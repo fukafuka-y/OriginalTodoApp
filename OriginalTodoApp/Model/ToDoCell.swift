@@ -14,7 +14,6 @@ class ToDoCell: UITableViewCell {
     
     @IBOutlet weak var ToDoTimeLabel: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

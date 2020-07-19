@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tYi-uG-N4w">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tYi-uG-N4w">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -40,8 +40,8 @@
                     <navigationItem key="navigationItem" title="ToDoList" id="1k2-UN-i8i">
                         <barButtonItem key="rightBarButtonItem" image="plus.circle" catalog="system" id="csA-Wa-oKf">
                             <connections>
-                                <action selector="plusButton:" destination="avS-f8-3CV" id="OYX-vi-WU3"/>
-                                <segue destination="mBS-WD-UG5" kind="presentation" id="k3N-TX-zUw"/>
+                                <action selector="plusButton:" destination="avS-f8-3CV" id="1oK-fp-8y8"/>
+                                <segue destination="mBS-WD-UG5" kind="presentation" identifier="plusTodo" modalPresentationStyle="overCurrentContext" id="k3N-TX-zUw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -58,7 +58,7 @@
             <objects>
                 <viewController id="mBS-WD-UG5" customClass="PlusToDoViewController" customModule="OriginalTodoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y6N-tP-AFw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="やることリスト" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z8E-PT-pEo">
@@ -76,17 +76,24 @@
                                     <action selector="plusTodoList:" destination="mBS-WD-UG5" eventType="touchUpInside" id="Z93-c5-e7m"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="09:00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qzd-G2-isM" customClass="TimePickerKeyboard" customModule="OriginalTodoApp" customModuleProvider="target">
+                                <rect key="frame" x="61" y="44" width="166" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="epd-kJ-T2A"/>
                     </view>
                     <connections>
                         <outlet property="TodoTextField" destination="z8E-PT-pEo" id="tCO-Hd-Yde"/>
+                        <outlet property="TodoTimeTextField" destination="Qzd-G2-isM" id="cof-BI-QgO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a2r-Mu-5Gv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1845" y="210"/>
+            <point key="canvasLocation" x="1844.9275362318842" y="209.59821428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="O3h-Se-v9C">

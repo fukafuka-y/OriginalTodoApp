@@ -9,69 +9,38 @@
 import UIKit
 import Lottie
 
-class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
-   
-    
+ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
+ 
 
     @IBOutlet weak var todoTableView: UITableView!
     
      var todoTextArray:[String] = ["体操","ランニング"]
-    
+     var todoText:String = ""
+     var todoTimeArray:[String] = ["09:00","10:00"]
+     var todoTime:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        todoTableView.register(UINib(nibName: "ToDoCell", bundle: nil),forCellReuseIdentifier:"ToDoCell")
-        todoTableView.delegate = self
-        todoTableView.dataSource = self
+                  
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        if UserDefaults.standard.object(forKey: "TodoList") != nil{
-            
-            todoTextArray.append(UserDefaults.standard.object(forKey: "TodoList") as! String)
-            
-            
-        }else{
-            
-        }
-        todoTableView.register(UINib(nibName: "ToDoCell", bundle: nil),forCellReuseIdentifier:"ToDoCell")
+
+        if UserDefaults.standard.object(forKey: "TodoList") != nil && UserDefaults.standard.object(forKey: "TodoTime") != nil{
+
+              todoText = UserDefaults.standard.object(forKey: "TodoList") as! String
+              todoTextArray.append(todoText)
+              todoTime = UserDefaults.standard.object(forKey: "TodoTime") as! String
+              todoTimeArray.append(todoTime)
+              todoTableView.register(UINib(nibName: "ToDoCell", bundle: nil),forCellReuseIdentifier:"ToDoCell")
+              todoTableView.reloadData()
+              UserDefaults.standard.removeObject(forKey: "ToDoCell")
+
+          }
         todoTableView.delegate = self
         todoTableView.dataSource = self
-    
-        
     }
     
-//    @IBAction func plusButton(_ sender: Any) {
-//
-//        pushAddButton()
-//    }
-//
-//
-//     func pushAddButton() {
-//                   let alert = UIAlertController(title: "タスクを追加", message: nil, preferredStyle: .alert)
-//                   alert.addTextField { textField in
-//                        textField.placeholder = "タスク名を入力"
-//                    }
-//
-//                   alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-//
-//                    if let text = alert.textFields?.first?.text{
-//
-//                        self.todoTextArray.append(text)
-//
-//                        self.todoTableView.reloadData()
-//                        }
-//                    }))
-//
-//                    // キャンセルボタンを追加
-//                   alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//
-//                    // アラートを表示す
-//                   present(alert, animated: true, completion: nil)
-//                }
-
         
     func showAnimation() {
            
@@ -89,6 +58,18 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
               
               
           }
+        
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return todoTimeArray.count
+           }
+           
+           func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+               let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell") as! ToDoCell
+               cell.ToDoTextLabel.text = todoTextArray[indexPath.row]
+               cell.ToDoTimeLabel.text = todoTimeArray[indexPath.row]
+               return cell
+           }
+           
        
         
     
@@ -97,21 +78,10 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
          return 1
      }
 
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         // #warning Incomplete implementation, return the number of rows
-         return todoTextArray.count
-     }
-     
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell") as! ToDoCell
-        cell.ToDoTextLabel.text = todoTextArray[indexPath.row]
-        return cell
-    
-    }
      
      func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-          return view.frame.size.height/8
+          return view.frame.size.height/9
              }
      
     
@@ -123,6 +93,8 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
     }
     
+    
+        
     /*
     // MARK: - Navigation
 
@@ -133,4 +105,6 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
     }
     */
 
+
 }
+

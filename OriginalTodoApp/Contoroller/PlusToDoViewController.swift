@@ -12,32 +12,46 @@ class PlusToDoViewController: UIViewController,UITextFieldDelegate {
 
    
     @IBOutlet weak var TodoTextField: UITextField!
-//    @IBOutlet weak var TodoTimeTextField: TimePickerKeyboard!
+    @IBOutlet weak var TodoTimeTextField: TimePickerKeyboard!
     
     var todoText:String = ""
+    var todoTime:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UserDefaults.standard.removeObject(forKey: "TodoList")
         TodoTextField.delegate = self
-//        TodoTimeTextField.delegate = self
+        TodoTimeTextField.delegate = self
 
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        todoText = TodoTextField.text!
+        saveText(todoText: todoText)
+        todoTime = TodoTimeTextField.text!
+        saveTime(todoTime: todoTime)
+        
+        return true
+        
     }
     
     @IBAction func plusTodoList(_ sender: Any) {
         
-        todoText = TodoTextField.text!
-        saveData(todoText: todoText)
         dismiss(animated: true, completion: nil)
     }
     
-    func saveData(todoText: String){
-    
+    func saveText(todoText: String){
+
            // Keyを指定して保存
         UserDefaults.standard.set(todoText, forKey: "TodoList")
        }
-    
+
+    func saveTime(todoTime:String){
+        
+         UserDefaults.standard.set(todoTime, forKey: "TodoTime")
+        
+    }
    
    
 
