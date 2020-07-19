@@ -13,9 +13,11 @@
 		5A7FEF7E24C3CA1D0056F49F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A7FEF7D24C3CA1D0056F49F /* Assets.xcassets */; };
 		5A7FEF8124C3CA1D0056F49F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A7FEF7F24C3CA1D0056F49F /* LaunchScreen.storyboard */; };
 		5A7FEF9024C3CBF80056F49F /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FEF8F24C3CBF80056F49F /* TodoViewController.swift */; };
-		5A7FEF9424C3F4F30056F49F /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FEF9324C3F4F30056F49F /* ConfigurationViewController.swift */; };
 		5A7FEF9F24C40B480056F49F /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FEF9D24C40B480056F49F /* ToDoCell.swift */; };
 		5A7FEFA024C40B480056F49F /* ToDoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A7FEF9E24C40B480056F49F /* ToDoCell.xib */; };
+		5A7FEFA224C4297E0056F49F /* checkAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A7FEFA124C4297E0056F49F /* checkAnimation.json */; };
+		5A7FEFA424C42C980056F49F /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FEFA324C42C980056F49F /* TimePicker.swift */; };
+		5A7FEFA624C42D2A0056F49F /* PlusToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FEFA524C42D2A0056F49F /* PlusToDoViewController.swift */; };
 		A77B7B55C18F7B9153376D7A /* Pods_OriginalTodoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E67F2ECC9DB0359A705CC3BA /* Pods_OriginalTodoApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,9 +31,11 @@
 		5A7FEF8024C3CA1D0056F49F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A7FEF8224C3CA1D0056F49F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A7FEF8F24C3CBF80056F49F /* TodoViewController.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
-		5A7FEF9324C3F4F30056F49F /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		5A7FEF9D24C40B480056F49F /* ToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
 		5A7FEF9E24C40B480056F49F /* ToDoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToDoCell.xib; sourceTree = "<group>"; };
+		5A7FEFA124C4297E0056F49F /* checkAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = checkAnimation.json; sourceTree = "<group>"; };
+		5A7FEFA324C42C980056F49F /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
+		5A7FEFA524C42D2A0056F49F /* PlusToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusToDoViewController.swift; sourceTree = "<group>"; };
 		D31DD2906DEF17F1926C12B1 /* Pods-OriginalTodoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginalTodoApp.release.xcconfig"; path = "Target Support Files/Pods-OriginalTodoApp/Pods-OriginalTodoApp.release.xcconfig"; sourceTree = "<group>"; };
 		E67F2ECC9DB0359A705CC3BA /* Pods_OriginalTodoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OriginalTodoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -74,6 +78,7 @@
 				5A7FEF8E24C3CB610056F49F /* Contoroller */,
 				5A7FEF7F24C3CA1D0056F49F /* LaunchScreen.storyboard */,
 				5A7FEF8224C3CA1D0056F49F /* Info.plist */,
+				5A7FEFA124C4297E0056F49F /* checkAnimation.json */,
 			);
 			path = OriginalTodoApp;
 			sourceTree = "<group>";
@@ -83,6 +88,7 @@
 			children = (
 				5A7FEF9D24C40B480056F49F /* ToDoCell.swift */,
 				5A7FEF9E24C40B480056F49F /* ToDoCell.xib */,
+				5A7FEFA324C42C980056F49F /* TimePicker.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -102,7 +108,7 @@
 				5A7FEF7424C3CA190056F49F /* AppDelegate.swift */,
 				5A7FEF7624C3CA190056F49F /* SceneDelegate.swift */,
 				5A7FEF8F24C3CBF80056F49F /* TodoViewController.swift */,
-				5A7FEF9324C3F4F30056F49F /* ConfigurationViewController.swift */,
+				5A7FEFA524C42D2A0056F49F /* PlusToDoViewController.swift */,
 			);
 			path = Contoroller;
 			sourceTree = "<group>";
@@ -188,6 +194,7 @@
 				5A7FEF7E24C3CA1D0056F49F /* Assets.xcassets in Resources */,
 				5A7FEF7C24C3CA190056F49F /* Main.storyboard in Resources */,
 				5A7FEFA024C40B480056F49F /* ToDoCell.xib in Resources */,
+				5A7FEFA224C4297E0056F49F /* checkAnimation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,10 +248,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A7FEF7524C3CA190056F49F /* AppDelegate.swift in Sources */,
-				5A7FEF9424C3F4F30056F49F /* ConfigurationViewController.swift in Sources */,
 				5A7FEF9024C3CBF80056F49F /* TodoViewController.swift in Sources */,
 				5A7FEF7724C3CA190056F49F /* SceneDelegate.swift in Sources */,
 				5A7FEF9F24C40B480056F49F /* ToDoCell.swift in Sources */,
+				5A7FEFA624C42D2A0056F49F /* PlusToDoViewController.swift in Sources */,
+				5A7FEFA424C42C980056F49F /* TimePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
