@@ -94,7 +94,19 @@ import Lottie
     }
     
     
+    
+    @IBAction func weatherButton(_ sender: Any) {
+         let baseviewContorller = BaseViewController()
+         present(baseviewContorller,animated: true ,completion: nil)
         
+    }
+    
+    
+    @IBAction func NewsButton(_ sender: Any) {
+        let base2viewContorller = Base2ViewController()
+        present(base2viewContorller,animated: true ,completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

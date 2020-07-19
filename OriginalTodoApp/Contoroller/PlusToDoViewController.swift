@@ -20,10 +20,13 @@ class PlusToDoViewController: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+         self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height / 2)
+        self.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
         TodoTextField.delegate = self
         TodoTimeTextField.delegate = self
 
     }
+   
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         

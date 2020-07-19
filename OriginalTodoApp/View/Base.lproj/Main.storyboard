@@ -31,6 +31,18 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Item" id="tqa-Sa-9Wz"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="5jv-iz-uGh"/>
+                                    <barButtonItem title="天気" id="Wph-Li-HCH">
+                                        <connections>
+                                            <action selector="weatherButton:" destination="avS-f8-3CV" id="S4G-qa-eL1"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="IE7-6L-vG0"/>
+                                    <barButtonItem title="ニュース" id="jDs-0G-YsA">
+                                        <connections>
+                                            <action selector="NewsButton:" destination="avS-f8-3CV" id="mTp-hf-y61"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -111,7 +123,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qyw-6c-T6q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="182.60869565217394" y="209.59821428571428"/>
+            <point key="canvasLocation" x="268" y="210"/>
         </scene>
     </scenes>
     <resources>
