@@ -18,7 +18,7 @@ class WeatherViewController: UITableViewController,SegementSlideContentScrollVie
         var tempuretureArray = [Double]()
         var MaxTempArray = [Double]()
         var MinTempArray = [Double]()
-        var descriptionArray = [String]()
+//        var descriptionArray = [String]()
         var weatherIdArray = [Int]()
         
         var weatherIdArrrayA = [Int]()
@@ -119,7 +119,6 @@ class WeatherViewController: UITableViewController,SegementSlideContentScrollVie
             let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell") as! WeatherCell
     //        getData()
             cell.areaTextLabel.text = self.areaStringArray[indexPath.row]
-            cell.descriptionLabel.text = self.descriptionArray[indexPath.row]
             let tempText = String(self.tempuretureArray[indexPath.row])
             let MaxText = String(self.MaxTempArray[indexPath.row])
             let MinText = String(self.MinTempArray[indexPath.row])
@@ -137,36 +136,45 @@ class WeatherViewController: UITableViewController,SegementSlideContentScrollVie
             let tempTextF = String(self.tempArrayF[indexPath.row])
             let tempTextG = String(self.tempArrayG[indexPath.row])
             
+            let timeText = timeTextChange(time: timeTextArray[indexPath.row])
+            let timeTextA = timeTextChange(time: timeTextArrayA[indexPath.row])
+            let timeTextB = timeTextChange(time: timeTextArrayB[indexPath.row])
+            let timeTextC = timeTextChange(time: timeTextArrayC[indexPath.row])
+            let timeTextD = timeTextChange(time: timeTextArrayD[indexPath.row])
+            let timeTextE = timeTextChange(time: timeTextArrayE[indexPath.row])
+            let timeTextF = timeTextChange(time: timeTextArrayF[indexPath.row])
+            let timeTextG = timeTextChange(time: timeTextArrayG[indexPath.row])
+            
             cell.weatherIconLabel.text = weatherIconChange(weatherId: weatherIdArray[indexPath.row])
-            cell.timeTextLabel.text = self.timeTextArray[indexPath.row]
+            cell.timeTextLabel.text = timeText
             cell.tempTextLabel.text = "\(tempText)℃"
 
             cell.weatherIconLabelA.text = weatherIconChange(weatherId: weatherIdArrrayA[indexPath.row])
-            cell.timeTextLabelA.text = self.timeTextArrayA[indexPath.row]
+            cell.timeTextLabelA.text = timeTextA
             cell.tempTextLabelA.text = "\(tempTextA)℃"
 
             cell.weatherIconLabelB.text = weatherIconChange(weatherId: weatherIdArrrayB[indexPath.row])
-            cell.timeTextLabelB.text = self.timeTextArrayB[indexPath.row]
+            cell.timeTextLabelB.text = timeTextB
             cell.tempTextLabelB.text = "\(tempTextB)℃"
 
             cell.weatherIconLabelC.text = weatherIconChange(weatherId: weatherIdArrrayC[indexPath.row])
-            cell.timeTextLabelC.text = self.timeTextArrayC[indexPath.row]
+            cell.timeTextLabelC.text = timeTextC
             cell.tempTextLabelC.text = "\(tempTextC)℃"
 
             cell.weatherIconLabelD.text = weatherIconChange(weatherId: weatherIdArrrayD[indexPath.row])
-            cell.timeTextLabelD.text = self.timeTextArrayD[indexPath.row]
+            cell.timeTextLabelD.text = timeTextD
             cell.tempTextLabelD.text = "\(tempTextD)℃"
 
             cell.weatherIconLabelE.text = weatherIconChange(weatherId: weatherIdArrrayE[indexPath.row])
-            cell.timeTextLabelE.text = self.timeTextArrayE[indexPath.row]
+            cell.timeTextLabelE.text = timeTextE
             cell.tempTextLabelE.text = "\(tempTextE)℃"
 
             cell.weatherIconLabelF.text = weatherIconChange(weatherId: weatherIdArrrayF[indexPath.row])
-            cell.timeTextLabelF.text = self.timeTextArrayF[indexPath.row]
+            cell.timeTextLabelF.text = timeTextF
             cell.tempTextLabelF.text = "\(tempTextF)℃"
 
             cell.weatherIconLabelG.text = weatherIconChange(weatherId: weatherIdArrrayG[indexPath.row])
-            cell.timeTextLabelG.text = self.timeTextArrayG[indexPath.row]
+            cell.timeTextLabelG.text = timeTextG
             cell.tempTextLabelG.text = "\(tempTextG)℃"
             
             
@@ -193,6 +201,13 @@ class WeatherViewController: UITableViewController,SegementSlideContentScrollVie
             
             return weatherIcon
         }
+    
+    func timeTextChange(time:String)->String{
+        
+        let timeString:String = String(time[time.index(time.startIndex, offsetBy: 11)..<time.index(time.startIndex, offsetBy: 16)])
+        return timeString
+        
+    }
         
         func tempChange(temp:Double)->Double{
             
@@ -230,7 +245,7 @@ class WeatherViewController: UITableViewController,SegementSlideContentScrollVie
                 let MaxTemp = json["list"][0]["main"]["temp_max"].double
                 let MinTemp = json["list"][0]["main"]["temp_min"].double
                 let area  = json["city"]["name"].string
-                let description = json["list"][0]["weather"][0]["description"].string
+//                let description = json["list"][0]["weather"][0]["description"].string
                 let weatherId = json["list"][0]["weather"][0]["id"].int
 
                 let weatherIdA = json["list"][1]["weather"][0]["id"].int
@@ -275,7 +290,7 @@ class WeatherViewController: UITableViewController,SegementSlideContentScrollVie
                 self.MaxTempArray.append(MaxTempRoud)
                 self.MinTempArray.append(MinTempRound)
                 self.areaStringArray.append(area!)
-                self.descriptionArray.append(description!)
+//                self.descriptionArray.append(description!)
                 self.weatherIdArray.append(weatherId!)
                 self.timeTextArray.append(dtText!)
                 
