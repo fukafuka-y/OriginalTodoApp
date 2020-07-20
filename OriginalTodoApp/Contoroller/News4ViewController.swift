@@ -115,10 +115,11 @@ class News4ViewController: UITableViewController,SegementSlideContentScrollViewD
                case "link":
                    lastItem.url = string
                case "pubDate":
-                   lastItem.pubDate = string
+                   lastItem.GetpubData = string
+                   let partPubDataString:String = String(string[(string.index(string.startIndex, offsetBy: 17))..<string.index(string.startIndex, offsetBy: 22)])
+                   lastItem.pubDate = partPubDataString
                default:break
-                   
-               }
+            }
                
                
            }

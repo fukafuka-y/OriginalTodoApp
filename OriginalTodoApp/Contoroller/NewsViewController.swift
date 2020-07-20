@@ -15,7 +15,6 @@ import SwiftyJSON
 class NewsViewController: UITableViewController,SegementSlideContentScrollViewDelegate,XMLParserDelegate{
 
     var newsData = [NewsData]()
-    
     //XMLParserのインスタンス化
     var parser = XMLParser()
    
@@ -115,7 +114,10 @@ class NewsViewController: UITableViewController,SegementSlideContentScrollViewDe
                case "link":
                    lastItem.url = string
                case "pubDate":
-                   lastItem.pubDate = string
+                   lastItem.GetpubData = string
+                   let partPubDataString:String = String(string[(string.index(string.startIndex, offsetBy: 17))..<string.index(string.startIndex, offsetBy: 22)])
+                   lastItem.pubDate = partPubDataString
+                
                default:break
                    
                }

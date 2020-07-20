@@ -22,21 +22,24 @@ import Lottie
     override func viewDidLoad() {
         super.viewDidLoad()
                   
+        todoTableView.register(UINib(nibName: "ToDoCell", bundle: nil),forCellReuseIdentifier:"ToDoCell")
+        todoTableView.delegate = self
+        todoTableView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
 
-        if UserDefaults.standard.object(forKey: "TodoList") != nil && UserDefaults.standard.object(forKey: "TodoTime") != nil{
-
-              todoText = UserDefaults.standard.object(forKey: "TodoList") as! String
-              todoTextArray.append(todoText)
-              todoTime = UserDefaults.standard.object(forKey: "TodoTime") as! String
-              todoTimeArray.append(todoTime)
-              todoTableView.register(UINib(nibName: "ToDoCell", bundle: nil),forCellReuseIdentifier:"ToDoCell")
-              todoTableView.reloadData()
-              UserDefaults.standard.removeObject(forKey: "ToDoCell")
-
-          }
+//        if UserDefaults.standard.object(forKey: "TodoList") != nil && UserDefaults.standard.object(forKey: "TodoTime") != nil{
+//
+//              todoText = UserDefaults.standard.object(forKey: "TodoList") as! String
+//              todoTextArray.append(todoText)
+//              todoTime = UserDefaults.standard.object(forKey: "TodoTime") as! String
+//              todoTimeArray.append(todoTime)
+//              todoTableView.register(UINib(nibName: "ToDoCell", bundle: nil),forCellReuseIdentifier:"ToDoCell")
+//              todoTableView.reloadData()
+//              UserDefaults.standard.removeObject(forKey: "ToDoCell")
+//
+//          }
         todoTableView.delegate = self
         todoTableView.dataSource = self
     }
@@ -63,13 +66,13 @@ import Lottie
             return todoTimeArray.count
            }
            
-           func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-               let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell") as! ToDoCell
-               cell.ToDoTextLabel.text = todoTextArray[indexPath.row]
-               cell.ToDoTimeLabel.text = todoTimeArray[indexPath.row]
-               return cell
-           }
-           
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+                 let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell") as! ToDoCell
+                 cell.ToDoTextLabel.text = todoTextArray[indexPath.row]
+                 cell.ToDoTimeLabel.text = todoTimeArray[indexPath.row]
+                return cell
+            }
+                
        
         
     
