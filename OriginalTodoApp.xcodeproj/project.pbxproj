@@ -18,6 +18,9 @@
 		5A577B3C24C45E5E000169F1 /* WeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A577B3A24C45E5E000169F1 /* WeatherCell.xib */; };
 		5A577B3E24C45F28000169F1 /* NewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A577B3D24C45F28000169F1 /* NewsData.swift */; };
 		5A577B4024C465A9000169F1 /* Base2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A577B3F24C465A9000169F1 /* Base2ViewController.swift */; };
+		5A577B4224C5D30D000169F1 /* News2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A577B4124C5D30D000169F1 /* News2ViewController.swift */; };
+		5A577B4424C5D324000169F1 /* News3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A577B4324C5D324000169F1 /* News3ViewController.swift */; };
+		5A577B4624C5D336000169F1 /* News4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A577B4524C5D336000169F1 /* News4ViewController.swift */; };
 		5A7FEF7524C3CA190056F49F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FEF7424C3CA190056F49F /* AppDelegate.swift */; };
 		5A7FEF7724C3CA190056F49F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FEF7624C3CA190056F49F /* SceneDelegate.swift */; };
 		5A7FEF7C24C3CA190056F49F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A7FEF7A24C3CA190056F49F /* Main.storyboard */; };
@@ -43,6 +46,9 @@
 		5A577B3A24C45E5E000169F1 /* WeatherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherCell.xib; sourceTree = "<group>"; };
 		5A577B3D24C45F28000169F1 /* NewsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsData.swift; sourceTree = "<group>"; };
 		5A577B3F24C465A9000169F1 /* Base2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base2ViewController.swift; sourceTree = "<group>"; };
+		5A577B4124C5D30D000169F1 /* News2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News2ViewController.swift; sourceTree = "<group>"; };
+		5A577B4324C5D324000169F1 /* News3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News3ViewController.swift; sourceTree = "<group>"; };
+		5A577B4524C5D336000169F1 /* News4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News4ViewController.swift; sourceTree = "<group>"; };
 		5A7FEF7124C3CA190056F49F /* OriginalTodoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OriginalTodoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7FEF7424C3CA190056F49F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A7FEF7624C3CA190056F49F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +145,9 @@
 				5A577B3124C45CC3000169F1 /* NewsViewController.swift */,
 				5A577B3324C45DC5000169F1 /* WebViewController.swift */,
 				5A577B3F24C465A9000169F1 /* Base2ViewController.swift */,
+				5A577B4124C5D30D000169F1 /* News2ViewController.swift */,
+				5A577B4324C5D324000169F1 /* News3ViewController.swift */,
+				5A577B4524C5D336000169F1 /* News4ViewController.swift */,
 			);
 			path = Contoroller;
 			sourceTree = "<group>";
@@ -282,7 +291,10 @@
 				5A7FEF7524C3CA190056F49F /* AppDelegate.swift in Sources */,
 				5A7FEF9024C3CBF80056F49F /* TodoViewController.swift in Sources */,
 				5A7FEF7724C3CA190056F49F /* SceneDelegate.swift in Sources */,
+				5A577B4424C5D324000169F1 /* News3ViewController.swift in Sources */,
+				5A577B4624C5D336000169F1 /* News4ViewController.swift in Sources */,
 				5A577B3424C45DC5000169F1 /* WebViewController.swift in Sources */,
+				5A577B4224C5D30D000169F1 /* News2ViewController.swift in Sources */,
 				5A7FEF9F24C40B480056F49F /* ToDoCell.swift in Sources */,
 				5A7FEFA624C42D2A0056F49F /* PlusToDoViewController.swift in Sources */,
 				5A577B4024C465A9000169F1 /* Base2ViewController.swift in Sources */,

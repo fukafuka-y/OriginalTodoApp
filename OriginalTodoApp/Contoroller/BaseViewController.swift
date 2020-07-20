@@ -22,7 +22,7 @@ class BaseViewController: SegementSlideDefaultViewController {
 
         override var titlesInSwitcher: [String]{
 
-            return["天気","ニュース"]
+            return["天気","トップニュース","スポーツ","エンタメ","経済","ライフ"]
             
             }
 
