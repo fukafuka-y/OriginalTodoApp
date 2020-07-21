@@ -80,7 +80,7 @@ import Lottie
             return todoTimeArray.count
            }
            
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
                  let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell") as! ToDoCell
                  cell.ToDoTextLabel.text = todoTextArray[indexPath.row]
                  cell.ToDoTimeLabel.text = todoTimeArray[indexPath.row]
@@ -106,6 +106,7 @@ import Lottie
         
         showAnimation()
         todoTextArray.remove(at: indexPath.row)
+        todoTimeArray.remove(at: indexPath.row)
         tableView.reloadData()
         
     }
@@ -115,6 +116,7 @@ import Lottie
     @IBAction func plusToDo(_ sender: Any) {
         
         plusToDoView.isHidden = false
+        timeTextFiled.text = ""
         
         
     }
@@ -122,6 +124,25 @@ import Lottie
     
     @IBAction func ToDoInput(_ sender: Any) {
         
+        if timeTextFiled.text != "" && todoTextField.text != ""{
+        todoTime = timeTextFiled.text!
+        todoText = todoTextField.text!
+        todoTimeArray.append(todoTime)
+        todoTextArray.append(todoText)
+        timeTextFiled.text = ""
+        todoTextField.text = ""
+        plusToDoView.isHidden = true
+        todoTableView.reloadData()
+        }
+        
+        
+    }
+    
+    
+    @IBAction func todoReturn(_ sender: Any) {
+        
+        timeTextFiled.text = ""
+        todoTextField.text = ""
         plusToDoView.isHidden = true
         
         
