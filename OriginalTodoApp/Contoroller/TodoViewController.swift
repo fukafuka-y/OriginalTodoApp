@@ -9,12 +9,16 @@
 import UIKit
 import Lottie
 
- class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
+ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate{
  
 
     @IBOutlet weak var todoTableView: UITableView!
+    @IBOutlet weak var plusToDoView: UIView!
+    @IBOutlet weak var timeTextFiled: TimePickerKeyboard!
+    @IBOutlet weak var todoTextField: UITextField!
     
-     var todoTextArray:[String] = ["体操","ランニング"]
+    
+    var todoTextArray:[String] = ["体操","ランニング"]
      var todoText:String = ""
      var todoTimeArray:[String] = ["09:00","10:00"]
      var todoTime:String = ""
@@ -25,6 +29,16 @@ import Lottie
         todoTableView.register(UINib(nibName: "ToDoCell", bundle: nil),forCellReuseIdentifier:"ToDoCell")
         todoTableView.delegate = self
         todoTableView.dataSource = self
+        
+        plusToDoView.backgroundColor = .darkGray
+        plusToDoView.alpha = 0.5
+        plusToDoView.isHidden = true
+        
+        timeTextFiled.delegate = self
+        todoTextField.delegate = self
+
+               
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -93,6 +107,23 @@ import Lottie
         showAnimation()
         todoTextArray.remove(at: indexPath.row)
         tableView.reloadData()
+        
+    }
+    
+    
+    
+    @IBAction func plusToDo(_ sender: Any) {
+        
+        plusToDoView.isHidden = false
+        
+        
+    }
+    
+    
+    @IBAction func ToDoInput(_ sender: Any) {
+        
+        plusToDoView.isHidden = true
+        
         
     }
     
