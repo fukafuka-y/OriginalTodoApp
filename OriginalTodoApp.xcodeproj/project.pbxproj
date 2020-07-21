@@ -21,6 +21,7 @@
 		5A577B4224C5D30D000169F1 /* News2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A577B4124C5D30D000169F1 /* News2ViewController.swift */; };
 		5A577B4424C5D324000169F1 /* News3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A577B4324C5D324000169F1 /* News3ViewController.swift */; };
 		5A577B4624C5D336000169F1 /* News4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A577B4524C5D336000169F1 /* News4ViewController.swift */; };
+		5A577B4824C6604B000169F1 /* rainAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A577B4724C6604A000169F1 /* rainAnimation.json */; };
 		5A7FEF7524C3CA190056F49F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FEF7424C3CA190056F49F /* AppDelegate.swift */; };
 		5A7FEF7724C3CA190056F49F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FEF7624C3CA190056F49F /* SceneDelegate.swift */; };
 		5A7FEF7C24C3CA190056F49F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A7FEF7A24C3CA190056F49F /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		5A577B4124C5D30D000169F1 /* News2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News2ViewController.swift; sourceTree = "<group>"; };
 		5A577B4324C5D324000169F1 /* News3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News3ViewController.swift; sourceTree = "<group>"; };
 		5A577B4524C5D336000169F1 /* News4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News4ViewController.swift; sourceTree = "<group>"; };
+		5A577B4724C6604A000169F1 /* rainAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rainAnimation.json; sourceTree = "<group>"; };
 		5A7FEF7124C3CA190056F49F /* OriginalTodoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OriginalTodoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7FEF7424C3CA190056F49F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A7FEF7624C3CA190056F49F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				5A7FEF7F24C3CA1D0056F49F /* LaunchScreen.storyboard */,
 				5A7FEF8224C3CA1D0056F49F /* Info.plist */,
 				5A7FEFA124C4297E0056F49F /* checkAnimation.json */,
+				5A577B4724C6604A000169F1 /* rainAnimation.json */,
 			);
 			path = OriginalTodoApp;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				5A7FEF7C24C3CA190056F49F /* Main.storyboard in Resources */,
 				5A577B3C24C45E5E000169F1 /* WeatherCell.xib in Resources */,
 				5A7FEFA024C40B480056F49F /* ToDoCell.xib in Resources */,
+				5A577B4824C6604B000169F1 /* rainAnimation.json in Resources */,
 				5A7FEFA224C4297E0056F49F /* checkAnimation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

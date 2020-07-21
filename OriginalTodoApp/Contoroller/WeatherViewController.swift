@@ -127,6 +127,15 @@ class WeatherViewController: UITableViewController,SegementSlideContentScrollVie
             cell.MinTempLabel.text = "\(MinText)℃"
             cell.IconLabel.text = weatherIconChange(weatherId: weatherIdArray[indexPath.row])
             
+            switch weatherIdArray[indexPath.row] {
+            case 300..<400: cell.backgroundColor = .brown
+            case 500..<600:  cell.backgroundColor = .blue
+            case 800:   cell.backgroundColor = .yellow
+            case 801..<900:  cell.backgroundColor = .brown
+            default:
+                cell.backgroundColor = .darkGray
+            }
+            
             
             let tempTextA = String(self.tempArrayA[indexPath.row])
             let tempTextB = String(self.tempArrayB[indexPath.row])
@@ -204,7 +213,8 @@ class WeatherViewController: UITableViewController,SegementSlideContentScrollVie
     
     func timeTextChange(time:String)->String{
         
-        let timeString:String = String(time[time.index(time.startIndex, offsetBy: 11)..<time.index(time.startIndex, offsetBy: 16)])
+        let timeStr:String = String(time[time.index(time.startIndex, offsetBy: 11)..<time.index(time.startIndex, offsetBy: 13)])
+        let timeString:String = "\(timeStr)時"
         return timeString
         
     }
@@ -216,6 +226,7 @@ class WeatherViewController: UITableViewController,SegementSlideContentScrollVie
       
         }
         
+    
        
         
         

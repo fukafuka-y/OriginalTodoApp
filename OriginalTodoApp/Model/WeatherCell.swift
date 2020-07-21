@@ -10,6 +10,9 @@ import UIKit
 
 class WeatherCell: UITableViewCell {
 
+    
+    @IBOutlet weak var weatherImageView: UIImageView!
+    
     @IBOutlet weak var areaTextLabel: UILabel!
     
     @IBOutlet weak var IconLabel: UILabel!
@@ -22,9 +25,7 @@ class WeatherCell: UITableViewCell {
     
     @IBOutlet weak var MinTempLabel: UILabel!
     
-    @IBOutlet weak var descriptionLabel: UILabel!
-    
-    
+  
     @IBOutlet weak var IconScrollView: UIScrollView!
        
     @IBOutlet weak var baceView: UIView!
