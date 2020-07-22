@@ -22,10 +22,10 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
      var todoText:String = ""
      var todoTimeArray:[String] = ["09:00","10:00"]
      var todoTime:String = ""
-     var prioritylist = ["", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
-    let priorityPickerView: UIPickerView = UIPickerView()
+     var prioritylist = ["重要度１","重要度2","重要度3", "重要度4","重要度5"]
+     let priorityPickerView: UIPickerView = UIPickerView()
     
-    override func viewDidLoad() {
+     override func viewDidLoad() {
         super.viewDidLoad()
                   
         todoTableView.register(UINib(nibName: "ToDoCell", bundle: nil),forCellReuseIdentifier:"ToDoCell")
@@ -42,19 +42,20 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         priorityPickerView.delegate = self
         priorityPickerView.dataSource = self
-        priorityPickerView.showsSelectionIndicator = true
+//        priorityPickerView.showsSelectionIndicator = true
 
         let toolbar = UIToolbar(frame: CGRectMake(0, 0, 0, 35))
+        let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: self, action: nil)
+        space.width = 12
+        let flexSpaceItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
-//        let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(TodoViewController.cancel))
-        toolbar.setItems([doneItem], animated: true)
+        let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
+        toolbar.setItems([flexSpaceItem,cancelItem,doneItem,space], animated: true)
 
         self.priorityTextField.inputView = priorityPickerView
         self.priorityTextField.inputAccessoryView = toolbar
         priorityTextField.delegate = self
                
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,7 +63,6 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         todoTableView.dataSource = self
     }
     
-        
     func showAnimation() {
            
               let animationView = AnimationView(name: "checkAnimation")
@@ -70,14 +70,9 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
               animationView.center = self.view.center
               animationView.contentMode = .scaleAspectFit
               animationView.animationSpeed = 0.5
-             
-              
               view.addSubview(animationView)
-
               animationView.play()
-              
-              
-              
+     
           }
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -98,36 +93,25 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
          // #warning Incomplete implementation, return the number of sections
          return 1
      }
-
-    
-     
+   
      func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
           return view.frame.size.height/9
              }
      
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         showAnimation()
         todoTextArray.remove(at: indexPath.row)
         todoTimeArray.remove(at: indexPath.row)
         tableView.reloadData()
-        
     }
-    
-    
     
     @IBAction func plusToDo(_ sender: Any) {
         
         plusTodoView.isHidden = false
         timeTextFiled.text = ""
-        
-        
     }
     
-    
     @IBAction func ToDoInput(_ sender: Any) {
-        
         
         if timeTextFiled.text != "" && todoTextField.text != ""{
         todoTime = timeTextFiled.text!
@@ -139,8 +123,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         plusTodoView.isHidden = true
         todoTableView.reloadData()
         }
-        
-        
+    
     }
     
     
@@ -149,7 +132,6 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         timeTextFiled.text = ""
         todoTextField.text = ""
         plusTodoView.isHidden = true
-        
         
     }
     
@@ -183,10 +165,10 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         priorityTextField.text = prioritylist[row]
     }
     
-//    @objc func cancel() {
-//           self.textField.text = ""
-//           self.textField.endEditing(true)
-//       }
+    @objc func cancel() {
+           self.priorityTextField.text = ""
+           self.priorityTextField.endEditing(true)
+       }
 
     @objc func done() {
            self.priorityTextField.endEditing(true)

@@ -44,10 +44,10 @@ class TimePickerKeyboard: UITextField {
         let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: self, action: nil)
         space.width = 12
         let flexSpaceItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-//        let todayButtonItem = UIBarButtonItem(title: "現在の時刻", style: .done, target: self, action: #selector(todayPicker))
+        let NowButtonItem = UIBarButtonItem(title: "現在", style: .done, target: self, action: #selector(nowTimePicker))
         let doneButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(donePicker))
 
-        let toolbarItems = [flexSpaceItem, doneButtonItem, space]
+        let toolbarItems = [flexSpaceItem,NowButtonItem, doneButtonItem, space]
 
         toolbar.setItems(toolbarItems, animated: true)
 
@@ -58,11 +58,11 @@ class TimePickerKeyboard: UITextField {
     @objc private func donePicker() {
         resignFirstResponder()
     }
-    // キーボードの今日ボタンタップ時に呼ばれる
-//    @objc private func todayPicker() {
-//        datePicker.date = Date()
-//        setText()
-//    }
+   
+    @objc private func nowTimePicker() {
+        datePicker.date = Date()
+        setText()
+    }
 
     //追加20200701
     @objc private func setText(){
