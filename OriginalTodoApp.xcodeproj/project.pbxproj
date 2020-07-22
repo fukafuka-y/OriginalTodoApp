@@ -23,6 +23,8 @@
 		5A577B4624C5D336000169F1 /* News4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A577B4524C5D336000169F1 /* News4ViewController.swift */; };
 		5A577B4824C6604B000169F1 /* rainAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A577B4724C6604A000169F1 /* rainAnimation.json */; };
 		5A577B4E24C7B259000169F1 /* News5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A577B4D24C7B259000169F1 /* News5ViewController.swift */; };
+		5A577B5024C84BF8000169F1 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A577B4F24C84BF8000169F1 /* DatePicker.swift */; };
+		5A577B5224C85087000169F1 /*  PriorityPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A577B5124C85087000169F1 /*  PriorityPicker.swift */; };
 		5A7FEF7524C3CA190056F49F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FEF7424C3CA190056F49F /* AppDelegate.swift */; };
 		5A7FEF7724C3CA190056F49F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FEF7624C3CA190056F49F /* SceneDelegate.swift */; };
 		5A7FEF7C24C3CA190056F49F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A7FEF7A24C3CA190056F49F /* Main.storyboard */; };
@@ -52,6 +54,8 @@
 		5A577B4524C5D336000169F1 /* News4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News4ViewController.swift; sourceTree = "<group>"; };
 		5A577B4724C6604A000169F1 /* rainAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rainAnimation.json; sourceTree = "<group>"; };
 		5A577B4D24C7B259000169F1 /* News5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News5ViewController.swift; sourceTree = "<group>"; };
+		5A577B4F24C84BF8000169F1 /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
+		5A577B5124C85087000169F1 /*  PriorityPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " PriorityPicker.swift"; sourceTree = "<group>"; };
 		5A7FEF7124C3CA190056F49F /* OriginalTodoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OriginalTodoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7FEF7424C3CA190056F49F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A7FEF7624C3CA190056F49F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +127,8 @@
 				5A577B3924C45E5E000169F1 /* WeatherCell.swift */,
 				5A577B3A24C45E5E000169F1 /* WeatherCell.xib */,
 				5A577B3D24C45F28000169F1 /* NewsData.swift */,
+				5A577B4F24C84BF8000169F1 /* DatePicker.swift */,
+				5A577B5124C85087000169F1 /*  PriorityPicker.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,6 +315,8 @@
 				5A577B3E24C45F28000169F1 /* NewsData.swift in Sources */,
 				5A7FEFA424C42C980056F49F /* TimePicker.swift in Sources */,
 				5A577B3724C45E4B000169F1 /* NewsCell.swift in Sources */,
+				5A577B5024C84BF8000169F1 /* DatePicker.swift in Sources */,
+				5A577B5224C85087000169F1 /*  PriorityPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

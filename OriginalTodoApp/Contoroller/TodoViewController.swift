@@ -9,18 +9,21 @@
 import UIKit
 import Lottie
 
- class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate{
- 
+class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource{
 
     @IBOutlet weak var todoTableView: UITableView!
     @IBOutlet weak var timeTextFiled: TimePickerKeyboard!
     @IBOutlet weak var todoTextField: UITextField!
     @IBOutlet weak var plusTodoView: UIView!
+    @IBOutlet weak var dateTextField: DatePickerKeyboard!
+    @IBOutlet weak var priorityTextField: UITextField!
     
-    var todoTextArray:[String] = ["体操","ランニング"]
+     var todoTextArray:[String] = ["体操","ランニング"]
      var todoText:String = ""
      var todoTimeArray:[String] = ["09:00","10:00"]
      var todoTime:String = ""
+     var prioritylist = ["", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+    let priorityPickerView: UIPickerView = UIPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +38,22 @@ import Lottie
         
         timeTextFiled.delegate = self
         todoTextField.delegate = self
+        dateTextField.delegate = self
+        
+        priorityPickerView.delegate = self
+        priorityPickerView.dataSource = self
+        priorityPickerView.showsSelectionIndicator = true
 
+        let toolbar = UIToolbar(frame: CGRectMake(0, 0, 0, 35))
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
+//        let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(TodoViewController.cancel))
+        toolbar.setItems([doneItem], animated: true)
+
+        self.priorityTextField.inputView = priorityPickerView
+        self.priorityTextField.inputAccessoryView = toolbar
+        priorityTextField.delegate = self
                
+        
         
     }
     
@@ -149,6 +166,36 @@ import Lottie
         let base2viewContorller = Base2ViewController()
         present(base2viewContorller,animated: true ,completion: nil)
     }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return prioritylist.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return prioritylist[row]
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        priorityTextField.text = prioritylist[row]
+    }
+    
+//    @objc func cancel() {
+//           self.textField.text = ""
+//           self.textField.endEditing(true)
+//       }
+
+    @objc func done() {
+           self.priorityTextField.endEditing(true)
+       }
+
+       func CGRectMake(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {
+           return CGRect(x: x, y: y, width: width, height: height)
+       }
+    
     
     /*
     // MARK: - Navigation
