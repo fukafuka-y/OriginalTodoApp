@@ -90,7 +90,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="plusToDoView" destination="xfi-q9-sxP" id="xMU-p3-yR8"/>
+                        <outlet property="plusTodoView" destination="xfi-q9-sxP" id="g1K-Kd-w2o"/>
                         <outlet property="timeTextFiled" destination="JvD-Iy-7gN" id="aj0-Yu-Hgh"/>
                         <outlet property="todoTableView" destination="en8-Vs-HVm" id="Whr-8E-DcT"/>
                         <outlet property="todoTextField" destination="jaa-Vw-xx2" id="6o5-4f-7tI"/>
@@ -99,48 +99,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efw-is-Gw1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1092.753623188406" y="209.59821428571428"/>
-        </scene>
-        <!--Plus To Do View Controller-->
-        <scene sceneID="DlV-9e-3gT">
-            <objects>
-                <viewController id="mBS-WD-UG5" customClass="PlusToDoViewController" customModule="OriginalTodoApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Y6N-tP-AFw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="やることリスト" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z8E-PT-pEo">
-                                <rect key="frame" x="61" y="92" width="286" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xK0-eY-xpK">
-                                <rect key="frame" x="235" y="35" width="88" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <state key="normal" image="plus.circle" catalog="system"/>
-                                <connections>
-                                    <action selector="plusTodoList:" destination="mBS-WD-UG5" eventType="touchUpInside" id="Z93-c5-e7m"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="09:00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qzd-G2-isM" customClass="TimePickerKeyboard" customModule="OriginalTodoApp" customModuleProvider="target">
-                                <rect key="frame" x="61" y="44" width="166" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="epd-kJ-T2A"/>
-                    </view>
-                    <connections>
-                        <outlet property="TodoTextField" destination="z8E-PT-pEo" id="tCO-Hd-Yde"/>
-                        <outlet property="TodoTimeTextField" destination="Qzd-G2-isM" id="cof-BI-QgO"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a2r-Mu-5Gv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1844.9275362318842" y="209.59821428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="O3h-Se-v9C">

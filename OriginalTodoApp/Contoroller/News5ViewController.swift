@@ -12,10 +12,9 @@ import SwiftyJSON
 
 
 
-class News4ViewController: UITableViewController,SegementSlideContentScrollViewDelegate,XMLParserDelegate{
+class News5ViewController: UITableViewController,SegementSlideContentScrollViewDelegate,XMLParserDelegate{
 
     var newsData = [NewsData]()
-    
     //XMLParserのインスタンス化
     var parser = XMLParser()
    
@@ -28,7 +27,7 @@ class News4ViewController: UITableViewController,SegementSlideContentScrollViewD
         tableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "NewsCell")
         tableView.backgroundColor = .clear
         
-        let urlString = "https://news.yahoo.co.jp/pickup/economy/rss.xml"
+        let urlString = "https://news.yahoo.co.jp/polls/life/rss.xml"
         let url:URL = URL(string:urlString)!
         parser = XMLParser(contentsOf: url)!
         parser.delegate = self
@@ -118,8 +117,10 @@ class News4ViewController: UITableViewController,SegementSlideContentScrollViewD
                    lastItem.GetpubData = string
                    let partPubDataString:String = String(string[(string.index(string.startIndex, offsetBy: 17))..<string.index(string.startIndex, offsetBy: 22)])
                    lastItem.pubDate = partPubDataString
+                
                default:break
-            }
+                   
+               }
                
                
            }

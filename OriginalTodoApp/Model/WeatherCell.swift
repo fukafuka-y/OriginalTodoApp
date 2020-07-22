@@ -11,6 +11,8 @@ import UIKit
 class WeatherCell: UITableViewCell {
 
     
+   
+    
     @IBOutlet weak var weatherImageView: UIImageView!
     
     @IBOutlet weak var areaTextLabel: UILabel!

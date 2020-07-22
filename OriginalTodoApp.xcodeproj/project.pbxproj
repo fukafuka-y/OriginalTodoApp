@@ -22,6 +22,7 @@
 		5A577B4424C5D324000169F1 /* News3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A577B4324C5D324000169F1 /* News3ViewController.swift */; };
 		5A577B4624C5D336000169F1 /* News4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A577B4524C5D336000169F1 /* News4ViewController.swift */; };
 		5A577B4824C6604B000169F1 /* rainAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A577B4724C6604A000169F1 /* rainAnimation.json */; };
+		5A577B4E24C7B259000169F1 /* News5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A577B4D24C7B259000169F1 /* News5ViewController.swift */; };
 		5A7FEF7524C3CA190056F49F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FEF7424C3CA190056F49F /* AppDelegate.swift */; };
 		5A7FEF7724C3CA190056F49F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FEF7624C3CA190056F49F /* SceneDelegate.swift */; };
 		5A7FEF7C24C3CA190056F49F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A7FEF7A24C3CA190056F49F /* Main.storyboard */; };
@@ -32,7 +33,6 @@
 		5A7FEFA024C40B480056F49F /* ToDoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A7FEF9E24C40B480056F49F /* ToDoCell.xib */; };
 		5A7FEFA224C4297E0056F49F /* checkAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A7FEFA124C4297E0056F49F /* checkAnimation.json */; };
 		5A7FEFA424C42C980056F49F /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FEFA324C42C980056F49F /* TimePicker.swift */; };
-		5A7FEFA624C42D2A0056F49F /* PlusToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FEFA524C42D2A0056F49F /* PlusToDoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +51,7 @@
 		5A577B4324C5D324000169F1 /* News3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News3ViewController.swift; sourceTree = "<group>"; };
 		5A577B4524C5D336000169F1 /* News4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News4ViewController.swift; sourceTree = "<group>"; };
 		5A577B4724C6604A000169F1 /* rainAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rainAnimation.json; sourceTree = "<group>"; };
+		5A577B4D24C7B259000169F1 /* News5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News5ViewController.swift; sourceTree = "<group>"; };
 		5A7FEF7124C3CA190056F49F /* OriginalTodoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OriginalTodoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7FEF7424C3CA190056F49F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A7FEF7624C3CA190056F49F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +64,6 @@
 		5A7FEF9E24C40B480056F49F /* ToDoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToDoCell.xib; sourceTree = "<group>"; };
 		5A7FEFA124C4297E0056F49F /* checkAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = checkAnimation.json; sourceTree = "<group>"; };
 		5A7FEFA324C42C980056F49F /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
-		5A7FEFA524C42D2A0056F49F /* PlusToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusToDoViewController.swift; sourceTree = "<group>"; };
 		D31DD2906DEF17F1926C12B1 /* Pods-OriginalTodoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginalTodoApp.release.xcconfig"; path = "Target Support Files/Pods-OriginalTodoApp/Pods-OriginalTodoApp.release.xcconfig"; sourceTree = "<group>"; };
 		E67F2ECC9DB0359A705CC3BA /* Pods_OriginalTodoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OriginalTodoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -142,7 +142,6 @@
 				5A7FEF7424C3CA190056F49F /* AppDelegate.swift */,
 				5A7FEF7624C3CA190056F49F /* SceneDelegate.swift */,
 				5A7FEF8F24C3CBF80056F49F /* TodoViewController.swift */,
-				5A7FEFA524C42D2A0056F49F /* PlusToDoViewController.swift */,
 				5A577B2D24C45C3F000169F1 /* BaseViewController.swift */,
 				5A577B2F24C45CA9000169F1 /* WeatherViewController.swift */,
 				5A577B3124C45CC3000169F1 /* NewsViewController.swift */,
@@ -151,6 +150,7 @@
 				5A577B4124C5D30D000169F1 /* News2ViewController.swift */,
 				5A577B4324C5D324000169F1 /* News3ViewController.swift */,
 				5A577B4524C5D336000169F1 /* News4ViewController.swift */,
+				5A577B4D24C7B259000169F1 /* News5ViewController.swift */,
 			);
 			path = Contoroller;
 			sourceTree = "<group>";
@@ -300,9 +300,9 @@
 				5A577B3424C45DC5000169F1 /* WebViewController.swift in Sources */,
 				5A577B4224C5D30D000169F1 /* News2ViewController.swift in Sources */,
 				5A7FEF9F24C40B480056F49F /* ToDoCell.swift in Sources */,
-				5A7FEFA624C42D2A0056F49F /* PlusToDoViewController.swift in Sources */,
 				5A577B4024C465A9000169F1 /* Base2ViewController.swift in Sources */,
 				5A577B3024C45CA9000169F1 /* WeatherViewController.swift in Sources */,
+				5A577B4E24C7B259000169F1 /* News5ViewController.swift in Sources */,
 				5A577B3224C45CC3000169F1 /* NewsViewController.swift in Sources */,
 				5A577B3B24C45E5E000169F1 /* WeatherCell.swift in Sources */,
 				5A577B2E24C45C3F000169F1 /* BaseViewController.swift in Sources */,

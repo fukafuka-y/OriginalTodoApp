@@ -45,6 +45,9 @@ class BaseViewController: SegementSlideDefaultViewController {
             case 4:
             return News4ViewController()
             
+            case 5:
+            return News5ViewController()
+            
            
            default:
                return WeatherViewController()

@@ -13,10 +13,9 @@ import Lottie
  
 
     @IBOutlet weak var todoTableView: UITableView!
-    @IBOutlet weak var plusToDoView: UIView!
     @IBOutlet weak var timeTextFiled: TimePickerKeyboard!
     @IBOutlet weak var todoTextField: UITextField!
-    
+    @IBOutlet weak var plusTodoView: UIView!
     
     var todoTextArray:[String] = ["体操","ランニング"]
      var todoText:String = ""
@@ -30,9 +29,9 @@ import Lottie
         todoTableView.delegate = self
         todoTableView.dataSource = self
         
-        plusToDoView.backgroundColor = .darkGray
-        plusToDoView.alpha = 0.5
-        plusToDoView.isHidden = true
+        plusTodoView.backgroundColor = .darkGray
+        plusTodoView.alpha = 0.5
+        plusTodoView.isHidden = true
         
         timeTextFiled.delegate = self
         todoTextField.delegate = self
@@ -42,18 +41,6 @@ import Lottie
     }
     
     override func viewWillAppear(_ animated: Bool) {
-
-//        if UserDefaults.standard.object(forKey: "TodoList") != nil && UserDefaults.standard.object(forKey: "TodoTime") != nil{
-//
-//              todoText = UserDefaults.standard.object(forKey: "TodoList") as! String
-//              todoTextArray.append(todoText)
-//              todoTime = UserDefaults.standard.object(forKey: "TodoTime") as! String
-//              todoTimeArray.append(todoTime)
-//              todoTableView.register(UINib(nibName: "ToDoCell", bundle: nil),forCellReuseIdentifier:"ToDoCell")
-//              todoTableView.reloadData()
-//              UserDefaults.standard.removeObject(forKey: "ToDoCell")
-//
-//          }
         todoTableView.delegate = self
         todoTableView.dataSource = self
     }
@@ -115,7 +102,7 @@ import Lottie
     
     @IBAction func plusToDo(_ sender: Any) {
         
-        plusToDoView.isHidden = false
+        plusTodoView.isHidden = false
         timeTextFiled.text = ""
         
         
@@ -124,6 +111,7 @@ import Lottie
     
     @IBAction func ToDoInput(_ sender: Any) {
         
+        
         if timeTextFiled.text != "" && todoTextField.text != ""{
         todoTime = timeTextFiled.text!
         todoText = todoTextField.text!
@@ -131,7 +119,7 @@ import Lottie
         todoTextArray.append(todoText)
         timeTextFiled.text = ""
         todoTextField.text = ""
-        plusToDoView.isHidden = true
+        plusTodoView.isHidden = true
         todoTableView.reloadData()
         }
         
@@ -143,7 +131,7 @@ import Lottie
         
         timeTextFiled.text = ""
         todoTextField.text = ""
-        plusToDoView.isHidden = true
+        plusTodoView.isHidden = true
         
         
     }
