@@ -69,19 +69,19 @@
                                             <action selector="todoReturn:" destination="avS-f8-3CV" eventType="touchUpInside" id="jhL-9x-Yx8"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N6S-jN-avZ" customClass="DatePickerKeyboard" customModule="OriginalTodoApp" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="日付を追加" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N6S-jN-avZ" customClass="DatePickerKeyboard" customModule="OriginalTodoApp" customModuleProvider="target">
                                         <rect key="frame" x="40" y="111" width="189" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="時間を入力" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JvD-Iy-7gN" customClass="TimePickerKeyboard" customModule="OriginalTodoApp" customModuleProvider="target">
-                                        <rect key="frame" x="40" y="8" width="189" height="34"/>
+                                        <rect key="frame" x="40" y="32" width="189" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eIf-J0-9T8">
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="重要度" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eIf-J0-9T8">
                                         <rect key="frame" x="237" y="111" width="91" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -92,7 +92,11 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="kou-MJ-svU"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="4LJ-Hh-Mwv" appends="YES" id="rlw-CL-UK4"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="ToDoList" id="1k2-UN-i8i">
                         <barButtonItem key="rightBarButtonItem" image="plus.circle" catalog="system" id="csA-Wa-oKf">
@@ -103,6 +107,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="dateTextField" destination="N6S-jN-avZ" id="TLS-XW-cIH"/>
+                        <outlet property="longTapButton" destination="4LJ-Hh-Mwv" id="6dW-LM-OVB"/>
                         <outlet property="plusTodoView" destination="xfi-q9-sxP" id="g1K-Kd-w2o"/>
                         <outlet property="priorityTextField" destination="eIf-J0-9T8" id="C1S-Fe-Vhp"/>
                         <outlet property="timeTextFiled" destination="JvD-Iy-7gN" id="aj0-Yu-Hgh"/>
@@ -111,6 +116,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efw-is-Gw1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="4LJ-Hh-Mwv">
+                    <connections>
+                        <action selector="longTapAction:" destination="avS-f8-3CV" id="luy-DW-ZOK"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1092.753623188406" y="209.59821428571428"/>
         </scene>

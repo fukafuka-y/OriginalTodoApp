@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A2AA31A24C9564C007A0CA5 /* SunnyIcon.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A2AA31924C9564C007A0CA5 /* SunnyIcon.json */; };
+		5A2AA31C24C9566A007A0CA5 /* CloudIcon.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A2AA31B24C9566A007A0CA5 /* CloudIcon.json */; };
+		5A2AA31E24C9568B007A0CA5 /* RainIcon.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A2AA31D24C9568B007A0CA5 /* RainIcon.json */; };
 		5A569EC824C43D3900586083 /* Pods_OriginalTodoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E67F2ECC9DB0359A705CC3BA /* Pods_OriginalTodoApp.framework */; };
 		5A577B2E24C45C3F000169F1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A577B2D24C45C3F000169F1 /* BaseViewController.swift */; };
 		5A577B3024C45CA9000169F1 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A577B2F24C45CA9000169F1 /* WeatherViewController.swift */; };
@@ -38,6 +41,9 @@
 
 /* Begin PBXFileReference section */
 		574000D5C9E37D1824B9F899 /* Pods-OriginalTodoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginalTodoApp.debug.xcconfig"; path = "Target Support Files/Pods-OriginalTodoApp/Pods-OriginalTodoApp.debug.xcconfig"; sourceTree = "<group>"; };
+		5A2AA31924C9564C007A0CA5 /* SunnyIcon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SunnyIcon.json; sourceTree = "<group>"; };
+		5A2AA31B24C9566A007A0CA5 /* CloudIcon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CloudIcon.json; sourceTree = "<group>"; };
+		5A2AA31D24C9568B007A0CA5 /* RainIcon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RainIcon.json; sourceTree = "<group>"; };
 		5A577B2D24C45C3F000169F1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		5A577B2F24C45CA9000169F1 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		5A577B3124C45CC3000169F1 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +116,9 @@
 				5A7FEF8224C3CA1D0056F49F /* Info.plist */,
 				5A7FEFA124C4297E0056F49F /* checkAnimation.json */,
 				5A577B4724C6604A000169F1 /* rainAnimation.json */,
+				5A2AA31B24C9566A007A0CA5 /* CloudIcon.json */,
+				5A2AA31924C9564C007A0CA5 /* SunnyIcon.json */,
+				5A2AA31D24C9568B007A0CA5 /* RainIcon.json */,
 			);
 			path = OriginalTodoApp;
 			sourceTree = "<group>";
@@ -237,7 +246,10 @@
 			files = (
 				5A577B3824C45E4B000169F1 /* NewsCell.xib in Resources */,
 				5A7FEF8124C3CA1D0056F49F /* LaunchScreen.storyboard in Resources */,
+				5A2AA31E24C9568B007A0CA5 /* RainIcon.json in Resources */,
+				5A2AA31A24C9564C007A0CA5 /* SunnyIcon.json in Resources */,
 				5A7FEF7E24C3CA1D0056F49F /* Assets.xcassets in Resources */,
+				5A2AA31C24C9566A007A0CA5 /* CloudIcon.json in Resources */,
 				5A7FEF7C24C3CA190056F49F /* Main.storyboard in Resources */,
 				5A577B3C24C45E5E000169F1 /* WeatherCell.xib in Resources */,
 				5A7FEFA024C40B480056F49F /* ToDoCell.xib in Resources */,

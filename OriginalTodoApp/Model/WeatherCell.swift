@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Lottie
 
-class WeatherCell: UITableViewCell {
+class WeatherCell: UITableViewCell{
 
     
    
+    @IBOutlet weak var weatherIconView: UIView!
     
     @IBOutlet weak var weatherImageView: UIImageView!
     
@@ -65,22 +67,40 @@ class WeatherCell: UITableViewCell {
        @IBOutlet weak var weatherIconLabelG: UILabel!
        @IBOutlet weak var tempTextLabelG: UILabel!
     
+    var animationString:String = ""
+    
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+      
     }
     
     override func layoutSubviews() {
            super.layoutSubviews()
         
-           let contentWidth = IconScrollView.bounds.width*2
+           let contentWidth = baceView.bounds.width*2
            let contentHeight = baceView.bounds.height
            IconScrollView.contentSize = CGSize(width: contentWidth, height: contentHeight)
+        
+           animationIcon()
            
        }
 
+    func animationIcon(){
+        
+        let animationView = AnimationView(name: "\(animationString)")
+               animationView.frame = weatherIconView.bounds
+//               animationView.center = self.weatherIconView.center
+               animationView.contentMode = .scaleAspectFit
+               animationView.loopMode = .loop
+               animationView.backgroundColor = .clear
+               animationView.animationSpeed = 0.5
+               weatherIconView.addSubview(animationView)
+               animationView.play()
+        
+        
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

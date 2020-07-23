@@ -9,7 +9,7 @@
 import UIKit
 import Lottie
 
-class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource{
+class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource, UIGestureRecognizerDelegate{
 
     @IBOutlet weak var todoTableView: UITableView!
     @IBOutlet weak var timeTextFiled: TimePickerKeyboard!
@@ -17,6 +17,8 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
     @IBOutlet weak var plusTodoView: UIView!
     @IBOutlet weak var dateTextField: DatePickerKeyboard!
     @IBOutlet weak var priorityTextField: UITextField!
+    
+    @IBOutlet var longTapButton: UILongPressGestureRecognizer!
     
      var todoTextArray:[String] = ["ToDo入力","ストレッチ"]
      var todoText:String = ""
@@ -58,6 +60,8 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         self.priorityTextField.inputView = priorityPickerView
         self.priorityTextField.inputAccessoryView = toolbar
         priorityTextField.delegate = self
+        
+        longTapButton.delegate = self
                
     }
     
@@ -119,13 +123,13 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
           return view.frame.size.height/9
              }
      
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        showAnimation()
-        todoTextArray.remove(at: indexPath.row)
-        todoTimeArray.remove(at: indexPath.row)
-        priorityArray.remove(at: indexPath.row)
-        tableView.reloadData()
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        showAnimation()
+//        todoTextArray.remove(at: indexPath.row)
+//        todoTimeArray.remove(at: indexPath.row)
+//        priorityArray.remove(at: indexPath.row)
+//        tableView.reloadData()
+//    }
     
     @IBAction func plusToDo(_ sender: Any) {
         
@@ -175,6 +179,40 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         let base2viewContorller = Base2ViewController()
         present(base2viewContorller,animated: true ,completion: nil)
     }
+    
+    func cellLongPressed(recognizer: UILongPressGestureRecognizer) {
+
+        // 押された位置でcellのPathを取得
+        let point = recognizer.location(in: todoTableView)
+        let indexPath = todoTableView.indexPathForRow(at: point)
+
+        if indexPath == nil {
+
+        } else if recognizer.state == UIGestureRecognizer.State.began  {
+            // 長押しされた場合の処理
+         showAnimation()
+            todoTextArray.remove(at: indexPath!.row)
+            todoTimeArray.remove(at: indexPath!.row)
+            priorityArray.remove(at: indexPath!.row)
+            todoTableView.reloadData()
+         }
+    }
+    
+//    @IBAction func longTapAction(_ sender: Any) {
+//
+//        let point = recognizer.locationInView(todoTableView)
+//        let indexPath = tableView.indexPathForRowAtPoint(point)
+//
+//        if indexPath == nil {
+//
+//        } else if recognizer.state == UIGestureRecognizerState.Began  {
+//            // 長押しされた場合の処理
+//            println("長押しされたcellのindexPath:\(indexPath?.row)")
+//         }
+//
+//    }
+//
+    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

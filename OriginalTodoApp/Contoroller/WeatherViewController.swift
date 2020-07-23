@@ -123,12 +123,26 @@ class WeatherViewController: UITableViewController,SegementSlideContentScrollVie
             cell.IconLabel.text = weatherIconChange(weatherId: weatherIdArray[indexPath.row])
             
             switch weatherIdArray[indexPath.row] {
-            case 300..<400: cell.backgroundColor = .brown
-            case 500..<600:  cell.backgroundColor = .blue
-            case 800:   cell.backgroundColor = .yellow
-            case 801..<900:  cell.backgroundColor = .brown
+            case 300..<400:
+                cell.backgroundColor = .brown
+                cell.animationString = "SunnyIcon"
+                cell.weatherIconView.backgroundColor = .brown
+            case 500..<600:
+                cell.backgroundColor = .blue
+                cell.animationString = "CloudIcon"
+                cell.weatherIconView.backgroundColor = .blue
+            case 800:
+                cell.backgroundColor = .yellow
+                cell.animationString = "RainIcon"
+                cell.weatherIconView.backgroundColor = .yellow
+            case 801..<900:
+                cell.backgroundColor = .brown
+                cell.animationString = "CloudIcon"
+                cell.weatherIconView.backgroundColor = .brown
             default:
                 cell.backgroundColor = .darkGray
+                cell.animationString = "CloudIcon"
+                cell.weatherIconView.backgroundColor = .darkGray
             }
             
             
