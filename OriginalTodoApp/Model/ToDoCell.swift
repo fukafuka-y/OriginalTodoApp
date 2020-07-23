@@ -14,6 +14,9 @@ class ToDoCell: UITableViewCell {
     
     @IBOutlet weak var ToDoTimeLabel: UILabel!
     
+    
+    @IBOutlet weak var ToDoImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

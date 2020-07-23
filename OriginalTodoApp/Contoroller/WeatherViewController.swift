@@ -11,7 +11,7 @@ import SegementSlide
 import SwiftyJSON
 import Alamofire
 
-class WeatherViewController: UITableViewController,SegementSlideContentScrollViewDelegate {
+class WeatherViewController: UITableViewController,SegementSlideContentScrollViewDelegate{
     
         var areaStringArray = [String]()
         var weatherIconArray = [String]()
@@ -46,9 +46,9 @@ class WeatherViewController: UITableViewController,SegementSlideContentScrollVie
         var timeTextArrayF = [String]()
         var timeTextArrayG = [String]()
         
-    //    var pickerView: UIPickerView = UIPickerView()
-    //    let list = ["Osaka", "Tokyo", "Nagoya", "Okinawa"]
-    //
+//        var pickerView: UIPickerView = UIPickerView()
+//        let areaList = ["Osaka", "Tokyo", "Nagoya", "Okinawa"]
+    
         
         override func viewDidLoad() {
             super.viewDidLoad()
@@ -57,50 +57,45 @@ class WeatherViewController: UITableViewController,SegementSlideContentScrollVie
             
                 getData()
             
-    //      pickerView.delegate = self
-    //      pickerView.dataSource = self
-    //      pickerView.showsSelectionIndicator = true
+//          pickerView.delegate = self
+//          pickerView.dataSource = self
 
-    //      let areaButton = UIButton(frame: CGRect(x: 50, y:100, width: 150, height: 80))
-    //      areaButton.backgroundColor = .black
-    //      let areaItem = areaButton.addTarget(self, action: #selector(done), for: .touchUpInside)
-    //      let cancelItem = areaButton.addTarget(self, action: #selector(cancel), for: .touchUpInside)
-    //      self.view.addSubview(areaButton)
-
-    //         plusbutton.addTarget(self, action: #selector(pushPlusButton), for: .touchUpInside)
+//          let areaButton = UIButton(frame: CGRect(x: 50, y:100, width: 150, height: 80))
+//          areaButton.backgroundColor = .black
+//          let areaItem = areaButton.addTarget(self, action: #selector(done), for: .touchUpInside)
+//          let cancelItem = areaButton.addTarget(self, action: #selector(cancel), for: .touchUpInside)
+//          self.textField.inputView = pickerView
+//          self.textField.inputAccessoryView = areaButton
             
-    //      self.textField.inputView = pickerView
-    //      self.textField.inputAccessoryView = areaButton
-            
-    //
+    
 
-    //
+    
         }
-    //
-    //    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-    //           1
-    //       }
-    //
-    //    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-    //        return list.count
-    //    }
-    //
-    //    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-    //        return list[row]
-    //    }
-    //
-    //    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    //        self.textField.text = list[row]
-    //    }
-    //
-    //    @objc func cancel() {
-    //        self.textField.text = ""
-    //        self.textField.endEditing(true)
-    //    }
-    //
-    //    @objc func done() {
-    //        self.textField.endEditing(true)
-    //    }
+    
+//        func numberOfComponents(in pickerView: UIPickerView) -> Int {
+//               1
+//           }
+//
+//        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+//            return areaList.count
+//        }
+//
+//        func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//            return areaList[row]
+//        }
+//
+//        func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//            self.textField.text = areaList[row]
+//        }
+//
+//        @objc func cancel() {
+//            self.textField.text = ""
+//            self.textField.endEditing(true)
+//        }
+//
+//        @objc func done() {
+//            self.textField.endEditing(true)
+//        }
 
         // MARK: - Table view data source
 

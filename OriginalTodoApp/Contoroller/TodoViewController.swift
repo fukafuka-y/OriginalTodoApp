@@ -18,11 +18,13 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
     @IBOutlet weak var dateTextField: DatePickerKeyboard!
     @IBOutlet weak var priorityTextField: UITextField!
     
-     var todoTextArray:[String] = ["体操","ランニング"]
+     var todoTextArray:[String] = ["ToDo入力","ストレッチ"]
      var todoText:String = ""
-     var todoTimeArray:[String] = ["09:00","10:00"]
+     var todoTimeArray:[String] = ["時間を入力","09:00"]
      var todoTime:String = ""
-     var prioritylist = ["重要度１","重要度2","重要度3", "重要度4","重要度5"]
+     var priorityArray:[String] = ["🔼","🔼"]
+     var priority:String = ""
+     var prioritylist = ["⭐️⭐️⭐️","⭐️⭐️","⭐️","🔼"]
      let priorityPickerView: UIPickerView = UIPickerView()
     
      override func viewDidLoad() {
@@ -51,7 +53,8 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
         let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
         toolbar.setItems([flexSpaceItem,cancelItem,doneItem,space], animated: true)
-
+        priorityTextField.text = "⭐️"
+        priorityTextField.textAlignment = .center
         self.priorityTextField.inputView = priorityPickerView
         self.priorityTextField.inputAccessoryView = toolbar
         priorityTextField.delegate = self
@@ -83,6 +86,24 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
                  let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell") as! ToDoCell
                  cell.ToDoTextLabel.text = todoTextArray[indexPath.row]
                  cell.ToDoTimeLabel.text = todoTimeArray[indexPath.row]
+            
+            let prioritylistString:String = priorityArray[indexPath.row]
+            
+            switch prioritylistString {
+            case "⭐️⭐️⭐️":
+                cell.backgroundColor = .red
+            case "⭐️⭐️":
+                cell.backgroundColor = .orange
+            case "⭐️":
+                cell.backgroundColor = .yellow
+            case "🔼":
+                cell.backgroundColor = .white
+            default:
+                cell.backgroundColor = .white
+                
+            }
+                
+           
                 return cell
             }
                 
@@ -102,6 +123,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         showAnimation()
         todoTextArray.remove(at: indexPath.row)
         todoTimeArray.remove(at: indexPath.row)
+        priorityArray.remove(at: indexPath.row)
         tableView.reloadData()
     }
     
@@ -116,12 +138,16 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         if timeTextFiled.text != "" && todoTextField.text != ""{
         todoTime = timeTextFiled.text!
         todoText = todoTextField.text!
+        priority = priorityTextField.text!
         todoTimeArray.append(todoTime)
         todoTextArray.append(todoText)
+        priorityArray.append(priority)
         timeTextFiled.text = ""
         todoTextField.text = ""
+        priorityTextField.text = ""
         plusTodoView.isHidden = true
         todoTableView.reloadData()
+        
         }
     
     }
@@ -131,6 +157,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         timeTextFiled.text = ""
         todoTextField.text = ""
+        priorityTextField.text = ""
         plusTodoView.isHidden = true
         
     }
