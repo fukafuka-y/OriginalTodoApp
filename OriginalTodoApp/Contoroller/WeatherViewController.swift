@@ -124,25 +124,35 @@ class WeatherViewController: UITableViewController,SegementSlideContentScrollVie
             
             switch weatherIdArray[indexPath.row] {
             case 300..<400:
-                cell.backgroundColor = .brown
+                cell.backgroundColor = UIColor(red: 1.0, green: 0, blue: 0, alpha: 0.4)
                 cell.animationString = "SunnyIcon"
-                cell.weatherIconView.backgroundColor = .brown
+                cell.weatherIconView.backgroundColor = UIColor(red: 1.0, green: 0, blue: 0, alpha: 0.4)
+                cell.baceView.backgroundColor = UIColor(red: 1.0, green: 0, blue: 0, alpha: 1.0)
+                cell.IconScrollView.backgroundColor = UIColor(red: 1.0, green: 0, blue: 0, alpha: 1.0)
             case 500..<600:
-                cell.backgroundColor = .blue
+                cell.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.4)
                 cell.animationString = "CloudIcon"
-                cell.weatherIconView.backgroundColor = .blue
+                cell.weatherIconView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.4)
+                cell.baceView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
+                cell.IconScrollView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
             case 800:
                 cell.backgroundColor = .yellow
                 cell.animationString = "RainIcon"
                 cell.weatherIconView.backgroundColor = .yellow
+                cell.baceView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
+                cell.IconScrollView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
             case 801..<900:
                 cell.backgroundColor = .brown
                 cell.animationString = "CloudIcon"
                 cell.weatherIconView.backgroundColor = .brown
+                cell.baceView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
+                cell.IconScrollView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
             default:
                 cell.backgroundColor = .darkGray
                 cell.animationString = "CloudIcon"
                 cell.weatherIconView.backgroundColor = .darkGray
+                cell.baceView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
+                cell.IconScrollView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
             }
             
             

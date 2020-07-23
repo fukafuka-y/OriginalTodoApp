@@ -20,8 +20,7 @@ class News3ViewController: UITableViewController,SegementSlideContentScrollViewD
     var parser = XMLParser()
    
      var currentElemantName:String!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,16 +33,14 @@ class News3ViewController: UITableViewController,SegementSlideContentScrollViewD
         parser.delegate = self
         parser.parse()
 
-        let backgroudImage:UIImageView = UIImageView(frame: CGRect(x: 0, y: 0 , width: 100, height:100))
-        backgroudImage.image = UIImage(named: "background")
+        let backgroudImage:UIImageView = UIImageView(frame: CGRect(x: 0, y: 0 , width:self.view.frame.width, height:self.view.frame.height))
+        let image = UIImage(named: "background3")
+        backgroudImage.image = image
         backgroudImage.contentMode = .scaleToFill
-        tableView.tableFooterView = backgroudImage
-        tableView.tableFooterView?.layer.masksToBounds = true
-//        view.insertSubview(backgroudImage, belowSubview: tableView)
-        self.view.sendSubviewToBack(backgroudImage)
+        backgroudImage.alpha = 0.4
+        self.tableView.backgroundView = backgroudImage
+        
        
-        
-        
     }
 
     // MARK: - Table view data source
