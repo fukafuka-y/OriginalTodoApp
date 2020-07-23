@@ -18,7 +18,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
     @IBOutlet weak var dateTextField: DatePickerKeyboard!
     @IBOutlet weak var priorityTextField: UITextField!
     
-    @IBOutlet var longTapButton: UILongPressGestureRecognizer!
+    
     
      var todoTextArray:[String] = ["ToDo入力","ストレッチ"]
      var todoText:String = ""
@@ -61,8 +61,15 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         self.priorityTextField.inputAccessoryView = toolbar
         priorityTextField.delegate = self
         
-        longTapButton.delegate = self
+        let longTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.longTap(_:)))
+         todoTableView.addGestureRecognizer(longTapGesture)
                
+    }
+    
+    @objc func longTap(_ sender: Any){
+        
+        print(String())
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

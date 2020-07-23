@@ -10,6 +10,7 @@ import UIKit
 import SegementSlide
 import SwiftyJSON
 import Alamofire
+import Lottie
 
 class WeatherViewController: UITableViewController,SegementSlideContentScrollViewDelegate{
     
@@ -53,10 +54,9 @@ class WeatherViewController: UITableViewController,SegementSlideContentScrollVie
         override func viewDidLoad() {
             super.viewDidLoad()
 
-             tableView.register(UINib(nibName: "WeatherCell", bundle: nil), forCellReuseIdentifier: "WeatherCell")
-            
-                getData()
-            
+            tableView.register(UINib(nibName: "WeatherCell", bundle: nil), forCellReuseIdentifier: "WeatherCell")
+            getData()
+           
 //          pickerView.delegate = self
 //          pickerView.dataSource = self
 
@@ -71,6 +71,8 @@ class WeatherViewController: UITableViewController,SegementSlideContentScrollVie
 
     
         }
+    
+      
     
 //        func numberOfComponents(in pickerView: UIPickerView) -> Int {
 //               1
@@ -121,34 +123,37 @@ class WeatherViewController: UITableViewController,SegementSlideContentScrollVie
             cell.MaxTempLabel.text = "\(MaxText)℃"
             cell.MinTempLabel.text = "\(MinText)℃"
             cell.IconLabel.text = weatherIconChange(weatherId: weatherIdArray[indexPath.row])
+            tableView.backgroundColor = .clear
+            cell.contentView.backgroundColor = .clear
+            
             
             switch weatherIdArray[indexPath.row] {
             case 300..<400:
-                cell.backgroundColor = UIColor(red: 1.0, green: 0, blue: 0, alpha: 0.4)
+                cell.backgroundColor = .clear
                 cell.animationString = "SunnyIcon"
                 cell.weatherIconView.backgroundColor = UIColor(red: 1.0, green: 0, blue: 0, alpha: 0.4)
                 cell.baceView.backgroundColor = UIColor(red: 1.0, green: 0, blue: 0, alpha: 1.0)
                 cell.IconScrollView.backgroundColor = UIColor(red: 1.0, green: 0, blue: 0, alpha: 1.0)
             case 500..<600:
-                cell.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.4)
+                cell.backgroundColor = .clear
                 cell.animationString = "CloudIcon"
                 cell.weatherIconView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.4)
                 cell.baceView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
                 cell.IconScrollView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
             case 800:
-                cell.backgroundColor = .yellow
+                cell.backgroundColor = .clear
                 cell.animationString = "RainIcon"
                 cell.weatherIconView.backgroundColor = .yellow
                 cell.baceView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
                 cell.IconScrollView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
             case 801..<900:
-                cell.backgroundColor = .brown
+                cell.backgroundColor = .clear
                 cell.animationString = "CloudIcon"
                 cell.weatherIconView.backgroundColor = .brown
                 cell.baceView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
                 cell.IconScrollView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
             default:
-                cell.backgroundColor = .darkGray
+                cell.backgroundColor = .clear
                 cell.animationString = "CloudIcon"
                 cell.weatherIconView.backgroundColor = .darkGray
                 cell.baceView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
