@@ -61,15 +61,13 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         self.priorityTextField.inputAccessoryView = toolbar
         priorityTextField.delegate = self
         
-        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: "cellLongPressed")
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(cellLongPressed))
         longPressRecognizer.delegate = self
         todoTableView.addGestureRecognizer(longPressRecognizer)
                
     }
    
 
-    
-   
     override func viewWillAppear(_ animated: Bool) {
         todoTableView.delegate = self
         todoTableView.dataSource = self
@@ -112,7 +110,6 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
                 
             }
                 
-           
                 return cell
             }
                 
@@ -186,7 +183,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
     }
     
     
-    func cellLongPressed(recognizer: UILongPressGestureRecognizer) {
+    @objc func cellLongPressed(recognizer: UILongPressGestureRecognizer) {
         let point = recognizer.location(in: todoTableView)
         let indexPath = todoTableView.indexPathForRow(at: point)
         if indexPath == nil {
