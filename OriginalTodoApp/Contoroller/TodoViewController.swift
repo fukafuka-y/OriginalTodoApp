@@ -181,6 +181,11 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         present(base2viewContorller,animated: true ,completion: nil)
     }
     
+    @IBAction func memoButton(_ sender: Any) {
+    performSegue(withIdentifier: "memo", sender: nil)
+    }
+    
+    
     func cellLongPressed(recognizer: UILongPressGestureRecognizer) {
         let point = recognizer.location(in: todoTableView)
         let indexPath = todoTableView.indexPathForRow(at: point)

@@ -28,6 +28,9 @@
 		5A577B4824C6604B000169F1 /* rainAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A577B4724C6604A000169F1 /* rainAnimation.json */; };
 		5A577B4E24C7B259000169F1 /* News5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A577B4D24C7B259000169F1 /* News5ViewController.swift */; };
 		5A577B5024C84BF8000169F1 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A577B4F24C84BF8000169F1 /* DatePicker.swift */; };
+		5A687C9424CBD08D00A87459 /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A687C9324CBD08D00A87459 /* MemoViewController.swift */; };
+		5A687C9624CBD0A000A87459 /* AddMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A687C9524CBD0A000A87459 /* AddMemoViewController.swift */; };
+		5A687C9824CBD0AE00A87459 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A687C9724CBD0AE00A87459 /* DetailViewController.swift */; };
 		5A7FEF7524C3CA190056F49F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FEF7424C3CA190056F49F /* AppDelegate.swift */; };
 		5A7FEF7724C3CA190056F49F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FEF7624C3CA190056F49F /* SceneDelegate.swift */; };
 		5A7FEF7C24C3CA190056F49F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A7FEF7A24C3CA190056F49F /* Main.storyboard */; };
@@ -62,6 +65,9 @@
 		5A577B4724C6604A000169F1 /* rainAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rainAnimation.json; sourceTree = "<group>"; };
 		5A577B4D24C7B259000169F1 /* News5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News5ViewController.swift; sourceTree = "<group>"; };
 		5A577B4F24C84BF8000169F1 /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
+		5A687C9324CBD08D00A87459 /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
+		5A687C9524CBD0A000A87459 /* AddMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemoViewController.swift; sourceTree = "<group>"; };
+		5A687C9724CBD0AE00A87459 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5A7FEF7124C3CA190056F49F /* OriginalTodoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OriginalTodoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7FEF7424C3CA190056F49F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A7FEF7624C3CA190056F49F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +172,9 @@
 				5A577B4324C5D324000169F1 /* News3ViewController.swift */,
 				5A577B4524C5D336000169F1 /* News4ViewController.swift */,
 				5A577B4D24C7B259000169F1 /* News5ViewController.swift */,
+				5A687C9324CBD08D00A87459 /* MemoViewController.swift */,
+				5A687C9524CBD0A000A87459 /* AddMemoViewController.swift */,
+				5A687C9724CBD0AE00A87459 /* DetailViewController.swift */,
 			);
 			path = Contoroller;
 			sourceTree = "<group>";
@@ -317,8 +326,10 @@
 				5A577B4424C5D324000169F1 /* News3ViewController.swift in Sources */,
 				5A577B4624C5D336000169F1 /* News4ViewController.swift in Sources */,
 				5A577B3424C45DC5000169F1 /* WebViewController.swift in Sources */,
+				5A687C9824CBD0AE00A87459 /* DetailViewController.swift in Sources */,
 				5A577B4224C5D30D000169F1 /* News2ViewController.swift in Sources */,
 				5A7FEF9F24C40B480056F49F /* ToDoCell.swift in Sources */,
+				5A687C9424CBD08D00A87459 /* MemoViewController.swift in Sources */,
 				5A577B4024C465A9000169F1 /* Base2ViewController.swift in Sources */,
 				5A577B3024C45CA9000169F1 /* WeatherViewController.swift in Sources */,
 				5A577B4E24C7B259000169F1 /* News5ViewController.swift in Sources */,
@@ -326,6 +337,7 @@
 				5A577B3B24C45E5E000169F1 /* WeatherCell.swift in Sources */,
 				5A577B2E24C45C3F000169F1 /* BaseViewController.swift in Sources */,
 				5A577B3E24C45F28000169F1 /* NewsData.swift in Sources */,
+				5A687C9624CBD0A000A87459 /* AddMemoViewController.swift in Sources */,
 				5A7FEFA424C42C980056F49F /* TimePicker.swift in Sources */,
 				5A577B3724C45E4B000169F1 /* NewsCell.swift in Sources */,
 				5A577B5024C84BF8000169F1 /* DatePicker.swift in Sources */,
