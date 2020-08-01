@@ -75,6 +75,8 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         todoTableView.dataSource = self
     }
     
+   
+    
     func showAnimation() {
            
               let animationView = AnimationView(name: "checkAnimation")
@@ -84,6 +86,12 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
               animationView.animationSpeed = 0.5
               view.addSubview(animationView)
               animationView.play()
+        
+              DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                
+                animationView.isHidden = true
+                
+             }
      
           }
         
@@ -95,16 +103,16 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
                  let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell") as! ToDoCell
                  cell.ToDoTextLabel.text = todoTextArray[indexPath.row]
                  cell.ToDoTimeLabel.text = todoTimeArray[indexPath.row]
-            
+                 cell.selectionStyle = .none
             let prioritylistString:String = priorityArray[indexPath.row]
             
             switch prioritylistString {
             case "⭐️⭐️⭐️":
-                cell.backgroundColor = .red
+                cell.backgroundColor = .systemRed
             case "⭐️⭐️":
-                cell.backgroundColor = .orange
+                cell.backgroundColor = .systemPink
             case "⭐️":
-                cell.backgroundColor = .yellow
+                cell.backgroundColor = .systemBlue
             case "🔼":
                 cell.backgroundColor = .white
             default:
