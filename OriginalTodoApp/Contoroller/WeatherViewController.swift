@@ -11,8 +11,9 @@ import SegementSlide
 import SwiftyJSON
 import Alamofire
 import Lottie
+import CoreLocation
 
-class WeatherViewController: UITableViewController,SegementSlideContentScrollViewDelegate, UITextFieldDelegate{
+class WeatherViewController: UITableViewController,SegementSlideContentScrollViewDelegate, UITextFieldDelegate,CLLocationManagerDelegate{
     
         var areaStringArray = [String]()
         var weatherIconArray = [String]()
@@ -50,12 +51,23 @@ class WeatherViewController: UITableViewController,SegementSlideContentScrollVie
 //        var pickerView: UIPickerView = UIPickerView()
 //        let areaList = ["Osaka", "Tokyo", "Nagoya", "Okinawa"]
     
+     let locationManager = CLLocationManager()
         
         override func viewDidLoad() {
             super.viewDidLoad()
 
             tableView.register(UINib(nibName: "WeatherCell", bundle: nil), forCellReuseIdentifier: "WeatherCell")
+            
+            locationManager.requestWhenInUseAuthorization()
+                   if (CLLocationManager.locationServicesEnabled()) {
+                       locationManager.delegate = self
+                       locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                       locationManager.startUpdatingLocation()
+            }
+            
             getData()
+            
+            
            
 //           let areaPicker = UITextField()
 //           areaPicker.frame = CGRect(x: 10, y: 100, width: UIScreen.main.bounds.size.width-20, height: 38)
@@ -64,7 +76,118 @@ class WeatherViewController: UITableViewController,SegementSlideContentScrollVie
 
         }
     
+  func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+  let location = locations[0]
+  print(location)
+  let APIkey = "3583b769077fdfc4880f9fcd27d339bf"
+  var lat = 26.8205
+  var lon = 30.8024
+  lat = location.coordinate.latitude
+  lon = location.coordinate.longitude
+    
       
+//                let area = "1853908"
+                let urlText:String = "https://api.openweathermap.org/data/2.5/forecast?lat=\(lat)&lon=\(lon)&units=metric&lang=ja&APPID=\(APIkey)"
+                let urlQuery = urlText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+                let url = URL(string: urlQuery!)
+
+                AF.request(url!, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON{ responce in
+
+
+                    switch responce.result{
+
+                    case .success:
+
+                    let json:JSON = JSON(responce.data as Any)
+                    print(json)
+                    let weatherIcon = json["list"][0]["weather"][0]["main"].string
+                    let tempureture = json["list"][0]["main"]["temp"].double
+                    let MaxTemp = json["list"][0]["main"]["temp_max"].double
+                    let MinTemp = json["list"][0]["main"]["temp_min"].double
+                    let area  = json["city"]["name"].string
+    //                let description = json["list"][0]["weather"][0]["description"].string
+                    let weatherId = json["list"][0]["weather"][0]["id"].int
+
+                    let weatherIdA = json["list"][1]["weather"][0]["id"].int
+                    let weatherIdB = json["list"][2]["weather"][0]["id"].int
+                    let weatherIdC = json["list"][3]["weather"][0]["id"].int
+                    let weatherIdD = json["list"][4]["weather"][0]["id"].int
+                    let weatherIdE = json["list"][5]["weather"][0]["id"].int
+                    let weatherIdF = json["list"][6]["weather"][0]["id"].int
+                    let weatherIdG = json["list"][7]["weather"][0]["id"].int
+                    
+                    let dtText = json["list"][0]["dt_txt"].string
+                    let dtTextA = json["list"][1]["dt_txt"].string
+                    let dtTextB = json["list"][2]["dt_txt"].string
+                    let dtTextC = json["list"][3]["dt_txt"].string
+                    let dtTextD = json["list"][4]["dt_txt"].string
+                    let dtTextE = json["list"][5]["dt_txt"].string
+                    let dtTextF = json["list"][6]["dt_txt"].string
+                    let dtTextG = json["list"][7]["dt_txt"].string
+                    
+                    let tempuretureA = json["list"][1]["main"]["temp"].double
+                    let tempuretureB = json["list"][2]["main"]["temp"].double
+                    let tempuretureC = json["list"][3]["main"]["temp"].double
+                    let tempuretureD = json["list"][4]["main"]["temp"].double
+                    let tempuretureE = json["list"][5]["main"]["temp"].double
+                    let tempuretureF = json["list"][6]["main"]["temp"].double
+                    let tempuretureG = json["list"][7]["main"]["temp"].double
+
+                    let tempNumRound = self.tempChange(temp:tempureture!)
+                    let MaxTempRoud = self.tempChange(temp: MaxTemp!)
+                    let MinTempRound = self.tempChange(temp: MinTemp!)
+                    
+                    let tempNumRoundA = self.tempChange(temp:tempuretureA!)
+                    let tempNumRoundB = self.tempChange(temp:tempuretureB!)
+                    let tempNumRoundC = self.tempChange(temp:tempuretureC!)
+                    let tempNumRoundD = self.tempChange(temp:tempuretureD!)
+                    let tempNumRoundE = self.tempChange(temp:tempuretureE!)
+                    let tempNumRoundF = self.tempChange(temp:tempuretureF!)
+                    let tempNumRoundG = self.tempChange(temp:tempuretureG!)
+                    
+                    self.weatherIconArray.append(weatherIcon!)
+                    self.tempuretureArray.append(tempNumRound)
+                    self.MaxTempArray.append(MaxTempRoud)
+                    self.MinTempArray.append(MinTempRound)
+                    self.areaStringArray.append(area!)
+    //                self.descriptionArray.append(description!)
+                    self.weatherIdArray.append(weatherId!)
+                    self.timeTextArray.append(dtText!)
+                    
+                    self.weatherIdArrrayA.append(weatherIdA!)
+                    self.weatherIdArrrayB.append(weatherIdB!)
+                    self.weatherIdArrrayC.append(weatherIdC!)
+                    self.weatherIdArrrayD.append(weatherIdD!)
+                    self.weatherIdArrrayE.append(weatherIdE!)
+                    self.weatherIdArrrayF.append(weatherIdF!)
+                    self.weatherIdArrrayG.append(weatherIdG!)
+                    
+                    self.timeTextArrayA.append(dtTextA!)
+                    self.timeTextArrayB.append(dtTextB!)
+                    self.timeTextArrayC.append(dtTextC!)
+                    self.timeTextArrayD.append(dtTextD!)
+                    self.timeTextArrayE.append(dtTextE!)
+                    self.timeTextArrayF.append(dtTextF!)
+                    self.timeTextArrayG.append(dtTextG!)
+                    
+                    
+                    self.tempArrayA.append(tempNumRoundA)
+                    self.tempArrayB.append(tempNumRoundB)
+                    self.tempArrayC.append(tempNumRoundC)
+                    self.tempArrayD.append(tempNumRoundD)
+                    self.tempArrayE.append(tempNumRoundE)
+                    self.tempArrayF.append(tempNumRoundF)
+                    self.tempArrayG.append(tempNumRoundG)
+                        
+                   case.failure:
+                    break
+
+                    }
+                    self.tableView.reloadData()
+                }
+    
+    
+    }
 
         // MARK: - Table view data source
 
@@ -139,7 +262,7 @@ class WeatherViewController: UITableViewController,SegementSlideContentScrollVie
 //                曇り
             case 800:
                 cell.backgroundColor = .lightGray
-                cell.animationString = "CoundIcon"
+                cell.animationString = "SunnyIcon"
                 cell.weatherIconView.backgroundColor = .lightGray
                 cell.baceView.backgroundColor = .lightGray
                 cell.IconScrollView.backgroundColor = .lightGray
@@ -261,106 +384,108 @@ class WeatherViewController: UITableViewController,SegementSlideContentScrollVie
         
          func getData(){
 
-            let APIkey = "3583b769077fdfc4880f9fcd27d339bf"
-            let area = "1853908"
-            let urlText:String = "https://api.openweathermap.org/data/2.5/forecast?id=\(area)&units=metric&lang=ja&APPID=\(APIkey)"
-            let urlQuery = urlText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-            let url = URL(string: urlQuery!)
-
-            AF.request(url!, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON{ responce in
-
-
-                switch responce.result{
-
-                case .success:
-
-                let json:JSON = JSON(responce.data as Any)
-                print(json)
-                let weatherIcon = json["list"][0]["weather"][0]["main"].string
-                let tempureture = json["list"][0]["main"]["temp"].double
-                let MaxTemp = json["list"][0]["main"]["temp_max"].double
-                let MinTemp = json["list"][0]["main"]["temp_min"].double
-                let area  = json["city"]["name"].string
-//                let description = json["list"][0]["weather"][0]["description"].string
-                let weatherId = json["list"][0]["weather"][0]["id"].int
-
-                let weatherIdA = json["list"][1]["weather"][0]["id"].int
-                let weatherIdB = json["list"][2]["weather"][0]["id"].int
-                let weatherIdC = json["list"][3]["weather"][0]["id"].int
-                let weatherIdD = json["list"][4]["weather"][0]["id"].int
-                let weatherIdE = json["list"][5]["weather"][0]["id"].int
-                let weatherIdF = json["list"][6]["weather"][0]["id"].int
-                let weatherIdG = json["list"][7]["weather"][0]["id"].int
-                
-                let dtText = json["list"][0]["dt_txt"].string
-                let dtTextA = json["list"][1]["dt_txt"].string
-                let dtTextB = json["list"][2]["dt_txt"].string
-                let dtTextC = json["list"][3]["dt_txt"].string
-                let dtTextD = json["list"][4]["dt_txt"].string
-                let dtTextE = json["list"][5]["dt_txt"].string
-                let dtTextF = json["list"][6]["dt_txt"].string
-                let dtTextG = json["list"][7]["dt_txt"].string
-                
-                let tempuretureA = json["list"][1]["main"]["temp"].double
-                let tempuretureB = json["list"][2]["main"]["temp"].double
-                let tempuretureC = json["list"][3]["main"]["temp"].double
-                let tempuretureD = json["list"][4]["main"]["temp"].double
-                let tempuretureE = json["list"][5]["main"]["temp"].double
-                let tempuretureF = json["list"][6]["main"]["temp"].double
-                let tempuretureG = json["list"][7]["main"]["temp"].double
-
-                let tempNumRound = self.tempChange(temp:tempureture!)
-                let MaxTempRoud = self.tempChange(temp: MaxTemp!)
-                let MinTempRound = self.tempChange(temp: MinTemp!)
-                
-                let tempNumRoundA = self.tempChange(temp:tempuretureA!)
-                let tempNumRoundB = self.tempChange(temp:tempuretureB!)
-                let tempNumRoundC = self.tempChange(temp:tempuretureC!)
-                let tempNumRoundD = self.tempChange(temp:tempuretureD!)
-                let tempNumRoundE = self.tempChange(temp:tempuretureE!)
-                let tempNumRoundF = self.tempChange(temp:tempuretureF!)
-                let tempNumRoundG = self.tempChange(temp:tempuretureG!)
-                
-                self.weatherIconArray.append(weatherIcon!)
-                self.tempuretureArray.append(tempNumRound)
-                self.MaxTempArray.append(MaxTempRoud)
-                self.MinTempArray.append(MinTempRound)
-                self.areaStringArray.append(area!)
-//                self.descriptionArray.append(description!)
-                self.weatherIdArray.append(weatherId!)
-                self.timeTextArray.append(dtText!)
-                
-                self.weatherIdArrrayA.append(weatherIdA!)
-                self.weatherIdArrrayB.append(weatherIdB!)
-                self.weatherIdArrrayC.append(weatherIdC!)
-                self.weatherIdArrrayD.append(weatherIdD!)
-                self.weatherIdArrrayE.append(weatherIdE!)
-                self.weatherIdArrrayF.append(weatherIdF!)
-                self.weatherIdArrrayG.append(weatherIdG!)
-                
-                self.timeTextArrayA.append(dtTextA!)
-                self.timeTextArrayB.append(dtTextB!)
-                self.timeTextArrayC.append(dtTextC!)
-                self.timeTextArrayD.append(dtTextD!)
-                self.timeTextArrayE.append(dtTextE!)
-                self.timeTextArrayF.append(dtTextF!)
-                self.timeTextArrayG.append(dtTextG!)
-                
-                
-                self.tempArrayA.append(tempNumRoundA)
-                self.tempArrayB.append(tempNumRoundB)
-                self.tempArrayC.append(tempNumRoundC)
-                self.tempArrayD.append(tempNumRoundD)
-                self.tempArrayE.append(tempNumRoundE)
-                self.tempArrayF.append(tempNumRoundF)
-                self.tempArrayG.append(tempNumRoundG)
-                    
-               case.failure:
-                break
-
-                }
-                self.tableView.reloadData()
-            }
+//            let APIkey = "3583b769077fdfc4880f9fcd27d339bf"
+//            let area = "1853908"
+//            let lat = 26.8205
+//            let lon = 30.8024
+//            let urlText:String = "https://api.openweathermap.org/data/2.5/forecast?lat=\(lat)&lon=\(lon)&units=metric&lang=ja&APPID=\(APIkey)"
+//            let urlQuery = urlText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+//            let url = URL(string: urlQuery!)
+//
+//            AF.request(url!, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON{ responce in
+//
+//
+//                switch responce.result{
+//
+//                case .success:
+//
+//                let json:JSON = JSON(responce.data as Any)
+//                print(json)
+//                let weatherIcon = json["list"][0]["weather"][0]["main"].string
+//                let tempureture = json["list"][0]["main"]["temp"].double
+//                let MaxTemp = json["list"][0]["main"]["temp_max"].double
+//                let MinTemp = json["list"][0]["main"]["temp_min"].double
+//                let area  = json["city"]["name"].string
+////                let description = json["list"][0]["weather"][0]["description"].string
+//                let weatherId = json["list"][0]["weather"][0]["id"].int
+//
+//                let weatherIdA = json["list"][1]["weather"][0]["id"].int
+//                let weatherIdB = json["list"][2]["weather"][0]["id"].int
+//                let weatherIdC = json["list"][3]["weather"][0]["id"].int
+//                let weatherIdD = json["list"][4]["weather"][0]["id"].int
+//                let weatherIdE = json["list"][5]["weather"][0]["id"].int
+//                let weatherIdF = json["list"][6]["weather"][0]["id"].int
+//                let weatherIdG = json["list"][7]["weather"][0]["id"].int
+//
+//                let dtText = json["list"][0]["dt_txt"].string
+//                let dtTextA = json["list"][1]["dt_txt"].string
+//                let dtTextB = json["list"][2]["dt_txt"].string
+//                let dtTextC = json["list"][3]["dt_txt"].string
+//                let dtTextD = json["list"][4]["dt_txt"].string
+//                let dtTextE = json["list"][5]["dt_txt"].string
+//                let dtTextF = json["list"][6]["dt_txt"].string
+//                let dtTextG = json["list"][7]["dt_txt"].string
+//
+//                let tempuretureA = json["list"][1]["main"]["temp"].double
+//                let tempuretureB = json["list"][2]["main"]["temp"].double
+//                let tempuretureC = json["list"][3]["main"]["temp"].double
+//                let tempuretureD = json["list"][4]["main"]["temp"].double
+//                let tempuretureE = json["list"][5]["main"]["temp"].double
+//                let tempuretureF = json["list"][6]["main"]["temp"].double
+//                let tempuretureG = json["list"][7]["main"]["temp"].double
+//
+//                let tempNumRound = self.tempChange(temp:tempureture!)
+//                let MaxTempRoud = self.tempChange(temp: MaxTemp!)
+//                let MinTempRound = self.tempChange(temp: MinTemp!)
+//
+//                let tempNumRoundA = self.tempChange(temp:tempuretureA!)
+//                let tempNumRoundB = self.tempChange(temp:tempuretureB!)
+//                let tempNumRoundC = self.tempChange(temp:tempuretureC!)
+//                let tempNumRoundD = self.tempChange(temp:tempuretureD!)
+//                let tempNumRoundE = self.tempChange(temp:tempuretureE!)
+//                let tempNumRoundF = self.tempChange(temp:tempuretureF!)
+//                let tempNumRoundG = self.tempChange(temp:tempuretureG!)
+//
+//                self.weatherIconArray.append(weatherIcon!)
+//                self.tempuretureArray.append(tempNumRound)
+//                self.MaxTempArray.append(MaxTempRoud)
+//                self.MinTempArray.append(MinTempRound)
+//                self.areaStringArray.append(area!)
+////                self.descriptionArray.append(description!)
+//                self.weatherIdArray.append(weatherId!)
+//                self.timeTextArray.append(dtText!)
+//
+//                self.weatherIdArrrayA.append(weatherIdA!)
+//                self.weatherIdArrrayB.append(weatherIdB!)
+//                self.weatherIdArrrayC.append(weatherIdC!)
+//                self.weatherIdArrrayD.append(weatherIdD!)
+//                self.weatherIdArrrayE.append(weatherIdE!)
+//                self.weatherIdArrrayF.append(weatherIdF!)
+//                self.weatherIdArrrayG.append(weatherIdG!)
+//
+//                self.timeTextArrayA.append(dtTextA!)
+//                self.timeTextArrayB.append(dtTextB!)
+//                self.timeTextArrayC.append(dtTextC!)
+//                self.timeTextArrayD.append(dtTextD!)
+//                self.timeTextArrayE.append(dtTextE!)
+//                self.timeTextArrayF.append(dtTextF!)
+//                self.timeTextArrayG.append(dtTextG!)
+//
+//
+//                self.tempArrayA.append(tempNumRoundA)
+//                self.tempArrayB.append(tempNumRoundB)
+//                self.tempArrayC.append(tempNumRoundC)
+//                self.tempArrayD.append(tempNumRoundD)
+//                self.tempArrayE.append(tempNumRoundE)
+//                self.tempArrayF.append(tempNumRoundF)
+//                self.tempArrayG.append(tempNumRoundG)
+//
+//               case.failure:
+//                break
+//
+//                }
+//                self.tableView.reloadData()
+//            }
 
                   
         }
