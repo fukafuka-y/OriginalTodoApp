@@ -18,7 +18,7 @@ class DatePickerKeyboard: UITextField {
         // datePickerの設定
         datePicker = UIDatePicker()
         datePicker.date = Date()
-        datePicker.datePickerMode = .date
+        datePicker.datePickerMode = .dateAndTime
         datePicker.locale = Locale(identifier: "ja")
         datePicker.addTarget(self, action: #selector(setText), for: .valueChanged)
 
@@ -60,8 +60,8 @@ class DatePickerKeyboard: UITextField {
     // datePickerの日付けをtextFieldのtextに反映させる
     @objc private func setText() {
         let f = DateFormatter()
-        f.dateStyle = .long
-        f.locale = Locale(identifier: "ja")
+        f.dateFormat = DateFormatter.dateFormat(fromTemplate:"M/d H時m分", options: 0, locale: Locale(identifier: "ja_JP"))
+//        f.locale = Locale(identifier: "ja")
         text = f.string(from: datePicker.date)
     }
 

@@ -9,26 +9,26 @@
 import UIKit
 import Lottie
 
-class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource, UIGestureRecognizerDelegate{
+class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,UIGestureRecognizerDelegate{
 
     @IBOutlet weak var todoTableView: UITableView!
-    @IBOutlet weak var timeTextFiled: TimePickerKeyboard!
+    @IBOutlet weak var timeTextFiled: DatePickerKeyboard!
     @IBOutlet weak var todoTextField: UITextField!
     @IBOutlet weak var plusTodoView: UIView!
-    @IBOutlet weak var dateTextField: DatePickerKeyboard!
     @IBOutlet weak var priorityTextField: UITextField!
     @IBOutlet weak var deliteButton: UIButton!
     
+    @IBOutlet weak var blueButton: UIButton!
+    @IBOutlet weak var yellowButton: UIButton!
     
     
-     var todoTextArray:[String] = ["ToDo入力","ストレッチ"]
+   
+     var todoTextArray:[String] = ["ToDo入力","勉強する"]
      var todoText:String = ""
-     var todoTimeArray:[String] = ["時間を入力","09:00"]
+     var todoTimeArray:[String] = ["時間を入力","8/1 19:00"]
      var todoTime:String = ""
-     var priorityArray:[String] = ["🔼","🔼"]
-     var priority:String = ""
-     var prioritylist = ["⭐️⭐️⭐️","⭐️⭐️","⭐️","🔼"]
-     let priorityPickerView: UIPickerView = UIPickerView()
+     var colorNumberArray:[Int] = [0,0]
+     var colorNumber:Int = 0
     
      override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,36 +37,26 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         todoTableView.delegate = self
         todoTableView.dataSource = self
         
-        plusTodoView.backgroundColor = .darkGray
-        plusTodoView.alpha = 0.5
+        plusTodoView.backgroundColor = UIColor(red: 0, green: 0.2, blue: 0.8, alpha: 0.6)
         plusTodoView.isHidden = true
         
         timeTextFiled.delegate = self
         todoTextField.delegate = self
-        dateTextField.delegate = self
-        
-        priorityPickerView.delegate = self
-        priorityPickerView.dataSource = self
-//        priorityPickerView.showsSelectionIndicator = true
-
-        let toolbar = UIToolbar(frame: CGRectMake(0, 0, 0, 35))
-        let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: self, action: nil)
-        space.width = 12
-        let flexSpaceItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
-        let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
-        toolbar.setItems([flexSpaceItem,cancelItem,doneItem,space], animated: true)
-        priorityTextField.text = "⭐️"
-        priorityTextField.textAlignment = .center
-        self.priorityTextField.inputView = priorityPickerView
-        self.priorityTextField.inputAccessoryView = toolbar
-        priorityTextField.delegate = self
+     
+//        let toolbar = UIToolbar(frame: CGRectMake(0, 0, 0, 35))
+//        let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: self, action: nil)
+//        space.width = 12
+//        let flexSpaceItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+//        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
+//        let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
+//        toolbar.setItems([flexSpaceItem,cancelItem,doneItem,space], animated: true)
+//
         
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(cellLongPressed))
         longPressRecognizer.delegate = self
         todoTableView.addGestureRecognizer(longPressRecognizer)
         
-        deliteButton.layer.cornerRadius = 30
+        deliteButton.layer.cornerRadius = 20
     }
    
 
@@ -94,6 +84,25 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
              }
      
           }
+    
+    @IBAction func blueButtonTap(_ sender: Any) {
+        
+        blueButton.layer.borderColor = UIColor.white.cgColor
+        blueButton.layer.borderWidth = 2.0
+        yellowButton.layer.borderWidth = 0
+        colorNumber = 1
+        
+    }
+    
+    @IBAction func yellowButtonTap(_ sender: Any) {
+        
+        yellowButton.layer.borderColor = UIColor.white.cgColor
+        yellowButton.layer.borderWidth = 2.0
+        blueButton.layer.borderWidth = 0
+        colorNumber = 2
+    }
+    
+    
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return todoTimeArray.count
@@ -104,22 +113,20 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
                  cell.ToDoTextLabel.text = todoTextArray[indexPath.row]
                  cell.ToDoTimeLabel.text = todoTimeArray[indexPath.row]
                  cell.selectionStyle = .none
-            let prioritylistString:String = priorityArray[indexPath.row]
+           
             
-            switch prioritylistString {
-            case "⭐️⭐️⭐️":
-                cell.backgroundColor = .systemRed
-            case "⭐️⭐️":
-                cell.backgroundColor = .systemPink
-            case "⭐️":
+            switch colorNumberArray[indexPath.row] {
+            case 1:
                 cell.backgroundColor = .systemBlue
-            case "🔼":
-                cell.backgroundColor = .white
+            case 2:
+                cell.backgroundColor = .yellow
+//            case "⭐️":
+//                cell.backgroundColor = UIColor(red: 0, green: 0, blue: 0.6, alpha: 0.7)
+//            case "🔼":
+//                cell.backgroundColor = .white
             default:
                 cell.backgroundColor = .white
-                
             }
-                
                 return cell
             }
                 
@@ -150,13 +157,14 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         if timeTextFiled.text != "" && todoTextField.text != ""{
         todoTime = timeTextFiled.text!
         todoText = todoTextField.text!
-        priority = priorityTextField.text!
         todoTimeArray.append(todoTime)
         todoTextArray.append(todoText)
-        priorityArray.append(priority)
         timeTextFiled.text = ""
         todoTextField.text = ""
-        priorityTextField.text = ""
+        colorNumberArray.append(colorNumber)
+        blueButton.layer.borderWidth = 0
+        yellowButton.layer.borderWidth = 0
+        colorNumber = 0
         plusTodoView.isHidden = true
         todoTableView.reloadData()
         
@@ -169,7 +177,6 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         timeTextFiled.text = ""
         todoTextField.text = ""
-        priorityTextField.text = ""
         plusTodoView.isHidden = true
         
     }
@@ -203,7 +210,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
             showAnimation()
             todoTextArray.remove(at: indexPath!.row)
             todoTimeArray.remove(at: indexPath!.row)
-            priorityArray.remove(at: indexPath!.row)
+            colorNumberArray.remove(at: indexPath!.row)
             todoTableView.reloadData()
          }
     }
@@ -212,31 +219,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         return 1
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return prioritylist.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return prioritylist[row]
-    }
-
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        priorityTextField.text = prioritylist[row]
-    }
-    
-    @objc func cancel() {
-           self.priorityTextField.text = ""
-           self.priorityTextField.endEditing(true)
-       }
-
-    @objc func done() {
-           self.priorityTextField.endEditing(true)
-       }
-
-       func CGRectMake(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {
-           return CGRect(x: x, y: y, width: width, height: height)
-       }
-    
+   
     
     /*
     // MARK: - Navigation
