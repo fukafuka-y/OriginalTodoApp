@@ -12,7 +12,7 @@ import SwiftyJSON
 import Alamofire
 import Lottie
 
-class WeatherViewController: UITableViewController,SegementSlideContentScrollViewDelegate{
+class WeatherViewController: UITableViewController,SegementSlideContentScrollViewDelegate, UITextFieldDelegate{
     
         var areaStringArray = [String]()
         var weatherIconArray = [String]()
@@ -47,8 +47,8 @@ class WeatherViewController: UITableViewController,SegementSlideContentScrollVie
         var timeTextArrayF = [String]()
         var timeTextArrayG = [String]()
         
-//        var pickerView: UIPickerView = UIPickerView()
-//        let areaList = ["Osaka", "Tokyo", "Nagoya", "Okinawa"]
+        var pickerView: UIPickerView = UIPickerView()
+        let areaList = ["Osaka", "Tokyo", "Nagoya", "Okinawa"]
     
         
         override func viewDidLoad() {
@@ -57,47 +57,14 @@ class WeatherViewController: UITableViewController,SegementSlideContentScrollVie
             tableView.register(UINib(nibName: "WeatherCell", bundle: nil), forCellReuseIdentifier: "WeatherCell")
             getData()
            
-//          pickerView.delegate = self
-//          pickerView.dataSource = self
+           let areaPicker = UITextField()
+           areaPicker.frame = CGRect(x: 10, y: 100, width: UIScreen.main.bounds.size.width-20, height: 38)
+           self.view.addSubview(areaPicker)
+           areaPicker.delegate = self
 
-//          let areaButton = UIButton(frame: CGRect(x: 50, y:100, width: 150, height: 80))
-//          areaButton.backgroundColor = .black
-//          let areaItem = areaButton.addTarget(self, action: #selector(done), for: .touchUpInside)
-//          let cancelItem = areaButton.addTarget(self, action: #selector(cancel), for: .touchUpInside)
-//          self.textField.inputView = pickerView
-//          self.textField.inputAccessoryView = areaButton
-            
-    
-
-    
         }
     
       
-    
-//        func numberOfComponents(in pickerView: UIPickerView) -> Int {
-//               1
-//           }
-//
-//        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//            return areaList.count
-//        }
-//
-//        func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//            return areaList[row]
-//        }
-//
-//        func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//            self.textField.text = areaList[row]
-//        }
-//
-//        @objc func cancel() {
-//            self.textField.text = ""
-//            self.textField.endEditing(true)
-//        }
-//
-//        @objc func done() {
-//            self.textField.endEditing(true)
-//        }
 
         // MARK: - Table view data source
 

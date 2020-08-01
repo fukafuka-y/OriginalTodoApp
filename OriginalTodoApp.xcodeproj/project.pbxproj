@@ -31,6 +31,9 @@
 		5A687C9424CBD08D00A87459 /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A687C9324CBD08D00A87459 /* MemoViewController.swift */; };
 		5A687C9624CBD0A000A87459 /* AddMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A687C9524CBD0A000A87459 /* AddMemoViewController.swift */; };
 		5A687C9824CBD0AE00A87459 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A687C9724CBD0AE00A87459 /* DetailViewController.swift */; };
+		5A687CCF24D538F700A87459 /* thunderIcon.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A687CCD24D538F600A87459 /* thunderIcon.json */; };
+		5A687CD024D538F700A87459 /* snowIcon.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A687CCE24D538F700A87459 /* snowIcon.json */; };
+		5A687CD224D5396100A87459 /* windyIcon.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A687CD124D5396100A87459 /* windyIcon.json */; };
 		5A7FEF7524C3CA190056F49F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FEF7424C3CA190056F49F /* AppDelegate.swift */; };
 		5A7FEF7724C3CA190056F49F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FEF7624C3CA190056F49F /* SceneDelegate.swift */; };
 		5A7FEF7C24C3CA190056F49F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A7FEF7A24C3CA190056F49F /* Main.storyboard */; };
@@ -68,6 +71,9 @@
 		5A687C9324CBD08D00A87459 /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
 		5A687C9524CBD0A000A87459 /* AddMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemoViewController.swift; sourceTree = "<group>"; };
 		5A687C9724CBD0AE00A87459 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5A687CCD24D538F600A87459 /* thunderIcon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = thunderIcon.json; sourceTree = "<group>"; };
+		5A687CCE24D538F700A87459 /* snowIcon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = snowIcon.json; sourceTree = "<group>"; };
+		5A687CD124D5396100A87459 /* windyIcon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = windyIcon.json; sourceTree = "<group>"; };
 		5A7FEF7124C3CA190056F49F /* OriginalTodoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OriginalTodoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7FEF7424C3CA190056F49F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A7FEF7624C3CA190056F49F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +130,9 @@
 				5A7FEF8224C3CA1D0056F49F /* Info.plist */,
 				5A7FEFA124C4297E0056F49F /* checkAnimation.json */,
 				5A577B4724C6604A000169F1 /* rainAnimation.json */,
+				5A687CD124D5396100A87459 /* windyIcon.json */,
+				5A687CCE24D538F700A87459 /* snowIcon.json */,
+				5A687CCD24D538F600A87459 /* thunderIcon.json */,
 				5A2AA31B24C9566A007A0CA5 /* CloudIcon.json */,
 				5A2AA31924C9564C007A0CA5 /* SunnyIcon.json */,
 				5A2AA31D24C9568B007A0CA5 /* RainIcon.json */,
@@ -268,6 +277,9 @@
 				5A577B4824C6604B000169F1 /* rainAnimation.json in Resources */,
 				5A2AA32224C996EE007A0CA5 /* rainbackgroundAnimation.json in Resources */,
 				5A7FEFA224C4297E0056F49F /* checkAnimation.json in Resources */,
+				5A687CD224D5396100A87459 /* windyIcon.json in Resources */,
+				5A687CCF24D538F700A87459 /* thunderIcon.json in Resources */,
+				5A687CD024D538F700A87459 /* snowIcon.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

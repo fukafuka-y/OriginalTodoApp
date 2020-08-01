@@ -43,11 +43,14 @@ class WeatherCell: UITableViewCell{
     @IBOutlet weak var weatherIconLabelG: UILabel!
     @IBOutlet weak var tempTextLabelG: UILabel!
     
+    
+    @IBOutlet weak var areaPicker: UITextField!
+    
     var animationString:String = ""
+   
     
     override func awakeFromNib() {
         super.awakeFromNib()
-      
     }
     
     override func layoutSubviews() {
@@ -73,9 +76,6 @@ class WeatherCell: UITableViewCell{
                animationView.play()
   
     }
-    
-    
-    
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

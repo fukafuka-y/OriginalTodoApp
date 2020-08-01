@@ -232,6 +232,12 @@
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KR4-Ph-9Fy">
+                        <rect key="frame" x="178" y="12" width="194" height="34"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
                 </subviews>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -240,6 +246,7 @@
                 <outlet property="IconScrollView" destination="qs1-PV-svY" id="Oyx-48-GCe"/>
                 <outlet property="MaxTempLabel" destination="lRA-Ff-1ct" id="OZU-gj-Ctp"/>
                 <outlet property="MinTempLabel" destination="CXb-DB-k8v" id="UvW-B1-ojo"/>
+                <outlet property="areaPicker" destination="KR4-Ph-9Fy" id="5Qa-W2-9Lo"/>
                 <outlet property="areaTextLabel" destination="x6d-kL-0XW" id="Gkn-tV-gGh"/>
                 <outlet property="baceView" destination="fZy-uP-Nqv" id="YFo-aI-ujN"/>
                 <outlet property="tempTextLabel" destination="hCz-Bc-b1z" id="71t-me-8Bt"/>
