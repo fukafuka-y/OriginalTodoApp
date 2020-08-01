@@ -111,6 +111,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="dateTextField" destination="N6S-jN-avZ" id="TLS-XW-cIH"/>
+                        <outlet property="deliteButton" destination="xyc-nO-MNI" id="10X-cM-wys"/>
                         <outlet property="plusTodoView" destination="xfi-q9-sxP" id="g1K-Kd-w2o"/>
                         <outlet property="priorityTextField" destination="eIf-J0-9T8" id="C1S-Fe-Vhp"/>
                         <outlet property="timeTextFiled" destination="JvD-Iy-7gN" id="aj0-Yu-Hgh"/>

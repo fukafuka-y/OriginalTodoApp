@@ -16,7 +16,7 @@ class Base2ViewController: SegementSlideDefaultViewController {
             
             reloadData()
             defaultSelectedIndex = 1
-           
+
         }
 
         override var titlesInSwitcher: [String]{

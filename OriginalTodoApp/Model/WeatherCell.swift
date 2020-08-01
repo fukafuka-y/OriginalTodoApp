@@ -13,7 +13,6 @@ class WeatherCell: UITableViewCell{
     
     @IBOutlet weak var weatherIconView: UIView!
     @IBOutlet weak var areaTextLabel: UILabel!
-    @IBOutlet weak var IconLabel: UILabel!
     @IBOutlet weak var temprutureLabel: UILabel!
     @IBOutlet weak var MaxTempLabel: UILabel!
     @IBOutlet weak var MinTempLabel: UILabel!

@@ -57,8 +57,9 @@ class NewsViewController: UITableViewController,SegementSlideContentScrollViewDe
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return view.frame.size.height/8
+        return view.frame.size.height/10
     }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
@@ -68,22 +69,8 @@ class NewsViewController: UITableViewController,SegementSlideContentScrollViewDe
         cell.pubdataTextLabel.text = newsData.pubDate
         cell.backgroundColor = .clear
         cell.contentView.backgroundColor = .clear
-       
-//        let cellheight: CGFloat = cell.bounds.height
-//        let cellwidth: CGFloat = cell.bounds.width
-//        let cellImage = UIImageView(frame: CGRect(x: 0, y: 0, width: cellwidth, height: cellheight))
-//        cellImage.image = UIImage(named: "background")
-//        cell.self.sendSubviewToBack(cellImage)
-//        cell.addSubview(cellImage)
-//        cell.self.bringSubviewToFront(cell.textLabel!)
-        
+ 
         return cell
-//        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
-//       let newsData = self.newsData[indexPath.row]
-//        cell.textLabel?.text = newsData.title
-//        cell.detailTextLabel?.text = newsData.url
-        
-       
     }
 
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
@@ -120,15 +107,12 @@ class NewsViewController: UITableViewController,SegementSlideContentScrollViewDe
                default:break
                    
                }
-               
-               
            }
        }
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
            self.currentElemantName = nil
        }
-       
        
        func parserDidEndDocument(_ parser: XMLParser) {
            self.tableView.reloadData()
@@ -140,7 +124,6 @@ class NewsViewController: UITableViewController,SegementSlideContentScrollViewDe
     
     
        override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
 
            let webviewContorller = WebViewController()
            let newsItem = newsData[indexPath.row]

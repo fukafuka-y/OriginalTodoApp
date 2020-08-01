@@ -17,6 +17,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
     @IBOutlet weak var plusTodoView: UIView!
     @IBOutlet weak var dateTextField: DatePickerKeyboard!
     @IBOutlet weak var priorityTextField: UITextField!
+    @IBOutlet weak var deliteButton: UIButton!
     
     
     
@@ -64,7 +65,8 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(cellLongPressed))
         longPressRecognizer.delegate = self
         todoTableView.addGestureRecognizer(longPressRecognizer)
-               
+        
+        deliteButton.layer.cornerRadius = 30
     }
    
 

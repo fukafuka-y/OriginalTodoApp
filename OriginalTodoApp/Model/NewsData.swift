@@ -9,12 +9,8 @@
 import Foundation
 
 class NewsData{
-    
     var title:String?
     var url:String?
     var GetpubData:String?
     var pubDate:String?
-
-    
-    
 }

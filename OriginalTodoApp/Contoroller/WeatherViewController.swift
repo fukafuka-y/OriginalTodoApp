@@ -122,7 +122,7 @@ class WeatherViewController: UITableViewController,SegementSlideContentScrollVie
             cell.temprutureLabel.text = "\(tempText)℃"
             cell.MaxTempLabel.text = "\(MaxText)℃"
             cell.MinTempLabel.text = "\(MinText)℃"
-            cell.IconLabel.text = weatherIconChange(weatherId: weatherIdArray[indexPath.row])
+//            cell.IconLabel.text = weatherIconChange(weatherId: weatherIdArray[indexPath.row])
             tableView.backgroundColor = .clear
             cell.contentView.backgroundColor = .clear
             
