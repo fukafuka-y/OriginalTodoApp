@@ -18,8 +18,12 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
     @IBOutlet weak var priorityTextField: UITextField!
     @IBOutlet weak var deliteButton: UIButton!
     
+    
+    @IBOutlet weak var whiteButton: UIButton!
     @IBOutlet weak var blueButton: UIButton!
     @IBOutlet weak var yellowButton: UIButton!
+    @IBOutlet weak var orangeButton: UIButton!
+    @IBOutlet weak var greenButton: UIButton!
     
     
    
@@ -56,7 +60,6 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         longPressRecognizer.delegate = self
         todoTableView.addGestureRecognizer(longPressRecognizer)
         
-        deliteButton.layer.cornerRadius = 20
     }
    
 
@@ -77,7 +80,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
               view.addSubview(animationView)
               animationView.play()
         
-              DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+              DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 
                 animationView.isHidden = true
                 
@@ -85,11 +88,24 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
      
           }
     
+    @IBAction func whiteButtonTap(_ sender: Any) {
+        
+        colorNumber = 0
+        blueButton.layer.borderWidth = 0
+        yellowButton.layer.borderWidth = 0
+        orangeButton.layer.borderWidth = 0
+        greenButton.layer.borderWidth = 0
+        
+    }
+    
+    
     @IBAction func blueButtonTap(_ sender: Any) {
         
         blueButton.layer.borderColor = UIColor.white.cgColor
         blueButton.layer.borderWidth = 2.0
         yellowButton.layer.borderWidth = 0
+        orangeButton.layer.borderWidth = 0
+        greenButton.layer.borderWidth = 0
         colorNumber = 1
         
     }
@@ -99,8 +115,32 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         yellowButton.layer.borderColor = UIColor.white.cgColor
         yellowButton.layer.borderWidth = 2.0
         blueButton.layer.borderWidth = 0
+        orangeButton.layer.borderWidth = 0
+        greenButton.layer.borderWidth = 0
         colorNumber = 2
     }
+    
+    @IBAction func orangeButtonTap(_ sender: Any) {
+        
+        orangeButton.layer.borderColor = UIColor.white.cgColor
+        orangeButton.layer.borderWidth = 2.0
+        blueButton.layer.borderWidth = 0
+        yellowButton.layer.borderWidth = 0
+        greenButton.layer.borderWidth = 0
+        colorNumber = 3
+        
+    }
+    
+    @IBAction func greenButtonTap(_ sender: Any) {
+        
+        greenButton.layer.borderColor = UIColor.white.cgColor
+        greenButton.layer.borderWidth = 2.0
+        blueButton.layer.borderWidth = 0
+        yellowButton.layer.borderWidth = 0
+        orangeButton.layer.borderWidth = 0
+        colorNumber = 4
+    }
+    
     
     
         
@@ -116,14 +156,16 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
            
             
             switch colorNumberArray[indexPath.row] {
+            case 0:
+                cell.backgroundColor = .white
             case 1:
                 cell.backgroundColor = .systemBlue
             case 2:
                 cell.backgroundColor = .yellow
-//            case "⭐️":
-//                cell.backgroundColor = UIColor(red: 0, green: 0, blue: 0.6, alpha: 0.7)
-//            case "🔼":
-//                cell.backgroundColor = .white
+            case 3:
+                cell.backgroundColor = .orange
+            case 4:
+                cell.backgroundColor = .green
             default:
                 cell.backgroundColor = .white
             }
@@ -139,7 +181,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
      }
    
      func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-          return view.frame.size.height/9
+          return view.frame.size.height/14
              }
      
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
