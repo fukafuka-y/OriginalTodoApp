@@ -67,13 +67,13 @@ class WeatherCell: UITableViewCell{
     func animationIcon(){
         
         let animationView = AnimationView(name: "\(animationString)")
-               animationView.frame = weatherIconView.bounds
-               animationView.contentMode = .scaleAspectFit
-               animationView.loopMode = .loop
-               animationView.backgroundColor = .clear
-               animationView.animationSpeed = 0.5
-               weatherIconView.addSubview(animationView)
-               animationView.play()
+        animationView.frame = weatherIconView.bounds
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.backgroundColor = .clear
+        animationView.animationSpeed = 2.0
+        weatherIconView.addSubview(animationView)
+        animationView.play()
   
     }
     

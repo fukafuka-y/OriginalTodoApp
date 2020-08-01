@@ -47,8 +47,8 @@ class WeatherViewController: UITableViewController,SegementSlideContentScrollVie
         var timeTextArrayF = [String]()
         var timeTextArrayG = [String]()
         
-        var pickerView: UIPickerView = UIPickerView()
-        let areaList = ["Osaka", "Tokyo", "Nagoya", "Okinawa"]
+//        var pickerView: UIPickerView = UIPickerView()
+//        let areaList = ["Osaka", "Tokyo", "Nagoya", "Okinawa"]
     
         
         override func viewDidLoad() {
@@ -57,10 +57,10 @@ class WeatherViewController: UITableViewController,SegementSlideContentScrollVie
             tableView.register(UINib(nibName: "WeatherCell", bundle: nil), forCellReuseIdentifier: "WeatherCell")
             getData()
            
-           let areaPicker = UITextField()
-           areaPicker.frame = CGRect(x: 10, y: 100, width: UIScreen.main.bounds.size.width-20, height: 38)
-           self.view.addSubview(areaPicker)
-           areaPicker.delegate = self
+//           let areaPicker = UITextField()
+//           areaPicker.frame = CGRect(x: 10, y: 100, width: UIScreen.main.bounds.size.width-20, height: 38)
+//           self.view.addSubview(areaPicker)
+//           areaPicker.delegate = self
 
         }
     
@@ -95,36 +95,70 @@ class WeatherViewController: UITableViewController,SegementSlideContentScrollVie
             
             
             switch weatherIdArray[indexPath.row] {
+//             雷
+            case 200..<300:
+                cell.backgroundColor = .systemYellow
+                cell.animationString = "ThunderIcon"
+                cell.weatherIconView.backgroundColor = .systemYellow
+                cell.baceView.backgroundColor = .systemYellow
+                cell.IconScrollView.backgroundColor = .systemYellow
+                
+//                曇り
             case 300..<400:
-                cell.backgroundColor = .clear
-                cell.animationString = "SunnyIcon"
-                cell.weatherIconView.backgroundColor = UIColor(red: 1.0, green: 0, blue: 0, alpha: 0.4)
-                cell.baceView.backgroundColor = UIColor(red: 1.0, green: 0, blue: 0, alpha: 1.0)
-                cell.IconScrollView.backgroundColor = UIColor(red: 1.0, green: 0, blue: 0, alpha: 1.0)
+                cell.backgroundColor = .lightGray
+                cell.animationString = "CloudIcon"
+                cell.weatherIconView.backgroundColor = .lightGray
+                cell.baceView.backgroundColor = .lightGray
+                cell.IconScrollView.backgroundColor = .lightGray
+                
+//                雨
             case 500..<600:
-                cell.backgroundColor = .clear
-                cell.animationString = "CloudIcon"
-                cell.weatherIconView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.4)
-                cell.baceView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
-                cell.IconScrollView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
-            case 800:
-                cell.backgroundColor = .clear
+                cell.backgroundColor = .systemBlue
                 cell.animationString = "RainIcon"
-                cell.weatherIconView.backgroundColor = .yellow
-                cell.baceView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
-                cell.IconScrollView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
+                cell.weatherIconView.backgroundColor = .systemBlue
+                cell.baceView.backgroundColor = .systemBlue
+                cell.IconScrollView.backgroundColor = .systemBlue
+                
+//                雪
+             case 600..<700:
+                cell.backgroundColor = .white
+                cell.animationString = "snowIcon"
+                cell.weatherIconView.backgroundColor = .white
+                cell.baceView.backgroundColor = .white
+                cell.IconScrollView.backgroundColor = .white
+               
+//                風
+             case 700..<800:
+                cell.backgroundColor = .lightGray
+                cell.animationString = "windyIcon"
+                cell.weatherIconView.backgroundColor = .lightGray
+                cell.baceView.backgroundColor = .lightGray
+                cell.IconScrollView.backgroundColor = .lightGray
+                
+                
+//                曇り
+            case 800:
+                cell.backgroundColor = .lightGray
+                cell.animationString = "CoundIcon"
+                cell.weatherIconView.backgroundColor = .lightGray
+                cell.baceView.backgroundColor = .lightGray
+                cell.IconScrollView.backgroundColor = .lightGray
+                
+//                曇り
             case 801..<900:
-                cell.backgroundColor = .clear
+                cell.backgroundColor = .lightGray
                 cell.animationString = "CloudIcon"
-                cell.weatherIconView.backgroundColor = .brown
-                cell.baceView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
-                cell.IconScrollView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
+                cell.weatherIconView.backgroundColor = .lightGray
+                cell.baceView.backgroundColor = .lightGray
+                cell.IconScrollView.backgroundColor = .lightGray
+                
+//                曇り
             default:
-                cell.backgroundColor = .clear
+                cell.backgroundColor = .lightGray
                 cell.animationString = "CloudIcon"
-                cell.weatherIconView.backgroundColor = .darkGray
-                cell.baceView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
-                cell.IconScrollView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
+                cell.weatherIconView.backgroundColor = .lightGray
+                cell.baceView.backgroundColor = .lightGray
+                cell.IconScrollView.backgroundColor = .lightGray
             }
             
             
