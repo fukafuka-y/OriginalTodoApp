@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A192D4124D6544600872D78 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A192D4024D6544600872D78 /* Data.swift */; };
 		5A2AA31A24C9564C007A0CA5 /* SunnyIcon.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A2AA31924C9564C007A0CA5 /* SunnyIcon.json */; };
 		5A2AA31C24C9566A007A0CA5 /* CloudIcon.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A2AA31B24C9566A007A0CA5 /* CloudIcon.json */; };
 		5A2AA31E24C9568B007A0CA5 /* RainIcon.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A2AA31D24C9568B007A0CA5 /* RainIcon.json */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		574000D5C9E37D1824B9F899 /* Pods-OriginalTodoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginalTodoApp.debug.xcconfig"; path = "Target Support Files/Pods-OriginalTodoApp/Pods-OriginalTodoApp.debug.xcconfig"; sourceTree = "<group>"; };
+		5A192D4024D6544600872D78 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		5A2AA31924C9564C007A0CA5 /* SunnyIcon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SunnyIcon.json; sourceTree = "<group>"; };
 		5A2AA31B24C9566A007A0CA5 /* CloudIcon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CloudIcon.json; sourceTree = "<group>"; };
 		5A2AA31D24C9568B007A0CA5 /* RainIcon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RainIcon.json; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				5A577B3A24C45E5E000169F1 /* WeatherCell.xib */,
 				5A577B3D24C45F28000169F1 /* NewsData.swift */,
 				5A577B4F24C84BF8000169F1 /* DatePicker.swift */,
+				5A192D4024D6544600872D78 /* Data.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				5A577B4E24C7B259000169F1 /* News5ViewController.swift in Sources */,
 				5A577B3224C45CC3000169F1 /* NewsViewController.swift in Sources */,
 				5A577B3B24C45E5E000169F1 /* WeatherCell.swift in Sources */,
+				5A192D4124D6544600872D78 /* Data.swift in Sources */,
 				5A577B2E24C45C3F000169F1 /* BaseViewController.swift in Sources */,
 				5A577B3E24C45F28000169F1 /* NewsData.swift in Sources */,
 				5A687C9624CBD0A000A87459 /* AddMemoViewController.swift in Sources */,

@@ -15,7 +15,6 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
     @IBOutlet weak var timeTextFiled: DatePickerKeyboard!
     @IBOutlet weak var todoTextField: UITextField!
     @IBOutlet weak var plusTodoView: UIView!
-    @IBOutlet weak var priorityTextField: UITextField!
     @IBOutlet weak var deliteButton: UIButton!
     
     
@@ -29,11 +28,14 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
    
      var todoTextArray:[String] = ["ToDo入力","勉強する"]
      var todoText:String = ""
-     var todoTimeArray:[String] = ["時間を入力","8/1 19:00"]
+     var todoTimeArray:[String] = ["8/2 10:00","8/2 8:00"]
      var todoTime:String = ""
      var colorNumberArray:[Int] = [0,0]
      var colorNumber:Int = 0
     
+     var DataArray :[Data] = []
+     
+
      override func viewDidLoad() {
         super.viewDidLoad()
                   
@@ -46,7 +48,24 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         timeTextFiled.delegate = self
         todoTextField.delegate = self
-     
+
+//        let time1:String = "8/2 10:00"
+//        let time2:String = "8/2 8:00"
+       
+        let timeData1 = Data()
+        let timeDate1 = dateFromString(string:todoTimeArray[0])
+        timeData1.date = timeDate1
+        timeData1.string = todoTextArray[0]
+        DataArray.append(timeData1)
+        
+        let timeData2 = Data()
+        let timeDate2 = dateFromString(string:todoTimeArray[1])
+        timeData2.date = timeDate2
+        timeData2.string = todoTextArray[1]
+        DataArray.append(timeData2)
+        
+        dataChange()
+        
 //        let toolbar = UIToolbar(frame: CGRectMake(0, 0, 0, 35))
 //        let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: self, action: nil)
 //        space.width = 12
@@ -149,9 +168,12 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
            }
            
          func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            
                  let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell") as! ToDoCell
-                 cell.ToDoTextLabel.text = todoTextArray[indexPath.row]
-                 cell.ToDoTimeLabel.text = todoTimeArray[indexPath.row]
+                 let data1 : String = self.stringFromDate(date: DataArray[indexPath.row].date)
+                 let text1 : String = DataArray[indexPath.row].string
+                 cell.ToDoTextLabel.text = text1
+                 cell.ToDoTimeLabel.text = data1
                  cell.selectionStyle = .none
            
             
@@ -197,34 +219,40 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
     @IBAction func ToDoInput(_ sender: Any) {
         
         if timeTextFiled.text != "" && todoTextField.text != ""{
+            
         todoTime = timeTextFiled.text!
         todoText = todoTextField.text!
-        todoTimeArray.append(todoTime)
-        todoTextArray.append(todoText)
-        timeTextFiled.text = ""
-        todoTextField.text = ""
         colorNumberArray.append(colorNumber)
         blueButton.layer.borderWidth = 0
         yellowButton.layer.borderWidth = 0
         colorNumber = 0
         plusTodoView.isHidden = true
+        let timeData3 = Data()
+        let timeDate3 = dateFromString(string:todoTime)
+        timeData3.date = timeDate3
+        timeData3.string = todoText
+        DataArray.append(timeData3)
+//        dataChange()
+       
         todoTableView.reloadData()
-        
-        }else if todoTextField.text != ""{
-    
-            todoText = todoTextField.text!
-            todoTextArray.append(todoText)
-            todoTimeArray.append("")
-            todoTextField.text = ""
-            timeTextFiled.text = ""
-            colorNumberArray.append(colorNumber)
-            blueButton.layer.borderWidth = 0
-            yellowButton.layer.borderWidth = 0
-            colorNumber = 0
-            plusTodoView.isHidden = true
-            todoTableView.reloadData()
-        
+        timeTextFiled.text = ""
+        todoTextField.text = ""
         }
+//        }else if todoTextField.text != ""{
+//
+//            todoText = todoTextField.text!
+//            todoTextArray.append(todoText)
+//            todoTimeArray.append("")
+//            todoTextField.text = ""
+//            timeTextFiled.text = ""
+//            colorNumberArray.append(colorNumber)
+//            blueButton.layer.borderWidth = 0
+//            yellowButton.layer.borderWidth = 0
+//            colorNumber = 0
+//            plusTodoView.isHidden = true
+//            todoTableView.reloadData()
+//
+//        }
     }
     
     @IBAction func todoReturn(_ sender: Any) {
@@ -265,6 +293,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
             todoTextArray.remove(at: indexPath!.row)
             todoTimeArray.remove(at: indexPath!.row)
             colorNumberArray.remove(at: indexPath!.row)
+            DataArray.remove(at: indexPath!.row-2)
             todoTableView.reloadData()
          }
     }
@@ -273,7 +302,32 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         return 1
     }
     
-   
+   func dateFromString(string: String) -> Date {
+                   
+        let formatter: DateFormatter = DateFormatter()
+        formatter.calendar = Calendar(identifier: .gregorian)
+        formatter.dateFormat = DateFormatter.dateFormat(fromTemplate:"MM/dd H:mm", options: 0, locale: Locale(identifier: "ja_JP"))
+    return formatter.date(from: string)!
+               
+      }
+               
+      func stringFromDate(date: Date) -> String {
+                   
+          let formatter: DateFormatter = DateFormatter()
+          formatter.calendar = Calendar(identifier: .gregorian)
+          formatter.dateFormat = DateFormatter.dateFormat(fromTemplate:"MM/dd H:mm", options: 0, locale: Locale(identifier: "ja_JP"))
+          return formatter.string(from: date)
+                  }
+              
+      
+
+      func dataChange(){
+       
+       DataArray = DataArray.sorted(by: { (a, b) -> Bool in
+                  return a.date < b.date
+                  })
+       
+   }
     
     /*
     // MARK: - Navigation
@@ -286,5 +340,6 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
     */
 
 
-}
 
+
+}
