@@ -23,6 +23,10 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
     @IBOutlet weak var yellowButton: UIButton!
     @IBOutlet weak var orangeButton: UIButton!
     @IBOutlet weak var greenButton: UIButton!
+    @IBOutlet weak var plusButton: UIButton!
+    
+    @IBOutlet weak var weatherButton1: UIButton!
+    
     
     
    
@@ -43,7 +47,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         todoTableView.delegate = self
         todoTableView.dataSource = self
         
-        plusTodoView.backgroundColor = UIColor(red: 0, green: 0.2, blue: 0.8, alpha: 0.6)
+//        plusTodoView.backgroundColor = UIColor(red: 0, green: 0.2, blue: 0.8, alpha: 0.6)
         plusTodoView.isHidden = true
         
         timeTextFiled.delegate = self
@@ -85,6 +89,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(cellLongPressed))
         longPressRecognizer.delegate = self
         todoTableView.addGestureRecognizer(longPressRecognizer)
+     
         
     }
    
@@ -189,13 +194,13 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
             case 0:
                 cell.backgroundColor = .white
             case 1:
-                cell.backgroundColor = .systemBlue
+                cell.backgroundColor = UIColor(red: 90/255, green: 255/255, blue: 255/255, alpha: 0.5)
             case 2:
-                cell.backgroundColor = .yellow
+                cell.backgroundColor = UIColor(red: 255/255, green: 219/255, blue: 85/255, alpha: 0.5)
             case 3:
-                cell.backgroundColor = .orange
+                cell.backgroundColor = UIColor(red: 255/255, green: 149/255, blue: 225/255, alpha: 0.5)
             case 4:
-                cell.backgroundColor = .green
+                cell.backgroundColor = UIColor(red: 73/255, green: 206/255, blue: 164/255, alpha: 0.5)
             default:
                 cell.backgroundColor = .white
             }
@@ -215,14 +220,19 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
              }
      
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
        
     }
     
     @IBAction func plusToDo(_ sender: Any) {
         
         plusTodoView.isHidden = false
+        weatherButton1.isHidden = true
         timeTextFiled.text = ""
+        todoTextField.text = ""
+        
     }
+    
     
     @IBAction func ToDoInput(_ sender: Any) {
         
@@ -256,8 +266,11 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         todoTextField.text = ""
         blueButton.layer.borderWidth = 0
         yellowButton.layer.borderWidth = 0
+        orangeButton.layer.borderWidth = 0
+        greenButton.layer.borderWidth = 0
         colorNumber = 0
         plusTodoView.isHidden = true
+        weatherButton1.isHidden = false
         
             
         }
@@ -283,26 +296,39 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         timeTextFiled.text = ""
         todoTextField.text = ""
         plusTodoView.isHidden = true
+        blueButton.layer.borderWidth = 0
+        yellowButton.layer.borderWidth = 0
+        orangeButton.layer.borderWidth = 0
+        greenButton.layer.borderWidth = 0
+        colorNumber = 0
+        
         
     }
     
     
     
     @IBAction func weatherButton(_ sender: Any) {
-         let baseviewContorller = BaseViewController()
-         present(baseviewContorller,animated: true ,completion: nil)
+//         let baseviewContorller = BaseViewController()
+//         present(baseviewContorller,animated: true ,completion: nil)
         
     }
     
     
     @IBAction func NewsButton(_ sender: Any) {
-        let base2viewContorller = Base2ViewController()
-        present(base2viewContorller,animated: true ,completion: nil)
+       
     }
     
     @IBAction func memoButton(_ sender: Any) {
     performSegue(withIdentifier: "memo", sender: nil)
     }
+    
+    @IBAction func weather(_ sender: Any) {
+        let baseviewContorller = BaseViewController()
+        present(baseviewContorller,animated: true ,completion: nil)
+        
+    }
+    
+  
     
     
     @objc func cellLongPressed(recognizer: UILongPressGestureRecognizer) {

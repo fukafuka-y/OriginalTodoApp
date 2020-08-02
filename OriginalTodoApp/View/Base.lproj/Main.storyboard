@@ -44,6 +44,20 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="e30-UC-yFV">
+                                <rect key="frame" x="30" y="680" width="140" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="weather"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="70"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="weather:" destination="avS-f8-3CV" eventType="touchUpInside" id="jug-ut-Lil"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xfi-q9-sxP">
                                 <rect key="frame" x="0.0" y="641" width="414" height="211"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -54,18 +68,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyc-nO-MNI">
-                                        <rect key="frame" x="361" y="48" width="17" height="17"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="42"/>
-                                        <state key="normal" image="clear" catalog="system">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="todoReturn:" destination="avS-f8-3CV" eventType="touchUpInside" id="jhL-9x-Yx8"/>
-                                        </connections>
-                                    </button>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="時間を入力" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JvD-Iy-7gN" customClass="DatePickerKeyboard" customModule="OriginalTodoApp" customModuleProvider="target">
                                         <rect key="frame" x="40" y="33" width="137" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -73,26 +75,35 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BhM-YU-Pqf">
-                                        <rect key="frame" x="326" y="101" width="36" height="31"/>
+                                        <rect key="frame" x="283" y="89" width="36" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="43"/>
-                                        <state key="normal" image="pencil" catalog="system"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                        <state key="normal" title="＋">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="18"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="ToDoInput:" destination="avS-f8-3CV" eventType="touchUpInside" id="ycg-UM-Pcr"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQx-EC-lYa">
-                                        <rect key="frame" x="90" y="157" width="33" height="34"/>
+                                        <rect key="frame" x="90" y="155" width="33" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.35294117650000001" green="1" blue="1" alpha="0.79635233274647876" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="blueButtonTap:" destination="avS-f8-3CV" eventType="touchUpInside" id="ho1-cf-bya"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="waL-Lj-vLK">
-                                        <rect key="frame" x="144" y="157" width="33" height="34"/>
+                                        <rect key="frame" x="145" y="155" width="33" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="0.85844131883380281" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="1" green="0.85882352941176465" blue="0.33333333333333331" alpha="0.79825044014084512" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="yellowButtonTap:" destination="avS-f8-3CV" eventType="touchUpInside" id="Uot-rd-GWG"/>
                                         </connections>
@@ -100,15 +111,15 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLa-hS-gag">
                                         <rect key="frame" x="201" y="155" width="33" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="1" green="0.58431372549019611" blue="0.88235294117647056" alpha="0.79723261443661975" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="orangeButtonTap:" destination="avS-f8-3CV" eventType="touchUpInside" id="90F-kL-5al"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8g4-fW-Vgs">
-                                        <rect key="frame" x="261" y="155" width="33" height="34"/>
+                                        <rect key="frame" x="259" y="155" width="33" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.28732809434368345" green="0.80658560739436624" blue="0.643128301056338" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.28627450980392155" green="0.80784313725490198" blue="0.64313725490196072" alpha="0.79549955985915488" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="greenButtonTap:" destination="avS-f8-3CV" eventType="touchUpInside" id="xIU-KY-aMo"/>
                                         </connections>
@@ -122,8 +133,26 @@
                                             <action selector="whiteButtonTap:" destination="avS-f8-3CV" eventType="touchUpInside" id="tO3-NZ-KBY"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyc-nO-MNI">
+                                        <rect key="frame" x="346" y="8" width="36" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
+                                        <state key="normal" title="×">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="18"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="todoReturn:" destination="avS-f8-3CV" eventType="touchUpInside" id="jhL-9x-Yx8"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="0.56764042011073212" green="0.8120875916252811" blue="1" alpha="0.87051606514084512" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -145,10 +174,12 @@
                         <outlet property="deliteButton" destination="xyc-nO-MNI" id="10X-cM-wys"/>
                         <outlet property="greenButton" destination="8g4-fW-Vgs" id="efy-K4-Vnl"/>
                         <outlet property="orangeButton" destination="bLa-hS-gag" id="v5F-St-7hN"/>
+                        <outlet property="plusButton" destination="BhM-YU-Pqf" id="YNp-KP-bid"/>
                         <outlet property="plusTodoView" destination="xfi-q9-sxP" id="g1K-Kd-w2o"/>
                         <outlet property="timeTextFiled" destination="JvD-Iy-7gN" id="aj0-Yu-Hgh"/>
                         <outlet property="todoTableView" destination="en8-Vs-HVm" id="Whr-8E-DcT"/>
                         <outlet property="todoTextField" destination="jaa-Vw-xx2" id="6o5-4f-7tI"/>
+                        <outlet property="weatherButton1" destination="e30-UC-yFV" id="fLy-In-dxU"/>
                         <outlet property="whiteButton" destination="8cm-QO-L09" id="ONj-98-xYM"/>
                         <outlet property="yellowButton" destination="waL-Lj-vLK" id="cIo-cR-6QD"/>
                         <segue destination="QJp-48-C9o" kind="show" identifier="memo" id="RhU-RJ-qRa"/>
@@ -304,11 +335,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="clear" catalog="system" width="128" height="114"/>
         <image name="cloud" catalog="system" width="128" height="87"/>
-        <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
         <image name="trash" catalog="system" width="121" height="128"/>
+        <image name="weather" width="196" height="196"/>
     </resources>
 </document>
