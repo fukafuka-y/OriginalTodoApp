@@ -12,5 +12,6 @@ class Data: NSObject {
  
     var string : String!
     var date : Date!
+    var Int :Int!
     
 }

@@ -31,7 +31,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
      var todoTimeArray:[String] = ["8/2 10:00","8/2 8:00","8/3 20:00"]
      
      var colorNumberArray:[Int] = [0,0,0]
-     var colorNumber:Int = 0
+//     var colorNumber:Int = 0
     
      var DataArray :[Data] = []
      
@@ -53,18 +53,21 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         let timeDate1 = dateFromString(string:todoTimeArray[0])
         timeData1.date = timeDate1
         timeData1.string = todoTextArray[0]
+        timeData1.Int = colorNumberArray[0]
         DataArray.append(timeData1)
         
         let timeData2 = Data()
         let timeDate2 = dateFromString(string:todoTimeArray[1])
         timeData2.date = timeDate2
         timeData2.string = todoTextArray[1]
+        timeDate2.Int = colorNumberArray[1]
         DataArray.append(timeData2)
         
         let timeData3 = Data()
         let timeDate3 = dateFromString(string:todoTimeArray[2])
         timeData3.date = timeDate3
         timeData3.string = todoTextArray[2]
+        timeDate3.Int = colorNumberArray[2]
         DataArray.append(timeData3)
         
         
