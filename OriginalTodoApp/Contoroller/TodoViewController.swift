@@ -210,10 +210,22 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         plusTodoView.isHidden = true
         todoTableView.reloadData()
         
+        }else if todoTextField.text != ""{
+    
+            todoText = todoTextField.text!
+            todoTextArray.append(todoText)
+            todoTimeArray.append("")
+            todoTextField.text = ""
+            timeTextFiled.text = ""
+            colorNumberArray.append(colorNumber)
+            blueButton.layer.borderWidth = 0
+            yellowButton.layer.borderWidth = 0
+            colorNumber = 0
+            plusTodoView.isHidden = true
+            todoTableView.reloadData()
+        
         }
-    
     }
-    
     
     @IBAction func todoReturn(_ sender: Any) {
         

@@ -35,12 +35,13 @@ class DatePickerKeyboard: UITextField {
         toolbar.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 44)
 
         let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: self, action: nil)
-        space.width = 12
+        space.width = 15
         let flexSpaceItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        let todayButtonItem = UIBarButtonItem(title: "今日", style: .done, target: self, action: #selector(todayPicker))
+        let cancelButtonItem = UIBarButtonItem(title: "cancel", style: .done , target: self, action: #selector(cancelPicker))
+        let todayButtonItem = UIBarButtonItem(title: "現在", style: .done, target: self, action: #selector(todayPicker))
         let doneButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(donePicker))
 
-        let toolbarItems = [flexSpaceItem, todayButtonItem, doneButtonItem, space]
+        let toolbarItems = [flexSpaceItem,todayButtonItem,doneButtonItem,cancelButtonItem,space]
 
         toolbar.setItems(toolbarItems, animated: true)
 
@@ -55,6 +56,11 @@ class DatePickerKeyboard: UITextField {
     @objc private func todayPicker() {
         datePicker.date = Date()
         setText()
+    }
+    
+    @objc private func cancelPicker() {
+        text = ""
+        resignFirstResponder()
     }
 
     // datePickerの日付けをtextFieldのtextに反映させる
