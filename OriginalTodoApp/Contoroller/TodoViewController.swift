@@ -26,6 +26,8 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
     @IBOutlet weak var plusButton: UIButton!
     
     @IBOutlet weak var weatherButton1: UIButton!
+    @IBOutlet weak var newsButton: UIButton!
+    
     
     
     
@@ -90,7 +92,11 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         longPressRecognizer.delegate = self
         todoTableView.addGestureRecognizer(longPressRecognizer)
      
+        weatherButton1.alpha = 0.8
+        weatherButton1.backgroundColor = .clear
         
+        newsButton.alpha = 0.8
+        newsButton.backgroundColor = .clear
     }
    
 
@@ -308,11 +314,13 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     
     
-    
-    
-    @IBAction func NewsButton(_ sender: Any) {
-       
+    @IBAction func news(_ sender: Any) {
+        let base2viewContorller = Base2ViewController()
+        present(base2viewContorller,animated: true ,completion: nil)
+        
     }
+    
+    
     
     @IBAction func memoButton(_ sender: Any) {
     performSegue(withIdentifier: "memo", sender: nil)
