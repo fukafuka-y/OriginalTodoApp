@@ -31,7 +31,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
      var todoTimeArray:[String] = ["8/2 10:00","8/2 8:00","8/3 20:00"]
      
      var colorNumberArray:[Int] = [0,0,0]
-//     var colorNumber:Int = 0
+     var colorNumber:Int = 0
     
      var DataArray :[Data] = []
      
@@ -60,14 +60,14 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         let timeDate2 = dateFromString(string:todoTimeArray[1])
         timeData2.date = timeDate2
         timeData2.string = todoTextArray[1]
-        timeDate2.Int = colorNumberArray[1]
+        timeData2.Int = colorNumberArray[1]
         DataArray.append(timeData2)
         
         let timeData3 = Data()
         let timeDate3 = dateFromString(string:todoTimeArray[2])
         timeData3.date = timeDate3
         timeData3.string = todoTextArray[2]
-        timeDate3.Int = colorNumberArray[2]
+        timeData3.Int = colorNumberArray[2]
         DataArray.append(timeData3)
         
         
@@ -179,12 +179,13 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
                  let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell") as! ToDoCell
                  let data1 : String = self.stringFromDate(date: DataArray[indexPath.row].date)
                  let text1 : String = DataArray[indexPath.row].string
+                 let colorNumber :Int = DataArray[indexPath.row].Int
                  cell.ToDoTextLabel.text = text1
                  cell.ToDoTimeLabel.text = data1
                  cell.selectionStyle = .none
            
             
-            switch colorNumberArray[indexPath.row] {
+            switch colorNumber {
             case 0:
                 cell.backgroundColor = .white
             case 1:
@@ -231,19 +232,21 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         var todoTime:String = ""
         let todotimeCount:Int = todoTimeArray.count
         let todotextCount:Int = todoTimeArray.count
+        let colorNumberCount:Int = colorNumberArray.count
         
         todoTime = timeTextFiled.text!
         todoText = todoTextField.text!
         
         todoTextArray.append(todoText)
         todoTimeArray.append(todoTime)
+        colorNumberArray.append(colorNumber)
         
             
-        colorNumberArray.append(colorNumber)
         let timeData4 = Data()
         let timeDate4 = dateFromString(string:todoTimeArray[todotimeCount])
         timeData4.date = timeDate4
         timeData4.string = todoTextArray[todotextCount]
+        timeData4.Int = colorNumberArray[colorNumberCount]
         DataArray.append(timeData4)
         dataChange()
        
