@@ -26,11 +26,11 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     
    
-     var todoTextArray:[String] = ["ToDo入力","勉強する"]
-     var todoText:String = ""
-     var todoTimeArray:[String] = ["8/2 10:00","8/2 8:00"]
-     var todoTime:String = ""
-     var colorNumberArray:[Int] = [0,0]
+     var todoTextArray:[String] = ["勉強する","ToDo入力","メール打つ"]
+     
+     var todoTimeArray:[String] = ["8/2 10:00","8/2 8:00","8/3 20:00"]
+     
+     var colorNumberArray:[Int] = [0,0,0]
      var colorNumber:Int = 0
     
      var DataArray :[Data] = []
@@ -48,9 +48,6 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         timeTextFiled.delegate = self
         todoTextField.delegate = self
-
-//        let time1:String = "8/2 10:00"
-//        let time2:String = "8/2 8:00"
        
         let timeData1 = Data()
         let timeDate1 = dateFromString(string:todoTimeArray[0])
@@ -63,6 +60,13 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         timeData2.date = timeDate2
         timeData2.string = todoTextArray[1]
         DataArray.append(timeData2)
+        
+        let timeData3 = Data()
+        let timeDate3 = dateFromString(string:todoTimeArray[2])
+        timeData3.date = timeDate3
+        timeData3.string = todoTextArray[2]
+        DataArray.append(timeData3)
+        
         
         dataChange()
         
@@ -219,24 +223,37 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
     @IBAction func ToDoInput(_ sender: Any) {
         
         if timeTextFiled.text != "" && todoTextField.text != ""{
-            
+        
+        var todoText:String = ""
+        var todoTime:String = ""
+        let todotimeCount:Int = todoTimeArray.count
+        let todotextCount:Int = todoTimeArray.count
+        
         todoTime = timeTextFiled.text!
         todoText = todoTextField.text!
+        
+        todoTextArray.append(todoText)
+        todoTimeArray.append(todoTime)
+        
+            
         colorNumberArray.append(colorNumber)
+        let timeData4 = Data()
+        let timeDate4 = dateFromString(string:todoTimeArray[todotimeCount])
+        timeData4.date = timeDate4
+        timeData4.string = todoTextArray[todotextCount]
+        DataArray.append(timeData4)
+        dataChange()
+       
+        todoTableView.reloadData()
+            
+        timeTextFiled.text = ""
+        todoTextField.text = ""
         blueButton.layer.borderWidth = 0
         yellowButton.layer.borderWidth = 0
         colorNumber = 0
         plusTodoView.isHidden = true
-        let timeData3 = Data()
-        let timeDate3 = dateFromString(string:todoTime)
-        timeData3.date = timeDate3
-        timeData3.string = todoText
-        DataArray.append(timeData3)
-//        dataChange()
-       
-        todoTableView.reloadData()
-        timeTextFiled.text = ""
-        todoTextField.text = ""
+        
+            
         }
 //        }else if todoTextField.text != ""{
 //
@@ -293,7 +310,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
             todoTextArray.remove(at: indexPath!.row)
             todoTimeArray.remove(at: indexPath!.row)
             colorNumberArray.remove(at: indexPath!.row)
-            DataArray.remove(at: indexPath!.row-2)
+            DataArray.remove(at: indexPath!.row)
             todoTableView.reloadData()
          }
     }
