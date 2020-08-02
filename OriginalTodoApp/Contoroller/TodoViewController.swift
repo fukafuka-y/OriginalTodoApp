@@ -307,11 +307,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     
     
-    @IBAction func weatherButton(_ sender: Any) {
-//         let baseviewContorller = BaseViewController()
-//         present(baseviewContorller,animated: true ,completion: nil)
-        
-    }
+    
     
     
     @IBAction func NewsButton(_ sender: Any) {
