@@ -44,7 +44,6 @@ class WeatherCell: UITableViewCell{
     @IBOutlet weak var tempTextLabelG: UILabel!
     
     
-    @IBOutlet weak var areaPicker: UITextField!
     
     var animationString:String = ""
    

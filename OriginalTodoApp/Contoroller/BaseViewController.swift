@@ -20,11 +20,11 @@ class BaseViewController: SegementSlideDefaultViewController {
            
         }
 
-        override var titlesInSwitcher: [String]{
-
-            return["天気","トップニュース","スポーツ","エンタメ","経済","ライフ"]
-            
-            }
+//        override var titlesInSwitcher: [String]{
+//
+//            return["天気"]
+//            
+//            }
 
 
 
@@ -33,20 +33,20 @@ class BaseViewController: SegementSlideDefaultViewController {
            case 0:
            return WeatherViewController()
             
-           case 1:
-            return NewsViewController()
-            
-            case 2:
-            return News2ViewController()
-            
-            case 3:
-            return News3ViewController()
-            
-            case 4:
-            return News4ViewController()
-            
-            case 5:
-            return News5ViewController()
+//           case 1:
+//            return NewsViewController()
+//
+//            case 2:
+//            return News2ViewController()
+//
+//            case 3:
+//            return News3ViewController()
+//
+//            case 4:
+//            return News4ViewController()
+//
+//            case 5:
+//            return News5ViewController()
             
            
            default:

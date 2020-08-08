@@ -107,7 +107,8 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         item1.imageView.image = UIImage(named: "weatherIcon")
         item1.imageSize = CGSize(width: 90, height: 90)
         item1.action = { item in
-            self.performSegue(withIdentifier: "weather", sender: nil)
+           let baseviewContorller = BaseViewController()
+           self.present(baseviewContorller,animated: true ,completion: nil)
         }
         
         let item2 = actionButton.addItem()
