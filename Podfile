@@ -12,6 +12,9 @@ target 'OriginalTodoApp' do
   pod ‘SwiftyJSON’
   pod 'YYCalendar'
   pod 'lottie-ios'
-　pod 'VACalendar'
+  pod 'JJFloatingActionButton'
+  
+
+ 
 
 end

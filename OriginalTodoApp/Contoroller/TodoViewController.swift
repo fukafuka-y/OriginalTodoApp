@@ -8,6 +8,7 @@
 
 import UIKit
 import Lottie
+import JJFloatingActionButton
 
 class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,UIGestureRecognizerDelegate{
 
@@ -25,8 +26,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
     @IBOutlet weak var greenButton: UIButton!
     @IBOutlet weak var plusButton: UIButton!
     
-    @IBOutlet weak var weatherButton1: UIButton!
-    @IBOutlet weak var newsButton: UIButton!
+    
     
     @IBOutlet weak var toolbar: UIToolbar!
     
@@ -93,15 +93,51 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         longPressRecognizer.delegate = self
         todoTableView.addGestureRecognizer(longPressRecognizer)
      
-        weatherButton1.alpha = 0.8
-        weatherButton1.backgroundColor = .clear
-        
-        newsButton.alpha = 0.8
-        newsButton.backgroundColor = .clear
+       
         
         toolbar.backgroundColor = UIColor.init(red: 255/255, green: 83/255, blue: 68/255, alpha: 1.0)
         
-    }
+        
+
+        let actionButton = JJFloatingActionButton()
+        actionButton.buttonImage = UIImage(systemName: "line.horizontal.3")
+        actionButton.buttonImageSize = CGSize(width: 50, height: 50)
+        actionButton.buttonColor = .blue
+        actionButton.buttonDiameter = 60
+        
+        actionButton.buttonAnimationConfiguration = .transition(toImage: UIImage(systemName: "xmark")!)
+        actionButton.itemAnimationConfiguration = .slideIn(withInterItemSpacing: 80)
+        
+        
+        let item1 = actionButton.addItem()
+        item1.titleLabel.text = ""
+        item1.imageView.image = UIImage(named: "weatherIcon")
+        item1.imageSize = CGSize(width: 90, height: 90)
+        item1.action = { item in
+            let baseviewContorller = BaseViewController()
+            self.present(baseviewContorller,animated: true ,completion: nil)
+        }
+        
+        let item2 = actionButton.addItem()
+        item2.titleLabel.text = ""
+        item2.imageView.image = UIImage(named: "newsIcon")
+        item2.imageSize = CGSize(width: 90, height: 90)
+        item2.action = { item in
+            let base2viewContorller = Base2ViewController()
+            self.present(base2viewContorller,animated: true ,completion: nil)
+        }
+        
+        view.addSubview(actionButton)
+        actionButton.translatesAutoresizingMaskIntoConstraints = false
+        actionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
+        actionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16).isActive = true
+        
+        
+
+            }
+
+        
+    
    
 
     override func viewWillAppear(_ animated: Bool) {
@@ -237,7 +273,6 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
     @IBAction func plusToDo(_ sender: Any) {
         
         plusTodoView.isHidden = false
-        weatherButton1.isHidden = true
         timeTextFiled.text = ""
         todoTextField.text = ""
         
@@ -280,7 +315,6 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         greenButton.layer.borderWidth = 0
         colorNumber = 0
         plusTodoView.isHidden = true
-        weatherButton1.isHidden = false
         
             
         }
@@ -318,11 +352,6 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     
     
-    @IBAction func news(_ sender: Any) {
-        let base2viewContorller = Base2ViewController()
-        present(base2viewContorller,animated: true ,completion: nil)
-        
-    }
     
     
     
@@ -330,11 +359,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
     performSegue(withIdentifier: "memo", sender: nil)
     }
     
-    @IBAction func weather(_ sender: Any) {
-        let baseviewContorller = BaseViewController()
-        present(baseviewContorller,animated: true ,completion: nil)
-        
-    }
+   
     
     @IBAction func calender(_ sender: Any) {
         let CalendarViewContorller = calendarViewController()

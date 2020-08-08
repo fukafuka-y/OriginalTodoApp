@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.2.1)
+  - JJFloatingActionButton (2.5.0)
   - lottie-ios (3.1.8)
   - SegementSlide (3.0.0)
   - SwiftyJSON (5.0.0)
@@ -7,6 +8,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - JJFloatingActionButton
   - lottie-ios
   - SegementSlide
   - SwiftyJSON
@@ -15,6 +17,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - JJFloatingActionButton
     - lottie-ios
     - SegementSlide
     - SwiftyJSON
@@ -22,11 +25,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  JJFloatingActionButton: fdc3aefb0f28f04d0f988fa25d5fac97028a9ea7
   lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
   SegementSlide: ad0a6de50cbcc071da9ec8b0f403a4e75b20ba9a
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   YYCalendar: 1a6bbbd2190392edf9209da898b029ce4e5e734b
 
-PODFILE CHECKSUM: d169bdeaf901c0f2f1b7e4b9b96e368ba68ddd63
+PODFILE CHECKSUM: 6c4aef8baa7bf89b92768f68f857f8a682371962
 
 COCOAPODS: 1.9.3

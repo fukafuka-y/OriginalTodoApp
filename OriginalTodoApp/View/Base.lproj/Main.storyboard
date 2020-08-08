@@ -38,35 +38,6 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="e30-UC-yFV">
-                                <rect key="frame" x="20" y="680" width="140" height="140"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="weather"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="70"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="weather:" destination="avS-f8-3CV" eventType="touchUpInside" id="jug-ut-Lil"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nY7-BJ-9bH">
-                                <rect key="frame" x="260" y="680" width="140" height="140"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="news"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="70"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="news:" destination="avS-f8-3CV" eventType="touchUpInside" id="8cd-03-1YZ"/>
-                                    <action selector="weather:" destination="avS-f8-3CV" eventType="touchUpInside" id="ie2-J1-vxG"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xfi-q9-sxP">
                                 <rect key="frame" x="0.0" y="641" width="414" height="211"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -182,7 +153,6 @@
                         <outlet property="blueButton" destination="CQx-EC-lYa" id="M2h-kT-LKc"/>
                         <outlet property="deliteButton" destination="xyc-nO-MNI" id="10X-cM-wys"/>
                         <outlet property="greenButton" destination="8g4-fW-Vgs" id="efy-K4-Vnl"/>
-                        <outlet property="newsButton" destination="nY7-BJ-9bH" id="70X-nF-oUf"/>
                         <outlet property="orangeButton" destination="bLa-hS-gag" id="v5F-St-7hN"/>
                         <outlet property="plusButton" destination="BhM-YU-Pqf" id="YNp-KP-bid"/>
                         <outlet property="plusTodoView" destination="xfi-q9-sxP" id="g1K-Kd-w2o"/>
@@ -190,16 +160,32 @@
                         <outlet property="todoTableView" destination="en8-Vs-HVm" id="Whr-8E-DcT"/>
                         <outlet property="todoTextField" destination="jaa-Vw-xx2" id="6o5-4f-7tI"/>
                         <outlet property="toolbar" destination="d7B-iP-9MR" id="vh9-35-a2L"/>
-                        <outlet property="weatherButton1" destination="e30-UC-yFV" id="fLy-In-dxU"/>
                         <outlet property="whiteButton" destination="8cm-QO-L09" id="ONj-98-xYM"/>
                         <outlet property="yellowButton" destination="waL-Lj-vLK" id="cIo-cR-6QD"/>
                         <segue destination="QJp-48-C9o" kind="show" identifier="memo" id="RhU-RJ-qRa"/>
+                        <segue destination="dot-iw-q0y" kind="show" identifier="weather" id="Ork-EZ-sWF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efw-is-Gw1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="4LJ-Hh-Mwv"/>
             </objects>
             <point key="canvasLocation" x="1092.753623188406" y="209.59821428571428"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hcb-fl-UOr">
+            <objects>
+                <viewController id="dot-iw-q0y" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5kC-3n-pZ8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="wRH-Us-5gd"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sz4-SW-LNs"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ej-LS-Xtn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2113" y="-7"/>
         </scene>
         <!--メモ一覧-->
         <scene sceneID="P3o-VG-awM">
@@ -342,10 +328,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="news" width="259" height="259"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
         <image name="trash" catalog="system" width="121" height="128"/>
-        <image name="weather" width="196" height="196"/>
     </resources>
 </document>
