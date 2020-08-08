@@ -201,23 +201,23 @@ class Weather2ViewController: UITableViewController,CLLocationManagerDelegate {
         switch weatherId{
         //             雷
         case 200..<300:
-            cell.backgroundColor = .systemYellow
+            cell.backgroundColor = UIColor(red: 17/255, green: 12/255, blue: 108/255, alpha: 1.0)
             cell.animationString = "ThunderIcon"
-            cell.weatherIconView.backgroundColor = .systemYellow
-            cell.baceView.backgroundColor = .systemYellow
-            cell.IconScrollView.backgroundColor = .systemYellow
+            cell.weatherIconView.backgroundColor = UIColor(red: 17/255, green: 12/255, blue: 108/255, alpha: 1.0)
+            cell.baceView.backgroundColor = UIColor(red: 17/255, green: 12/255, blue: 108/255, alpha: 1.0)
+            cell.IconScrollView.backgroundColor = UIColor(red: 17/255, green: 12/255, blue: 108/255, alpha: 1.0)
             
         //                曇り
         case 300..<400:
-            cell.backgroundColor = .lightGray
+            cell.backgroundColor = UIColor(red: 73/255, green: 96/255, blue: 102/255, alpha: 0.6)
             cell.animationString = "CloudIcon"
-            cell.weatherIconView.backgroundColor = .lightGray
-            cell.baceView.backgroundColor = .lightGray
-            cell.IconScrollView.backgroundColor = .lightGray
+            cell.weatherIconView.backgroundColor = UIColor(red: 73/255, green: 96/255, blue: 102/255, alpha: 0.6)
+            cell.baceView.backgroundColor = UIColor(red: 73/255, green: 96/255, blue: 102/255, alpha: 0.6)
+            cell.IconScrollView.backgroundColor = UIColor(red: 73/255, green: 96/255, blue: 102/255, alpha: 0.6)
             
         //                雨
         case 500..<600:
-            cell.backgroundColor = .systemBlue
+            cell.backgroundColor = UIColor(red: 88/255, green: 147/255, blue: 255/255, alpha: 1.0)
             cell.animationString = "RainIcon"
             cell.weatherIconView.backgroundColor = .systemBlue
             cell.baceView.backgroundColor = .systemBlue
@@ -225,44 +225,44 @@ class Weather2ViewController: UITableViewController,CLLocationManagerDelegate {
             
         //                雪
         case 600..<700:
-            cell.backgroundColor = .white
+            cell.backgroundColor = UIColor(red: 217/255, green: 229/255, blue: 255/255, alpha: 1.0)
             cell.animationString = "snowIcon"
-            cell.weatherIconView.backgroundColor = .white
-            cell.baceView.backgroundColor = .white
-            cell.IconScrollView.backgroundColor = .white
+            cell.weatherIconView.backgroundColor = UIColor(red: 217/255, green: 229/255, blue: 255/255, alpha: 1.0)
+            cell.baceView.backgroundColor = UIColor(red: 217/255, green: 229/255, blue: 255/255, alpha: 1.0)
+            cell.IconScrollView.backgroundColor = UIColor(red: 217/255, green: 229/255, blue: 255/255, alpha: 1.0)
             
         //                風
         case 700..<800:
-            cell.backgroundColor = .lightGray
+            cell.backgroundColor = UIColor(red: 88/255, green: 147/255, blue: 255/255, alpha: 1.0)
             cell.animationString = "windyIcon"
-            cell.weatherIconView.backgroundColor = .lightGray
-            cell.baceView.backgroundColor = .lightGray
-            cell.IconScrollView.backgroundColor = .lightGray
+            cell.weatherIconView.backgroundColor = UIColor(red: 88/255, green: 147/255, blue: 255/255, alpha: 1.0)
+            cell.baceView.backgroundColor = UIColor(red: 88/255, green: 147/255, blue: 255/255, alpha: 1.0)
+            cell.IconScrollView.backgroundColor = UIColor(red: 88/255, green: 147/255, blue: 255/255, alpha: 1.0)
             
             
-        //                曇り
+        //                 晴れ
         case 800:
-            cell.backgroundColor = .lightGray
+            cell.backgroundColor = UIColor(red: 140/255, green: 255/255, blue: 235/255, alpha: 1.0)
             cell.animationString = "SunnyIcon"
-            cell.weatherIconView.backgroundColor = .lightGray
-            cell.baceView.backgroundColor = .lightGray
-            cell.IconScrollView.backgroundColor = .lightGray
+            cell.weatherIconView.backgroundColor = UIColor(red: 140/255, green: 255/255, blue: 235/255, alpha: 1.0)
+            cell.baceView.backgroundColor = UIColor(red: 140/255, green: 255/255, blue: 235/255, alpha: 1.0)
+            cell.IconScrollView.backgroundColor = UIColor(red: 140/255, green: 255/255, blue: 235/255, alpha: 1.0)
             
         //                曇り
         case 801..<900:
-            cell.backgroundColor = .lightGray
+            cell.backgroundColor = UIColor(red: 140/255, green: 255/255, blue: 235/255, alpha: 1.0)
             cell.animationString = "CloudIcon"
-            cell.weatherIconView.backgroundColor = .lightGray
-            cell.baceView.backgroundColor = .lightGray
-            cell.IconScrollView.backgroundColor = .lightGray
+            cell.weatherIconView.backgroundColor = UIColor(red: 140/255, green: 255/255, blue: 235/255, alpha: 1.0)
+            cell.baceView.backgroundColor = UIColor(red: 140/255, green: 255/255, blue: 235/255, alpha: 1.0)
+            cell.IconScrollView.backgroundColor = UIColor(red: 140/255, green: 255/255, blue: 235/255, alpha: 1.0)
             
         //                曇り
         default:
-            cell.backgroundColor = .lightGray
+            cell.backgroundColor = UIColor(red: 140/255, green: 255/255, blue: 235/255, alpha: 1.0)
             cell.animationString = "CloudIcon"
-            cell.weatherIconView.backgroundColor = .lightGray
-            cell.baceView.backgroundColor = .lightGray
-            cell.IconScrollView.backgroundColor = .lightGray
+            cell.weatherIconView.backgroundColor = UIColor(red: 140/255, green: 255/255, blue: 235/255, alpha: 1.0)
+            cell.baceView.backgroundColor = UIColor(red: 140/255, green: 255/255, blue: 235/255, alpha: 1.0)
+            cell.IconScrollView.backgroundColor = UIColor(red: 140/255, green: 255/255, blue: 235/255, alpha: 1.0)
         }
         
         

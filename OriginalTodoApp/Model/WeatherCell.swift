@@ -50,6 +50,9 @@ class WeatherCell: UITableViewCell{
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+         animationIcon()
+        
     }
     
     override func layoutSubviews() {
@@ -59,7 +62,7 @@ class WeatherCell: UITableViewCell{
            let contentHeight = baceView.bounds.height
            IconScrollView.contentSize = CGSize(width: contentWidth, height: contentHeight)
         
-           animationIcon()
+          
      
        }
 
