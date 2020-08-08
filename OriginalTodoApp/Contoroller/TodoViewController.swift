@@ -25,13 +25,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
     @IBOutlet weak var orangeButton: UIButton!
     @IBOutlet weak var greenButton: UIButton!
     @IBOutlet weak var plusButton: UIButton!
-    
-    
-    
-    @IBOutlet weak var toolbar: UIToolbar!
-    
-    
-    
+
    
      var todoTextArray:[String] = ["勉強する","ToDo入力","メール打つ"]
      
@@ -95,7 +89,6 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
      
        
         
-        toolbar.backgroundColor = UIColor.init(red: 255/255, green: 83/255, blue: 68/255, alpha: 1.0)
         
         
 
@@ -114,8 +107,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         item1.imageView.image = UIImage(named: "weatherIcon")
         item1.imageSize = CGSize(width: 90, height: 90)
         item1.action = { item in
-            let baseviewContorller = BaseViewController()
-            self.present(baseviewContorller,animated: true ,completion: nil)
+            self.performSegue(withIdentifier: "weather", sender: nil)
         }
         
         let item2 = actionButton.addItem()
@@ -126,6 +118,15 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
             let base2viewContorller = Base2ViewController()
             self.present(base2viewContorller,animated: true ,completion: nil)
         }
+        
+        let item3 = actionButton.addItem()
+        item3.titleLabel.text = ""
+        item3.imageView.image = UIImage(named: "memoIcon")
+        item3.imageSize = CGSize(width: 90, height: 90)
+        item3.action = { item in
+         self.performSegue(withIdentifier: "memo", sender: nil)
+        }
+        
         
         view.addSubview(actionButton)
         actionButton.translatesAutoresizingMaskIntoConstraints = false
@@ -354,18 +355,18 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     
     
-    
-    @IBAction func memoButton(_ sender: Any) {
-    performSegue(withIdentifier: "memo", sender: nil)
-    }
-    
-   
-    
-    @IBAction func calender(_ sender: Any) {
-        let CalendarViewContorller = calendarViewController()
-        present(CalendarViewContorller,animated: true ,completion: nil)
-        
-    }
+//    
+//    @IBAction func memoButton(_ sender: Any) {
+//    performSegue(withIdentifier: "memo", sender: nil)
+//    }
+//    
+//   
+//    
+//    @IBAction func calender(_ sender: Any) {
+//        let CalendarViewContorller = calendarViewController()
+//        present(CalendarViewContorller,animated: true ,completion: nil)
+//        
+//    }
     
     
   
