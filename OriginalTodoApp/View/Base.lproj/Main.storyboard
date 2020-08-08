@@ -23,7 +23,7 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d7B-iP-9MR">
                                 <rect key="frame" x="0.0" y="852" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.3239746582941716" blue="0.26675910600470343" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <barButtonItem title="メモ" id="tqa-Sa-9Wz">
                                         <connections>
@@ -31,7 +31,11 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="5jv-iz-uGh"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="IE7-6L-vG0"/>
+                                    <barButtonItem title="カレンダー" id="7V1-H4-lai">
+                                        <connections>
+                                            <action selector="calender:" destination="avS-f8-3CV" id="MXn-Fx-SbE"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="e30-UC-yFV">
@@ -185,6 +189,7 @@
                         <outlet property="timeTextFiled" destination="JvD-Iy-7gN" id="aj0-Yu-Hgh"/>
                         <outlet property="todoTableView" destination="en8-Vs-HVm" id="Whr-8E-DcT"/>
                         <outlet property="todoTextField" destination="jaa-Vw-xx2" id="6o5-4f-7tI"/>
+                        <outlet property="toolbar" destination="d7B-iP-9MR" id="vh9-35-a2L"/>
                         <outlet property="weatherButton1" destination="e30-UC-yFV" id="fLy-In-dxU"/>
                         <outlet property="whiteButton" destination="8cm-QO-L09" id="ONj-98-xYM"/>
                         <outlet property="yellowButton" destination="waL-Lj-vLK" id="cIo-cR-6QD"/>

@@ -7,10 +7,11 @@ target 'OriginalTodoApp' do
 
   # Pods for OriginalTodoApp
 
- pod 'SegementSlide'
+  pod 'SegementSlide'
   pod 'Alamofire'
   pod ‘SwiftyJSON’
   pod 'YYCalendar'
   pod 'lottie-ios'
+　pod 'VACalendar'
 
 end

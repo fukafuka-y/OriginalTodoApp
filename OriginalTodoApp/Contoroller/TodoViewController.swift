@@ -28,6 +28,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
     @IBOutlet weak var weatherButton1: UIButton!
     @IBOutlet weak var newsButton: UIButton!
     
+    @IBOutlet weak var toolbar: UIToolbar!
     
     
     
@@ -97,6 +98,9 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         newsButton.alpha = 0.8
         newsButton.backgroundColor = .clear
+        
+        toolbar.backgroundColor = UIColor.init(red: 255/255, green: 83/255, blue: 68/255, alpha: 1.0)
+        
     }
    
 
@@ -331,6 +335,13 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         present(baseviewContorller,animated: true ,completion: nil)
         
     }
+    
+    @IBAction func calender(_ sender: Any) {
+        let CalendarViewContorller = calendarViewController()
+        present(CalendarViewContorller,animated: true ,completion: nil)
+        
+    }
+    
     
   
     
