@@ -144,12 +144,45 @@
                         <outlet property="whiteButton" destination="8cm-QO-L09" id="ONj-98-xYM"/>
                         <outlet property="yellowButton" destination="waL-Lj-vLK" id="cIo-cR-6QD"/>
                         <segue destination="QJp-48-C9o" kind="show" identifier="memo" id="chO-BC-Lyf"/>
+                        <segue destination="8EN-kG-dUZ" kind="show" identifier="weather" id="DHs-mX-MjQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efw-is-Gw1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="4LJ-Hh-Mwv"/>
             </objects>
             <point key="canvasLocation" x="1092.753623188406" y="209.59821428571428"/>
+        </scene>
+        <!--Weather2 View Controller-->
+        <scene sceneID="2VM-9H-j1D">
+            <objects>
+                <tableViewController id="8EN-kG-dUZ" customClass="Weather2ViewController" customModule="OriginalTodoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aAr-ZT-vn6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="410" id="bul-Hq-xZV">
+                                <rect key="frame" x="0.0" y="28" width="414" height="410"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bul-Hq-xZV" id="gb0-vb-haj">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="410"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8EN-kG-dUZ" id="gzJ-VU-526"/>
+                            <outlet property="delegate" destination="8EN-kG-dUZ" id="5Jf-pM-K7B"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="gC5-q2-Aib"/>
+                    <connections>
+                        <outlet property="weatherTableView" destination="aAr-ZT-vn6" id="WEB-WH-mun"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="snR-Yw-ST4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2063.768115942029" y="-184.15178571428569"/>
         </scene>
         <!--メモ一覧-->
         <scene sceneID="P3o-VG-awM">

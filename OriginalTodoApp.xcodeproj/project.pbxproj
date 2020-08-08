@@ -47,6 +47,7 @@
 		5A7FEFA224C4297E0056F49F /* checkAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A7FEFA124C4297E0056F49F /* checkAnimation.json */; };
 		5A7FEFA424C42C980056F49F /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FEFA324C42C980056F49F /* TimePicker.swift */; };
 		5A9A3AEA24DE542D000F8233 /* Weather1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9A3AE924DE542D000F8233 /* Weather1ViewController.swift */; };
+		5A9A3AF024DE828A000F8233 /* Weather2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9A3AEF24DE828A000F8233 /* Weather2ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		5A7FEFA124C4297E0056F49F /* checkAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = checkAnimation.json; sourceTree = "<group>"; };
 		5A7FEFA324C42C980056F49F /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 		5A9A3AE924DE542D000F8233 /* Weather1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather1ViewController.swift; sourceTree = "<group>"; };
+		5A9A3AEF24DE828A000F8233 /* Weather2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather2ViewController.swift; sourceTree = "<group>"; };
 		D31DD2906DEF17F1926C12B1 /* Pods-OriginalTodoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginalTodoApp.release.xcconfig"; path = "Target Support Files/Pods-OriginalTodoApp/Pods-OriginalTodoApp.release.xcconfig"; sourceTree = "<group>"; };
 		E67F2ECC9DB0359A705CC3BA /* Pods_OriginalTodoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OriginalTodoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -193,6 +195,7 @@
 				5A687C9524CBD0A000A87459 /* AddMemoViewController.swift */,
 				5A687C9724CBD0AE00A87459 /* DetailViewController.swift */,
 				5A192D4824D7779D00872D78 /* CalenderViewController.swift */,
+				5A9A3AEF24DE828A000F8233 /* Weather2ViewController.swift */,
 			);
 			path = Contoroller;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 			files = (
 				5A7FEF7524C3CA190056F49F /* AppDelegate.swift in Sources */,
 				5A7FEF9024C3CBF80056F49F /* TodoViewController.swift in Sources */,
+				5A9A3AF024DE828A000F8233 /* Weather2ViewController.swift in Sources */,
 				5A7FEF7724C3CA190056F49F /* SceneDelegate.swift in Sources */,
 				5A577B4424C5D324000169F1 /* News3ViewController.swift in Sources */,
 				5A577B4624C5D336000169F1 /* News4ViewController.swift in Sources */,
