@@ -27,7 +27,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
     @IBOutlet weak var plusButton: UIButton!
 
    
-     var todoTextArray:[String] = ["勉強する","ToDo入力","メール打つ"]
+     var todoTextArray:[String] = ["長押しで消去","ToDo入力","右上の＋ボタンより入力画面が表示"]
      
      var todoTimeArray:[String] = ["8/2 10:00","8/2 8:00","8/3 20:00"]
      
@@ -103,7 +103,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         
         let item1 = actionButton.addItem()
-        item1.titleLabel.text = ""
+        item1.titleLabel.text = "天気予報     "
         item1.imageView.image = UIImage(named: "weatherIcon")
         item1.imageSize = CGSize(width: 90, height: 90)
         item1.action = { item in
@@ -111,7 +111,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         }
         
         let item2 = actionButton.addItem()
-        item2.titleLabel.text = ""
+        item2.titleLabel.text = "ニュース     "
         item2.imageView.image = UIImage(named: "newsIcon")
         item2.imageSize = CGSize(width: 90, height: 90)
         item2.action = { item in
@@ -120,7 +120,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         }
         
         let item3 = actionButton.addItem()
-        item3.titleLabel.text = ""
+        item3.titleLabel.text = "メモ     "
         item3.imageView.image = UIImage(named: "memoIcon")
         item3.imageSize = CGSize(width: 90, height: 90)
         item3.action = { item in

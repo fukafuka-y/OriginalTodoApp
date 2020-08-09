@@ -20,6 +20,8 @@ class News5ViewController: UITableViewController,SegementSlideContentScrollViewD
    
      var currentElemantName:String!
     
+    var topic:String = "/world"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +29,7 @@ class News5ViewController: UITableViewController,SegementSlideContentScrollViewD
         tableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "NewsCell")
         tableView.backgroundColor = .clear
         
-        let urlString = "https://news.yahoo.co.jp/polls/life/rss.xml"
+        let urlString = "https://news.yahoo.co.jp/pickup\(topic)/rss.xml"
         let url:URL = URL(string:urlString)!
         parser = XMLParser(contentsOf: url)!
         parser.delegate = self
