@@ -27,14 +27,17 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
     @IBOutlet weak var plusButton: UIButton!
 
    
-     var todoTextArray:[String] = ["長押しで消去","ToDo入力","右上の＋ボタンより入力画面が表示"]
+     var todoTextArray:[String] = ["長押しで消去","右上の＋ボタンよりToDo入力"]
      
-     var todoTimeArray:[String] = ["8/2 10:00","8/2 8:00","8/3 20:00"]
+     var todoTimeArray:[String] = ["8/2 10:00","8/2 8:00"]
      
      var colorNumberArray:[Int] = [0,0,0]
      var colorNumber:Int = 0
     
      var DataArray :[Data] = []
+    
+    let actionButton = JJFloatingActionButton()
+    
      
 
      override func viewDidLoad() {
@@ -64,12 +67,12 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         timeData2.Int = colorNumberArray[1]
         DataArray.append(timeData2)
         
-        let timeData3 = Data()
-        let timeDate3 = dateFromString(string:todoTimeArray[2])
-        timeData3.date = timeDate3
-        timeData3.string = todoTextArray[2]
-        timeData3.Int = colorNumberArray[2]
-        DataArray.append(timeData3)
+//        let timeData3 = Data()
+//        let timeDate3 = dateFromString(string:todoTimeArray[2])
+//        timeData3.date = timeDate3
+//        timeData3.string = todoTextArray[2]
+//        timeData3.Int = colorNumberArray[2]
+//        DataArray.append(timeData3)
         
         
         dataChange()
@@ -92,11 +95,12 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         
 
-        let actionButton = JJFloatingActionButton()
+        
         actionButton.buttonImage = UIImage(systemName: "line.horizontal.3")
         actionButton.buttonImageSize = CGSize(width: 50, height: 50)
         actionButton.buttonColor = .blue
         actionButton.buttonDiameter = 60
+        actionButton.isHidden = false
         
         actionButton.buttonAnimationConfiguration = .transition(toImage: UIImage(systemName: "xmark")!)
         actionButton.itemAnimationConfiguration = .slideIn(withInterItemSpacing: 80)
@@ -274,6 +278,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
     @IBAction func plusToDo(_ sender: Any) {
         
         plusTodoView.isHidden = false
+        actionButton.isHidden = true
         timeTextFiled.text = ""
         todoTextField.text = ""
         
@@ -316,6 +321,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         greenButton.layer.borderWidth = 0
         colorNumber = 0
         plusTodoView.isHidden = true
+        actionButton.isHidden = false
         
             
         }
@@ -346,6 +352,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
         orangeButton.layer.borderWidth = 0
         greenButton.layer.borderWidth = 0
         colorNumber = 0
+        actionButton.isHidden = false
         
         
     }
