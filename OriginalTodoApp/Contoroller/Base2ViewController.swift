@@ -15,13 +15,13 @@ class Base2ViewController: SegementSlideDefaultViewController {
             super.viewDidLoad()
             
             reloadData()
-            defaultSelectedIndex = 1
+            defaultSelectedIndex = 0
 
         }
 
         override var titlesInSwitcher: [String]{
 
-            return["天気","ニュース","スポーツ","エンタメ","経済","ライフ"]
+            return["ニュース","スポーツ","エンタメ","経済","ライフ"]
             
             }
 
@@ -30,21 +30,18 @@ class Base2ViewController: SegementSlideDefaultViewController {
      override func segementSlideContentViewController(at index: Int) -> SegementSlideContentScrollViewDelegate? {
            switch index {
            case 0:
-           return WeatherViewController()
-            
-           case 1:
-            return NewsViewController()
-           
-            case 2:
+           return NewsViewController()
+        
+            case 1:
             return News2ViewController()
             
-            case 3:
+            case 2:
             return News3ViewController()
             
-            case 4:
+            case 3:
             return News4ViewController()
             
-            case 5:
+            case 4:
             return News5ViewController()
             
            default:

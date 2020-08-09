@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--ToDoList-->
+        <!--ToDo-->
         <scene sceneID="ydu-Yz-Pn1">
             <objects>
                 <viewController storyboardIdentifier="todoVIew" id="avS-f8-3CV" customClass="TodoViewController" customModule="OriginalTodoApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,7 +21,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xfi-q9-sxP">
-                                <rect key="frame" x="0.0" y="641" width="414" height="221"/>
+                                <rect key="frame" x="0.0" y="641" width="414" height="255"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="todoを入力" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jaa-Vw-xx2">
@@ -99,7 +99,7 @@
                                         <rect key="frame" x="346" y="8" width="36" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
                                         <state key="normal" title="×">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -114,7 +114,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.56764042011073212" green="0.8120875916252811" blue="1" alpha="0.87051606514084512" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.39509795984455953" green="0.16066947089895087" blue="0.15384341145940847" alpha="0.87334947183098588" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -124,7 +124,7 @@
                             <outletCollection property="gestureRecognizers" destination="4LJ-Hh-Mwv" appends="YES" id="rlw-CL-UK4"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="ToDoList" id="1k2-UN-i8i">
+                    <navigationItem key="navigationItem" title="ToDo" id="1k2-UN-i8i">
                         <barButtonItem key="rightBarButtonItem" image="plus.circle" catalog="system" id="csA-Wa-oKf">
                             <connections>
                                 <action selector="plusToDo:" destination="avS-f8-3CV" id="F9d-CG-R2O"/>
@@ -161,11 +161,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="410" id="bul-Hq-xZV">
-                                <rect key="frame" x="0.0" y="28" width="414" height="410"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="769" id="bul-Hq-xZV">
+                                <rect key="frame" x="0.0" y="28" width="414" height="769"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bul-Hq-xZV" id="gb0-vb-haj">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="410"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="769"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -212,7 +212,7 @@
                         <viewLayoutGuide key="safeArea" id="0tW-f0-K4G"/>
                     </view>
                     <navigationItem key="navigationItem" title="メモ一覧" id="Y5k-hH-QJ6">
-                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="dqi-pv-Pg7">
+                        <barButtonItem key="rightBarButtonItem" image="square.and.pencil" catalog="system" id="dqi-pv-Pg7">
                             <connections>
                                 <segue destination="sf5-FI-3Dn" kind="show" id="zfK-Nh-Igh"/>
                             </connections>
@@ -220,14 +220,14 @@
                     </navigationItem>
                     <connections>
                         <outlet property="memoTabelView" destination="FuN-Gv-UVS" id="akF-Cd-Dep"/>
-                        <segue destination="oR7-cI-Pvi" kind="show" identifier="detail" id="FE5-Xt-pyM"/>
+                        <segue destination="oR7-cI-Pvi" kind="show" identifier="detail" id="fYU-Nw-HEH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ox-gJ-JmY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2042" y="651"/>
         </scene>
-        <!--詳細-->
+        <!--Detail View Controller-->
         <scene sceneID="jWZ-sz-3BH">
             <objects>
                 <viewController id="oR7-cI-Pvi" customClass="DetailViewController" customModule="OriginalTodoApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -235,10 +235,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="75u-JW-zTQ">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xcm-pA-ieU">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -247,21 +246,34 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="0bC-dZ-268"/>
                     </view>
-                    <navigationItem key="navigationItem" title="詳細" id="3nu-AX-vIJ">
-                        <barButtonItem key="rightBarButtonItem" image="trash" catalog="system" id="THM-Dz-1hU">
-                            <connections>
-                                <action selector="trush:" destination="oR7-cI-Pvi" id="Xfd-ua-cBb"/>
-                            </connections>
-                        </barButtonItem>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="3nu-AX-vIJ">
+                        <rightBarButtonItems>
+                            <barButtonItem title="完了" id="5mq-Do-juW">
+                                <connections>
+                                    <action selector="addMemo:" destination="oR7-cI-Pvi" id="sXB-ch-ATh"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="trash" catalog="system" id="THM-Dz-1hU">
+                                <connections>
+                                    <action selector="trush:" destination="oR7-cI-Pvi" id="vRm-uU-tcI"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="square.and.arrow.up" catalog="system" id="YdE-df-e6c">
+                                <connections>
+                                    <action selector="share:" destination="oR7-cI-Pvi" id="dg9-b1-boN"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="memoTextView" destination="75u-JW-zTQ" id="5mx-jk-I1H"/>
-                        <outlet property="trush" destination="3nu-AX-vIJ" id="wNm-bY-5Up"/>
+                        <outlet property="memoTextView" destination="xcm-pA-ieU" id="Whc-gw-2iL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gl2-C6-aXU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3622" y="1619"/>
+            <point key="canvasLocation" x="3403" y="1213"/>
         </scene>
         <!--Add Memo View Controller-->
         <scene sceneID="eQ7-5Y-LhD">
@@ -272,96 +284,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="S0M-ER-JO5">
-                                <rect key="frame" x="20" y="132" width="374" height="404"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVF-2C-elT">
-                                <rect key="frame" x="94" y="563" width="206" height="78"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
-                                <state key="normal" title="OK">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="AddMemo:" destination="sf5-FI-3Dn" eventType="touchUpInside" id="6xA-Yj-LB4"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="z2m-JC-OCu"/>
                     </view>
-                    <navigationItem key="navigationItem" id="9q7-FX-Cwk"/>
+                    <navigationItem key="navigationItem" id="9q7-FX-Cwk">
+                        <rightBarButtonItems>
+                            <barButtonItem title="完了" id="MyI-Eo-R1Y">
+                                <connections>
+                                    <action selector="addMemo:" destination="sf5-FI-3Dn" id="AgG-kh-EgS"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="square.and.arrow.up" catalog="system" id="oKJ-UL-Ci6">
+                                <connections>
+                                    <action selector="share:" destination="sf5-FI-3Dn" id="3Af-CP-xTJ"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="memoTextFiled" destination="S0M-ER-JO5" id="bk5-nk-3QP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eSy-T4-TZx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3623" y="904"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="wE7-sh-xtb">
-            <objects>
-                <viewController id="6wb-3B-Cp5" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fjO-jJ-WUX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cml-9x-VxF">
-                                <rect key="frame" x="20" y="99" width="179" height="131"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.54720859934683097" green="1" blue="0.92254007105823588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zRc-48-wJi">
-                                <rect key="frame" x="20" y="238" width="179" height="131"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.28694432218309857" green="0.37791593309859156" blue="0.40099581866197181" alpha="0.60252530809859151" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a9w-Ci-9zi">
-                                <rect key="frame" x="20" y="444" width="179" height="131"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.34377685542509606" green="0.57588569926868738" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="11H-zv-hyd">
-                                <rect key="frame" x="20" y="671" width="179" height="131"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mg7-xx-6h4">
-                                        <rect key="frame" x="34" y="30" width="179" height="131"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.067188750783882339" green="0.04696488533461924" blue="0.4229679404145078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RC4-Tc-zkZ">
-                                <rect key="frame" x="215" y="157" width="179" height="131"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.85043537440119832" green="0.89703326428022967" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jBO-Ad-jJ8">
-                                <rect key="frame" x="176" y="468" width="179" height="131"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.42517430170724124" green="0.56253767580157077" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bSb-lv-xGh">
-                                <rect key="frame" x="192" y="664" width="179" height="131"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="oQ1-Em-fbO"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JRG-cc-Fz0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4421.739130434783" y="126.5625"/>
+            <point key="canvasLocation" x="3403" y="437"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="O3h-Se-v9C">
@@ -384,8 +337,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <image name="square.and.pencil" catalog="system" width="128" height="118"/>
         <image name="trash" catalog="system" width="121" height="128"/>
     </resources>
 </document>
