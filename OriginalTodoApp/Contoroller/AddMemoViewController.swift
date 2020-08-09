@@ -13,6 +13,8 @@ class AddMemoViewController: UIViewController {
     
     @IBOutlet weak var memoTextFiled: UITextView!
     var shareText:String = ""
+    let ud = UserDefaults.standard
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +28,6 @@ class AddMemoViewController: UIViewController {
     
     
         let inputText = memoTextFiled.text
-        let ud = UserDefaults.standard
         if ud.array(forKey: "memoArray") != nil{
             var saveMemoArray = ud.array(forKey: "memoArray") as! [String]
             if inputText != ""{
@@ -78,10 +79,16 @@ class AddMemoViewController: UIViewController {
     func showAlert(title:String){
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
 
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        let okAction: UIAlertAction = UIAlertAction(title: "OK",style: UIAlertAction.Style.default,handler:{(action:UIAlertAction!) -> Void in
+            var saveMemoArray = self.ud.array(forKey: "memoArray") as! [String]
+            let inputText = self.memoTextFiled.text
+            saveMemoArray.append(inputText!)
+            self.ud.set(saveMemoArray, forKey: "memoArray")
+               })
 
-        alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
-
+       let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル",style: UIAlertAction.Style.cancel,handler:nil)
+       alert.addAction(okAction)
+       alert.addAction(cancelAction)
         self.present(alert, animated: true, completion:nil)
      
     }

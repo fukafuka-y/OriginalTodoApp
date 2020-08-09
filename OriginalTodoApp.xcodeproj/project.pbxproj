@@ -48,6 +48,7 @@
 		5A7FEFA424C42C980056F49F /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FEFA324C42C980056F49F /* TimePicker.swift */; };
 		5A9A3AEA24DE542D000F8233 /* Weather1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9A3AE924DE542D000F8233 /* Weather1ViewController.swift */; };
 		5A9A3AF024DE828A000F8233 /* Weather2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9A3AEF24DE828A000F8233 /* Weather2ViewController.swift */; };
+		5A9A3B1224DF8D15000F8233 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9A3B1124DF8D15000F8233 /* ConfigurationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,7 @@
 		5A7FEFA324C42C980056F49F /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 		5A9A3AE924DE542D000F8233 /* Weather1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather1ViewController.swift; sourceTree = "<group>"; };
 		5A9A3AEF24DE828A000F8233 /* Weather2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather2ViewController.swift; sourceTree = "<group>"; };
+		5A9A3B1124DF8D15000F8233 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		D31DD2906DEF17F1926C12B1 /* Pods-OriginalTodoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginalTodoApp.release.xcconfig"; path = "Target Support Files/Pods-OriginalTodoApp/Pods-OriginalTodoApp.release.xcconfig"; sourceTree = "<group>"; };
 		E67F2ECC9DB0359A705CC3BA /* Pods_OriginalTodoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OriginalTodoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -196,6 +198,7 @@
 				5A687C9724CBD0AE00A87459 /* DetailViewController.swift */,
 				5A192D4824D7779D00872D78 /* CalenderViewController.swift */,
 				5A9A3AEF24DE828A000F8233 /* Weather2ViewController.swift */,
+				5A9A3B1124DF8D15000F8233 /* ConfigurationViewController.swift */,
 			);
 			path = Contoroller;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				5A577B4E24C7B259000169F1 /* News5ViewController.swift in Sources */,
 				5A577B3224C45CC3000169F1 /* NewsViewController.swift in Sources */,
 				5A577B3B24C45E5E000169F1 /* WeatherCell.swift in Sources */,
+				5A9A3B1224DF8D15000F8233 /* ConfigurationViewController.swift in Sources */,
 				5A192D4124D6544600872D78 /* Data.swift in Sources */,
 				5A577B2E24C45C3F000169F1 /* BaseViewController.swift in Sources */,
 				5A577B3E24C45F28000169F1 /* NewsData.swift in Sources */,
