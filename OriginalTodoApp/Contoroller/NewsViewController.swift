@@ -20,15 +20,19 @@ class NewsViewController: UITableViewController,SegementSlideContentScrollViewDe
    
     var currentElemantName:String!
     
-    var topic2:String = "/SPORTS"
-    var tooic2String:String = ""
-    var topic3:String = "/ENTERTAINMENT"
-    var topic3String:String = ""
-    var topic4:String = "/BUSINESS"
-    var topic4String:String = ""
-    var topic5:String = "/WORLD"
-    var topic5String:String = ""
+    var topic1:String = ""
+    var topic2:String = ""
+    var topic3:String = ""
+    var topic4:String = ""
+    var topic5:String = ""
+    var topic6:String = ""
+
     
+    let ud = UserDefaults.standard
+    
+    var topicArray:[String] = []
+//    var topicSaveArray : [String] = []
+//        UserDefaults.standard.array(forKey: "topic") as! [String]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,11 +52,63 @@ class NewsViewController: UITableViewController,SegementSlideContentScrollViewDe
         backgroudImage.contentMode = .scaleToFill
         backgroudImage.alpha = 0.4
         self.tableView.backgroundView = backgroudImage
-       
-        UserDefaults.standard.set(topic2, forKey: "topic2")
-        UserDefaults.standard.set(topic3, forKey: "topic3")
-        UserDefaults.standard.set(topic4, forKey: "topic4")
-        UserDefaults.standard.set(topic5, forKey: "topic5")
+        
+        
+        
+        if ud.object(forKey: "topic2") != nil{
+            topic2 = ud.object(forKey: "topic2") as! String
+        }else{
+            topic2 = "/SPORTS"
+        }
+        
+        if ud.object(forKey: "topic3") != nil{
+            topic3 = ud.object(forKey: "topic3") as! String
+        }else{
+            topic3 = "/ENTERTAINMENT"
+        }
+        
+        if ud.object(forKey: "topic4") != nil{
+            topic4 = ud.object(forKey: "topic4") as! String
+        }else{
+            topic4 = "/BUSINESS"
+        }
+        
+        if ud.object(forKey: "topic5") != nil{
+            topic5 = ud.object(forKey: "topic5") as! String
+        }else{
+            topic5 = "/WORLD"
+        }
+        
+        if ud.object(forKey: "topic6") != nil{
+            topic6 = ud.object(forKey: "topic5") as! String
+        }else{
+            topic6 = "/SCIENCE"
+        }
+        
+            
+
+            
+        topicArray.append(topic1)
+        topicArray.append(topic2)
+        topicArray.append(topic3)
+        topicArray.append(topic4)
+        topicArray.append(topic5)
+        topicArray.append(topic6)
+        
+        
+        ud.set(topicArray, forKey: "topic")
+        
+        ud.removeObject(forKey: "topic2")
+        ud.removeObject(forKey: "topic3")
+        ud.removeObject(forKey: "topic4")
+        ud.removeObject(forKey: "topic5")
+        
+        
+        
+//        UserDefaults.standard.set(topic2, forKey: "topic2")
+//        UserDefaults.standard.set(topic3, forKey: "topic3")
+//        UserDefaults.standard.set(topic4, forKey: "topic4")
+//        UserDefaults.standard.set(topic5, forKey: "topic5")
         
     }
 

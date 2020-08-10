@@ -10,7 +10,7 @@ import SegementSlide
 
 class Base2ViewController: SegementSlideDefaultViewController {
 
-    let titleArray:[String] = ["ニュース","スポーツ","エンタメ","経済","国際",""]
+    let titleArray:[String] = ["ニュース","スポーツ","エンタメ","経済","国際","科学"]
     
         override func viewDidLoad() {
             super.viewDidLoad()
@@ -25,6 +25,7 @@ class Base2ViewController: SegementSlideDefaultViewController {
             return[titleArray[0],titleArray[1],titleArray[2],titleArray[3],titleArray[4],titleArray[5]]
             
             }
+    
 
 
 
@@ -45,6 +46,9 @@ class Base2ViewController: SegementSlideDefaultViewController {
             
             case 4:
             return News5ViewController()
+            
+            case 5:
+            return News6ViewController()
             
            default:
                return NewsViewController()

@@ -20,7 +20,7 @@ class News6ViewController: UITableViewController,SegementSlideContentScrollViewD
    
      var currentElemantName:String!
     
-    var topic:String = "/world"
+    var topicArray:[String] = UserDefaults.standard.array(forKey: "topic") as! [String]
     
     
     override func viewDidLoad() {
@@ -29,19 +29,20 @@ class News6ViewController: UITableViewController,SegementSlideContentScrollViewD
         tableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "NewsCell")
         tableView.backgroundColor = .clear
         
-        let urlString = "https://news.yahoo.co.jp/pickup\(topic)/rss.xml"
+        let topic = topicArray[5]
+        let urlString = "https://news.google.com/news/rss/headlines/section/topic\(topic)?hl=ja&gl=JP&ceid=JP:ja"
         let url:URL = URL(string:urlString)!
         parser = XMLParser(contentsOf: url)!
         parser.delegate = self
         parser.parse()
 
-        let backgroudImage:UIImageView = UIImageView(frame: CGRect(x: 0, y: 0 , width:self.view.frame.width, height:self.view.frame.height))
-        let image = UIImage(named: "background5")
-        backgroudImage.image = image
-        backgroudImage.contentMode = .scaleToFill
-        backgroudImage.alpha = 0.4
-        self.tableView.backgroundView = backgroudImage
-       
+//        let backgroudImage:UIImageView = UIImageView(frame: CGRect(x: 0, y: 0 , width:self.view.frame.width, height:self.view.frame.height))
+//        let image = UIImage(named: "background5")
+//        backgroudImage.image = image
+//        backgroudImage.contentMode = .scaleToFill
+//        backgroudImage.alpha = 0.4
+//        self.tableView.backgroundView = backgroudImage
+//       
         
         
     }
@@ -59,7 +60,7 @@ class News6ViewController: UITableViewController,SegementSlideContentScrollViewD
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return view.frame.size.height/8
+        return view.frame.size.height/10
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         

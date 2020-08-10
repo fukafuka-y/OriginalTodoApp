@@ -31,7 +31,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
      
      var todoTimeArray:[String] = ["8/2 10:00","8/2 8:00"]
      
-     var colorNumberArray:[Int] = [0,0,0]
+     var colorNumberArray:[Int] = [0,0]
      var colorNumber:Int = 0
     
      var DataArray :[Data] = []

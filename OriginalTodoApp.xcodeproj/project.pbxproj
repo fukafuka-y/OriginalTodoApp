@@ -53,6 +53,7 @@
 		5AF52D9D24E0D40000947D70 /* SelectNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF52D9B24E0D40000947D70 /* SelectNewsCell.swift */; };
 		5AF52D9E24E0D40000947D70 /* SelectNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AF52D9C24E0D40000947D70 /* SelectNewsCell.xib */; };
 		5AF52DA024E0DABD00947D70 /* News6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF52D9F24E0DABD00947D70 /* News6ViewController.swift */; };
+		5AF52DA224E1389800947D70 /* NewsSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF52DA124E1389800947D70 /* NewsSelect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +105,7 @@
 		5AF52D9B24E0D40000947D70 /* SelectNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectNewsCell.swift; sourceTree = "<group>"; };
 		5AF52D9C24E0D40000947D70 /* SelectNewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectNewsCell.xib; sourceTree = "<group>"; };
 		5AF52D9F24E0DABD00947D70 /* News6ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News6ViewController.swift; sourceTree = "<group>"; };
+		5AF52DA124E1389800947D70 /* NewsSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSelect.swift; sourceTree = "<group>"; };
 		D31DD2906DEF17F1926C12B1 /* Pods-OriginalTodoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginalTodoApp.release.xcconfig"; path = "Target Support Files/Pods-OriginalTodoApp/Pods-OriginalTodoApp.release.xcconfig"; sourceTree = "<group>"; };
 		E67F2ECC9DB0359A705CC3BA /* Pods_OriginalTodoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OriginalTodoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -175,6 +177,7 @@
 				5A9A3AE924DE542D000F8233 /* Weather1ViewController.swift */,
 				5AF52D9B24E0D40000947D70 /* SelectNewsCell.swift */,
 				5AF52D9C24E0D40000947D70 /* SelectNewsCell.xib */,
+				5AF52DA124E1389800947D70 /* NewsSelect.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AF52DA224E1389800947D70 /* NewsSelect.swift in Sources */,
 				5A7FEF7524C3CA190056F49F /* AppDelegate.swift in Sources */,
 				5A7FEF9024C3CBF80056F49F /* TodoViewController.swift in Sources */,
 				5A9A3AF024DE828A000F8233 /* Weather2ViewController.swift in Sources */,

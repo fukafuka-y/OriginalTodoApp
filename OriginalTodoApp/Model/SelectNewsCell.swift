@@ -14,7 +14,17 @@ class SelectNewsCell: UITableViewCell {
     
     @IBOutlet weak var selectButton: UISegmentedControl!
     
+    let ud = UserDefaults.standard
+    
     var newsBool:Bool = true
+    
+    let newsArray:[String] = ["スポーツ","エンタメ","経済","国際","科学","生活","国内"]
+
+    var topic2:String = "/SPORTS"
+    var topic3:String = "/ENTERTAINMENT"
+    var topic4:String = "/BUSINESS"
+    var topic5:String = "/WORLD"
+    var topic6:String = "/SCIENCE"
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,12 +40,8 @@ class SelectNewsCell: UITableViewCell {
     func changeNews(){
         
         if selectButton.selectedSegmentIndex == 0{
-            
             newsBool = true
-            
-            
         }else{
-            
             newsBool = false
         }
         

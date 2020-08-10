@@ -18,9 +18,9 @@ class News5ViewController: UITableViewController,SegementSlideContentScrollViewD
     //XMLParserのインスタンス化
     var parser = XMLParser()
    
-     var currentElemantName:String!
+    var currentElemantName:String!
     
-    var topic:String = ""
+    var topicArray:[String] = UserDefaults.standard.array(forKey: "topic") as! [String]
     
     
     override func viewDidLoad() {
@@ -29,7 +29,7 @@ class News5ViewController: UITableViewController,SegementSlideContentScrollViewD
         tableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "NewsCell")
         tableView.backgroundColor = .clear
         
-        let topic = UserDefaults.standard.object(forKey: "topic5") as! String
+        let topic = topicArray[4]
         
         let urlString = "https://news.google.com/news/rss/headlines/section/topic\(topic)?hl=ja&gl=JP&ceid=JP:ja"
         let url:URL = URL(string:urlString)!
@@ -47,6 +47,15 @@ class News5ViewController: UITableViewController,SegementSlideContentScrollViewD
         
         
     }
+    
+//    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        
+//        tableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "NewsCell")
+//        tableView.backgroundColor = .clear
+//        
+//    }
 
     // MARK: - Table view data source
 

@@ -21,7 +21,7 @@ class News2ViewController: UITableViewController,SegementSlideContentScrollViewD
    
      var currentElemantName:String!
     
-    
+    var topicArray:[String] = UserDefaults.standard.array(forKey: "topic") as! [String]
     
 //    var topic:String = "/SPORTS"
     var topic:String = ""
@@ -29,8 +29,8 @@ class News2ViewController: UITableViewController,SegementSlideContentScrollViewD
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//         UserDefaults.standard.set(topic, forKey: "topic2")
-         let topic = UserDefaults.standard.object(forKey: "topic2") as! String
+//
+         let topic = topicArray[1]
         
         let urlString = "https://news.google.com/news/rss/headlines/section/topic\(topic)?hl=ja&gl=JP&ceid=JP:ja"
         let url:URL = URL(string:urlString)!

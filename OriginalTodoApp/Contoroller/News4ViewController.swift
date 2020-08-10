@@ -20,7 +20,8 @@ class News4ViewController: UITableViewController,SegementSlideContentScrollViewD
     var parser = XMLParser()
    
     var currentElemantName:String!
-    var topic:String = ""
+    
+    var topicArray:[String] = UserDefaults.standard.array(forKey: "topic") as! [String]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,7 @@ class News4ViewController: UITableViewController,SegementSlideContentScrollViewD
         tableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "NewsCell")
         tableView.backgroundColor = .clear
         
-        let topic = UserDefaults.standard.object(forKey: "topic4") as! String
+        let topic = topicArray[3]
         
         let urlString = "https://news.google.com/news/rss/headlines/section/topic\(topic)?hl=ja&gl=JP&ceid=JP:ja"
         let url:URL = URL(string:urlString)!
