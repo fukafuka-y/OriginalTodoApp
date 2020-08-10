@@ -15,14 +15,13 @@ class SelectNewsViewController: UIViewController,UITableViewDelegate,UITableView
     @IBOutlet weak var newsTableView: UITableView!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         newsTableView.delegate = self
         newsTableView.dataSource = self
         
-        tableView.register(UINib(nibName: "SelectNewsCell", bundle: nil), forCellReuseIdentifier: "SelectNewsCell")
+        newsTableView.register(UINib(nibName: "SelectNewsCell", bundle: nil), forCellReuseIdentifier: "SelectNewsCell")
       
     }
     
@@ -31,16 +30,18 @@ class SelectNewsViewController: UIViewController,UITableViewDelegate,UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "selectNewsCell") as! selectNewsCell
-        
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SelectNewsCell") as! SelectNewsCell
+        cell.newsTextLabel.text = newsArray[indexPath.row]
+        return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
        return 1
     }
 
-   
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return view.frame.size.height/12
+    }
     
     
     /*
