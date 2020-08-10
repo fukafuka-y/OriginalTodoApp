@@ -52,6 +52,7 @@
 		5AF52D9A24E0D00200947D70 /* SelectNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF52D9924E0D00200947D70 /* SelectNewsViewController.swift */; };
 		5AF52D9D24E0D40000947D70 /* SelectNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF52D9B24E0D40000947D70 /* SelectNewsCell.swift */; };
 		5AF52D9E24E0D40000947D70 /* SelectNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AF52D9C24E0D40000947D70 /* SelectNewsCell.xib */; };
+		5AF52DA024E0DABD00947D70 /* News6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF52D9F24E0DABD00947D70 /* News6ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +103,7 @@
 		5AF52D9924E0D00200947D70 /* SelectNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectNewsViewController.swift; sourceTree = "<group>"; };
 		5AF52D9B24E0D40000947D70 /* SelectNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectNewsCell.swift; sourceTree = "<group>"; };
 		5AF52D9C24E0D40000947D70 /* SelectNewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectNewsCell.xib; sourceTree = "<group>"; };
+		5AF52D9F24E0DABD00947D70 /* News6ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News6ViewController.swift; sourceTree = "<group>"; };
 		D31DD2906DEF17F1926C12B1 /* Pods-OriginalTodoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginalTodoApp.release.xcconfig"; path = "Target Support Files/Pods-OriginalTodoApp/Pods-OriginalTodoApp.release.xcconfig"; sourceTree = "<group>"; };
 		E67F2ECC9DB0359A705CC3BA /* Pods_OriginalTodoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OriginalTodoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -192,22 +194,23 @@
 				5A7FEF7424C3CA190056F49F /* AppDelegate.swift */,
 				5A7FEF7624C3CA190056F49F /* SceneDelegate.swift */,
 				5A7FEF8F24C3CBF80056F49F /* TodoViewController.swift */,
-				5A577B2D24C45C3F000169F1 /* BaseViewController.swift */,
-				5A577B2F24C45CA9000169F1 /* WeatherViewController.swift */,
+				5A9A3AEF24DE828A000F8233 /* Weather2ViewController.swift */,
 				5A577B3124C45CC3000169F1 /* NewsViewController.swift */,
-				5A577B3324C45DC5000169F1 /* WebViewController.swift */,
 				5A577B3F24C465A9000169F1 /* Base2ViewController.swift */,
 				5A577B4124C5D30D000169F1 /* News2ViewController.swift */,
 				5A577B4324C5D324000169F1 /* News3ViewController.swift */,
 				5A577B4524C5D336000169F1 /* News4ViewController.swift */,
 				5A577B4D24C7B259000169F1 /* News5ViewController.swift */,
+				5AF52D9F24E0DABD00947D70 /* News6ViewController.swift */,
+				5A577B3324C45DC5000169F1 /* WebViewController.swift */,
 				5A687C9324CBD08D00A87459 /* MemoViewController.swift */,
 				5A687C9524CBD0A000A87459 /* AddMemoViewController.swift */,
 				5A687C9724CBD0AE00A87459 /* DetailViewController.swift */,
-				5A192D4824D7779D00872D78 /* CalenderViewController.swift */,
-				5A9A3AEF24DE828A000F8233 /* Weather2ViewController.swift */,
 				5A9A3B1124DF8D15000F8233 /* ConfigurationViewController.swift */,
 				5AF52D9924E0D00200947D70 /* SelectNewsViewController.swift */,
+				5A577B2D24C45C3F000169F1 /* BaseViewController.swift */,
+				5A192D4824D7779D00872D78 /* CalenderViewController.swift */,
+				5A577B2F24C45CA9000169F1 /* WeatherViewController.swift */,
 			);
 			path = Contoroller;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				5A577B3424C45DC5000169F1 /* WebViewController.swift in Sources */,
 				5AF52D9A24E0D00200947D70 /* SelectNewsViewController.swift in Sources */,
 				5A687C9824CBD0AE00A87459 /* DetailViewController.swift in Sources */,
+				5AF52DA024E0DABD00947D70 /* News6ViewController.swift in Sources */,
 				5A9A3AEA24DE542D000F8233 /* Weather1ViewController.swift in Sources */,
 				5A577B4224C5D30D000169F1 /* News2ViewController.swift in Sources */,
 				5A7FEF9F24C40B480056F49F /* ToDoCell.swift in Sources */,

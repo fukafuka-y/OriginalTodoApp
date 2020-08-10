@@ -23,16 +23,20 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CkS-xm-5XB">
-                        <rect key="frame" x="304" y="23" width="49" height="31"/>
+                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iic-It-GRp">
+                        <rect key="frame" x="243" y="22" width="117" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </switch>
+                        <segments>
+                            <segment title="表示"/>
+                            <segment title="非表示"/>
+                        </segments>
+                    </segmentedControl>
                 </subviews>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="newsSwitch" destination="CkS-xm-5XB" id="zSB-et-ZSE"/>
                 <outlet property="newsTextLabel" destination="vNc-V8-dVd" id="XQM-Gj-Ow4"/>
+                <outlet property="selectButton" destination="iic-It-GRp" id="jfR-BQ-zvb"/>
             </connections>
             <point key="canvasLocation" x="181.15942028985509" y="140.95982142857142"/>
         </tableViewCell>

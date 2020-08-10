@@ -10,7 +10,7 @@ import UIKit
 
 class SelectNewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    let newsArray:[String] = ["国際","エンタメ","IT","地域","国内","経済","スポーツ","科学"]
+    let newsArray:[String] = ["スポーツ","エンタメ","経済","国際","IT","地域","国内","科学"]
     
     @IBOutlet weak var newsTableView: UITableView!
     
@@ -32,6 +32,7 @@ class SelectNewsViewController: UIViewController,UITableViewDelegate,UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SelectNewsCell") as! SelectNewsCell
         cell.newsTextLabel.text = newsArray[indexPath.row]
+        
         return cell
     }
     
@@ -43,6 +44,11 @@ class SelectNewsViewController: UIViewController,UITableViewDelegate,UITableView
         return view.frame.size.height/12
     }
     
+    func change(){
+        
+        
+        
+    }
     
     /*
     // MARK: - Navigation
