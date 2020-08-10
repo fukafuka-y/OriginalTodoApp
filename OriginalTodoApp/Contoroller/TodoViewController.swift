@@ -25,6 +25,8 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
     @IBOutlet weak var orangeButton: UIButton!
     @IBOutlet weak var greenButton: UIButton!
     @IBOutlet weak var plusButton: UIButton!
+    
+    
 
    
      var todoTextArray:[String] = ["長押しで消去","右上の＋ボタンよりToDo入力"]
@@ -148,6 +150,7 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
     override func viewWillAppear(_ animated: Bool) {
         todoTableView.delegate = self
         todoTableView.dataSource = self
+        todoTableView.reloadData()
     }
     
    
@@ -236,10 +239,43 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
                  let data1 : String = self.stringFromDate(date: DataArray[indexPath.row].date)
                  let text1 : String = DataArray[indexPath.row].string
                  let colorNumber :Int = DataArray[indexPath.row].Int
+                 
                  cell.ToDoTextLabel.text = text1
                  cell.ToDoTimeLabel.text = data1
                  cell.selectionStyle = .none
            
+            var mojisize:Int = 2
+            
+            if UserDefaults.standard.object(forKey: "mojisize") != nil{
+                mojisize = UserDefaults.standard.object(forKey: "mojisize") as! Int
+            }
+            
+            switch mojisize {
+            case 0:
+                cell.ToDoTimeLabel.font = UIFont.systemFont(ofSize: 21.0)
+                cell.ToDoTextLabel.font = UIFont.systemFont(ofSize: 24.0)
+                cell.ToDoImageView.frame = CGRect(x: 10, y: 24, width: 40, height: 40)
+            case 1:
+                cell.ToDoTimeLabel.font = UIFont.systemFont(ofSize: 18.0)
+                cell.ToDoTextLabel.font = UIFont.systemFont(ofSize: 21.0)
+                cell.ToDoImageView.frame = CGRect(x: 12, y: 21, width: 40, height: 40)
+            case 2:
+                cell.ToDoTimeLabel.font = UIFont.systemFont(ofSize: 15.0)
+                cell.ToDoTextLabel.font = UIFont.systemFont(ofSize: 18.0)
+                cell.ToDoImageView.frame = CGRect(x: 14, y: 19, width: 30, height: 30)
+            case 3:
+                cell.ToDoTimeLabel.font = UIFont.systemFont(ofSize: 12.0)
+                cell.ToDoTextLabel.font = UIFont.systemFont(ofSize: 15.0)
+                cell.ToDoImageView.frame = CGRect(x: 20, y: 16, width: 25, height: 25)
+            case 4:
+                cell.ToDoTimeLabel.font = UIFont.systemFont(ofSize: 9.0)
+                cell.ToDoTextLabel.font = UIFont.systemFont(ofSize: 12.0)
+                cell.ToDoImageView.frame = CGRect(x: 26, y: 13, width: 20, height: 20)
+            default:
+                cell.ToDoTimeLabel.font = UIFont.systemFont(ofSize: 15.0)
+                cell.ToDoTextLabel.font = UIFont.systemFont(ofSize: 15.0)
+                cell.ToDoImageView.frame = CGRect(x: 14, y: 19, width: 30, height: 30)
+            }
             
             switch colorNumber {
             case 0:
@@ -267,7 +303,30 @@ class TodoViewController: UIViewController,UITableViewDataSource,UITableViewDele
      }
    
      func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-          return view.frame.size.height/14
+        
+        var mojisize:Int = 2
+        var cellhight:Int = 14
+                   
+        if UserDefaults.standard.object(forKey: "mojisize") != nil{
+            mojisize = UserDefaults.standard.object(forKey: "mojisize") as! Int
+        }
+         
+        switch mojisize {
+        case 0:
+            cellhight = 10
+        case 1:
+            cellhight = 12
+        case 2:
+            cellhight = 14
+        case 3:
+            cellhight = 16
+        case 4:
+            cellhight = 18
+        default:
+            cellhight = 14
+        }
+        
+        return view.frame.size.height / CGFloat(cellhight)
              }
      
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -14,9 +14,8 @@ class MojiChangeViewController: UIViewController,UITableViewDelegate,UITableView
     @IBOutlet weak var mojiTableView: UITableView!
     
     let mojiArray:[String] = ["大きい","少し大きい","通常","少し小さい","小さい"]
-    let checkArray:[String] = ["checkmark.circle","circle","circle","circle","circle"]
-    let checkImage = UIImage(systemName:"checkmark.circle")! as UIImage
-    let nocheckImage = UIImage(systemName:"circle")! as UIImage
+    var checkArray:[String] = ["circle","circle","checkmark.circle","circle","circle"]
+    var mojisize:Int = 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +35,39 @@ class MojiChangeViewController: UIViewController,UITableViewDelegate,UITableView
         cell.imageView?.image = UIImage(systemName: checkArray[indexPath.row])
         return cell
        }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        checkArray.removeAll()
+        switch indexPath.row {
+        case 0:
+        checkArray = ["checkmark.circle","circle","circle","circle","circle"]
+        mojisize = 0
+        UserDefaults.standard.set(mojisize, forKey: "mojisize")
+        case 1:
+        checkArray = ["circle","checkmark.circle","circle","circle","circle"]
+        mojisize = 1
+        UserDefaults.standard.set(mojisize, forKey: "mojisize")
+        case 2:
+        checkArray = ["circle","circle","checkmark.circle","circle","circle"]
+        mojisize = 2
+        UserDefaults.standard.set(mojisize, forKey: "mojisize")
+        case 3:
+        checkArray = ["circle","circle","circle","checkmark.circle","circle"]
+        mojisize = 3
+        UserDefaults.standard.set(mojisize, forKey: "mojisize")
+        case 4:
+        checkArray = ["circle","circle","circle","circle","checkmark.circle"]
+        mojisize = 4
+        UserDefaults.standard.set(mojisize, forKey: "mojisize")
+        default:
+        checkArray = ["checkmark.circle","circle","circle","circle","circle"]
+        mojisize = 0
+        UserDefaults.standard.set(mojisize, forKey: "mojisize")
+        
+        }
+        
+        mojiTableView.reloadData()
+    }
     
 
     /*
