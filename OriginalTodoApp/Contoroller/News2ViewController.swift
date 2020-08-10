@@ -20,20 +20,26 @@ class News2ViewController: UITableViewController,SegementSlideContentScrollViewD
     var parser = XMLParser()
    
      var currentElemantName:String!
-    var topic:String = "/sports"
     
+    
+    
+    var topic:String = "/sports"
+    var topic2:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "NewsCell")
-        tableView.backgroundColor = .clear
+         UserDefaults.standard.set(topic, forKey: "topic2")
+         let topic2 = UserDefaults.standard.object(forKey: "topic2") as! String
         
-        let urlString = "https://news.yahoo.co.jp/pickup\(topic)/rss.xml"
+        let urlString = "https://news.yahoo.co.jp/pickup\(topic2)/rss.xml"
         let url:URL = URL(string:urlString)!
         parser = XMLParser(contentsOf: url)!
         parser.delegate = self
         parser.parse()
+        
+        tableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "NewsCell")
+        tableView.backgroundColor = .clear
 
         let backgroudImage:UIImageView = UIImageView(frame: CGRect(x: 0, y: 0 , width:self.view.frame.width, height:self.view.frame.height))
         let image = UIImage(named: "background2")
@@ -44,6 +50,14 @@ class News2ViewController: UITableViewController,SegementSlideContentScrollViewD
         
         
     }
+    
+//    func topicData(){
+//
+//        UserDefaults.standard.set(topic, forKey: "topic2")
+//        let topic2 = UserDefaults.standard.object(forKey: "topic2") as! String
+//        print(topic2)
+//
+//    }
 
     // MARK: - Table view data source
 
