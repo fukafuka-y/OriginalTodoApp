@@ -22,8 +22,6 @@ class News3ViewController: UITableViewController,SegementSlideContentScrollViewD
      var currentElemantName:String!
     
     var topic:String = ""
-    var topic3:String = "/ENTERTAINMENT"
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +29,6 @@ class News3ViewController: UITableViewController,SegementSlideContentScrollViewD
         tableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "NewsCell")
         tableView.backgroundColor = .clear
         
-        UserDefaults.standard.set(topic3, forKey: "topic3")
         let topic = UserDefaults.standard.object(forKey: "topic3") as! String
         
         let urlString = "https://news.google.com/news/rss/headlines/section/topic\(topic)?hl=ja&gl=JP&ceid=JP:ja"

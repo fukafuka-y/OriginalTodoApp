@@ -18,7 +18,16 @@ class NewsViewController: UITableViewController,SegementSlideContentScrollViewDe
     //XMLParserのインスタンス化
     var parser = XMLParser()
    
-     var currentElemantName:String!
+    var currentElemantName:String!
+    
+    var topic2:String = "/SPORTS"
+    var tooic2String:String = ""
+    var topic3:String = "/ENTERTAINMENT"
+    var topic3String:String = ""
+    var topic4:String = "/BUSINESS"
+    var topic4String:String = ""
+    var topic5:String = "/WORLD"
+    var topic5String:String = ""
     
     
     override func viewDidLoad() {
@@ -40,7 +49,10 @@ class NewsViewController: UITableViewController,SegementSlideContentScrollViewDe
         backgroudImage.alpha = 0.4
         self.tableView.backgroundView = backgroudImage
        
-        
+        UserDefaults.standard.set(topic2, forKey: "topic2")
+        UserDefaults.standard.set(topic3, forKey: "topic3")
+        UserDefaults.standard.set(topic4, forKey: "topic4")
+        UserDefaults.standard.set(topic5, forKey: "topic5")
         
     }
 

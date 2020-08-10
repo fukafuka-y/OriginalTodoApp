@@ -23,16 +23,16 @@ class News2ViewController: UITableViewController,SegementSlideContentScrollViewD
     
     
     
-    var topic:String = "/SPORTS"
-    var topic3:String = ""
+//    var topic:String = "/SPORTS"
+    var topic:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-         UserDefaults.standard.set(topic, forKey: "topic2")
-         let topic2 = UserDefaults.standard.object(forKey: "topic2") as! String
+//         UserDefaults.standard.set(topic, forKey: "topic2")
+         let topic = UserDefaults.standard.object(forKey: "topic2") as! String
         
-        let urlString = "https://news.google.com/news/rss/headlines/section/topic\(topic2)?hl=ja&gl=JP&ceid=JP:ja"
+        let urlString = "https://news.google.com/news/rss/headlines/section/topic\(topic)?hl=ja&gl=JP&ceid=JP:ja"
         let url:URL = URL(string:urlString)!
         parser = XMLParser(contentsOf: url)!
         parser.delegate = self

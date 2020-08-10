@@ -10,11 +10,12 @@ import UIKit
 
 class SelectNewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    let newsArray:[String] = ["スポーツ","エンタメ","経済","国際","IT","地域","国内","科学"]
-    let news2Array:[String] = ["/sport","/entertainment","/economy","/world","/computer","/local","/domestic","/science"]
+    let newsArray:[String] = ["スポーツ","エンタメ","経済","国際","科学","生活","国内"]
+    let news2Array:[String] = ["/SPORTS","/ENTERTAINMENT","/BUSINESS","/WORLD","/SCIENCE","/HEALTH","/NATION"]
     
     @IBOutlet weak var newsTableView: UITableView!
     
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
