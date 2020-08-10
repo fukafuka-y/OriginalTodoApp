@@ -16,6 +16,8 @@ class DetailViewController: UIViewController {
     var memoText:String = ""
     var selectedRow:Int!
     var shareText:String = ""
+    let ud = UserDefaults.standard
+    var saveMemoArray:[String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +27,25 @@ class DetailViewController: UIViewController {
 
     @IBAction func addMemo(_ sender: Any) {
 //
-        showAlert(title: "保存しました")
+        if memoTextView.text != ""{
+                   
+            showAlert(title: "保存しますか？")
+            
+        }else{
+            
+            let alert2Controller = UIAlertController(title:"何も書いてありません" ,
+                                                     message: nil,
+                                                     preferredStyle: .alert)
+            alert2Controller.addAction(UIAlertAction(title: "OK",
+                                                     style: .default,
+                                                     handler: nil))
+            present(alert2Controller, animated: true)
+            
+               
+              }
+           }
        
         
-    }
     
         
     @IBAction func trush(_ sender: Any) {
@@ -60,26 +77,42 @@ class DetailViewController: UIViewController {
     
     
     
-    
-    
-    
-        
     func showAlert(title:String){
-        
-        let alert: UIAlertController = UIAlertController(title:title,message: nil,preferredStyle:.alert)
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+
         let okAction: UIAlertAction = UIAlertAction(title: "OK",style: UIAlertAction.Style.default,handler:{(action:UIAlertAction!) -> Void in
-           DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.Decision()
-            }
-        })
-        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル",style: UIAlertAction.Style.cancel,handler:nil)
-        alert.addAction(okAction)
-        alert.addAction(cancelAction)
-        
+           
+            let inputText = self.memoTextView.text
+            self.saveMemoArray.append(inputText!)
+            self.ud.set(self.saveMemoArray, forKey: "memoArray")
+            self.navigationController?.popViewController(animated: true)
+               })
+
+       let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル",style: UIAlertAction.Style.cancel,handler:nil)
+       alert.addAction(okAction)
+       alert.addAction(cancelAction)
         self.present(alert, animated: true, completion:nil)
-       
      
     }
+    
+    
+        
+//    func showAlert(title:String){
+//
+//        let alert: UIAlertController = UIAlertController(title:title,message: nil,preferredStyle:.alert)
+//        let okAction: UIAlertAction = UIAlertAction(title: "OK",style: UIAlertAction.Style.default,handler:{(action:UIAlertAction!) -> Void in
+//           DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//            self.Decision()
+//            }
+//        })
+//        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル",style: UIAlertAction.Style.cancel,handler:nil)
+//        alert.addAction(okAction)
+//        alert.addAction(cancelAction)
+//
+//        self.present(alert, animated: true, completion:nil)
+//
+//
+//    }
     
 
     func deliteAlert(title:String){
@@ -87,7 +120,7 @@ class DetailViewController: UIViewController {
         
         let alert: UIAlertController = UIAlertController(title:title,message: nil,preferredStyle:.alert)
         let okAction: UIAlertAction = UIAlertAction(title: "OK",style: UIAlertAction.Style.default,handler:{(action:UIAlertAction!) -> Void in
-           DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+           DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             self.trush1()
             }
         })

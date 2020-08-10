@@ -60,6 +60,12 @@ class MemoViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             let selectedIndexPath = memoTabelView.indexPathForSelectedRow!
             detailVC.memoText = memoArray[selectedIndexPath.row]
             detailVC.selectedRow = selectedIndexPath.row
+            memoArray.remove(at: selectedIndexPath.row)
+            detailVC.saveMemoArray = memoArray
+            
+        }else if segue.identifier == "add"{
+            let addVC = segue.destination as! AddMemoViewController
+            addVC.saveMemoArray = memoArray
             
         }
     }
@@ -72,6 +78,12 @@ class MemoViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                 tableView.reloadData()
             }
     }
+    
+    
+    @IBAction func addMemo(_ sender: Any) {
+        performSegue(withIdentifier: "add", sender: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

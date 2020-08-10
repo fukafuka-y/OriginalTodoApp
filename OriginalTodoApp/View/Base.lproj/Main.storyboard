@@ -431,13 +431,14 @@
                     <navigationItem key="navigationItem" id="Y5k-hH-QJ6">
                         <barButtonItem key="rightBarButtonItem" image="square.and.pencil" catalog="system" id="dqi-pv-Pg7">
                             <connections>
-                                <segue destination="sf5-FI-3Dn" kind="show" id="zfK-Nh-Igh"/>
+                                <action selector="addMemo:" destination="QJp-48-C9o" id="h6b-lE-vco"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="memoTabelView" destination="FuN-Gv-UVS" id="akF-Cd-Dep"/>
                         <segue destination="oR7-cI-Pvi" kind="show" identifier="detail" id="fYU-Nw-HEH"/>
+                        <segue destination="sf5-FI-3Dn" kind="show" identifier="add" id="sTp-Wp-OaI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ox-gJ-JmY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -531,7 +532,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eSy-T4-TZx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3403" y="437"/>
+            <point key="canvasLocation" x="3403" y="367"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="O3h-Se-v9C">

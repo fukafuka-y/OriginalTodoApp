@@ -15,7 +15,7 @@ class AddMemoViewController: UIViewController {
     
     var shareText:String = ""
     let ud = UserDefaults.standard
-    
+     var saveMemoArray:[String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,10 +37,10 @@ class AddMemoViewController: UIViewController {
            let alert2Controller = UIAlertController(title:"何も書いてありません" ,
                                                           message: nil,
                                                           preferredStyle: .alert)
-                      alert2Controller.addAction(UIAlertAction(title: "OK",
-                                                              style: .default,
-                                                              handler: nil))
-                      present(alert2Controller, animated: true)
+            alert2Controller.addAction(UIAlertAction(title: "OK",
+                                                     style: .default,
+                                                     handler: nil))
+            present(alert2Controller, animated: true)
                     
         
        }
@@ -98,10 +98,10 @@ class AddMemoViewController: UIViewController {
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
 
         let okAction: UIAlertAction = UIAlertAction(title: "OK",style: UIAlertAction.Style.default,handler:{(action:UIAlertAction!) -> Void in
-            var saveMemoArray:[String] = []
+           
             let inputText = self.memoTextFiled.text
-            saveMemoArray.append(inputText!)
-            self.ud.set(saveMemoArray, forKey: "memoArray")
+            self.saveMemoArray.append(inputText!)
+            self.ud.set(self.saveMemoArray, forKey: "memoArray")
             self.navigationController?.popViewController(animated: true)
                })
 
