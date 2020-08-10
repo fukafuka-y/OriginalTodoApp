@@ -22,7 +22,7 @@ class SelectNewsCell: UITableViewCell {
 
     var topic2:String = "/SPORTS"
     var topic3:String = "/ENTERTAINMENT"
-    var topic4:String = "/BUSINESS"
+    var topic4:String = "/ENTERTAINMENT"
     var topic5:String = "/WORLD"
     var topic6:String = "/SCIENCE"
     

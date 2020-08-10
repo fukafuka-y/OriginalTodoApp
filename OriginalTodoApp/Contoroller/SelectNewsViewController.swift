@@ -13,6 +13,7 @@ class SelectNewsViewController: UIViewController,UITableViewDelegate,UITableView
     let newsArray:[String] = ["スポーツ","エンタメ","経済","国際","科学","生活","国内"]
     let news2Array:[String] = ["/SPORTS","/ENTERTAINMENT","/BUSINESS","/WORLD","/SCIENCE","/HEALTH","/NATION"]
     
+    let ud = UserDefaults.standard
     
     
     @IBOutlet weak var newsTableView: UITableView!
@@ -43,15 +44,19 @@ class SelectNewsViewController: UIViewController,UITableViewDelegate,UITableView
         }
         
         cell.changeNews()
-        
+       
         if cell.newsBool == true{
             
-            
+            ud.set(cell.topic2, forKey: "topic2")
+            ud.set(cell.topic3, forKey: "topic3")
+            ud.set(cell.topic4, forKey: "topic4")
+            ud.set(cell.topic5, forKey: "topic5")
+            ud.set(cell.topic6, forKey: "topic6")
         }else{
             
-            print(indexPath.row)
             
         }
+        
         
 //        cell.changeNews()
         
