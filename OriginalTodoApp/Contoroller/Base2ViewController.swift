@@ -10,7 +10,7 @@ import SegementSlide
 
 class Base2ViewController: SegementSlideDefaultViewController {
 
-    let titleArray:[String] = ["ニュース","スポーツ","エンタメ","経済","国際"]
+    let titleArray:[String] = ["ニュース","スポーツ","エンタメ","経済","国際","IT"]
     
         override func viewDidLoad() {
             super.viewDidLoad()

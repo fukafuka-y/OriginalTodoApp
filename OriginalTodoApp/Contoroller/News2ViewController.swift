@@ -23,7 +23,7 @@ class News2ViewController: UITableViewController,SegementSlideContentScrollViewD
     
     
     
-    var topic:String = "/sports"
+    var topic:String = "/SPORTS"
     var topic3:String = ""
     
     override func viewDidLoad() {
@@ -32,7 +32,7 @@ class News2ViewController: UITableViewController,SegementSlideContentScrollViewD
          UserDefaults.standard.set(topic, forKey: "topic2")
          let topic2 = UserDefaults.standard.object(forKey: "topic2") as! String
         
-        let urlString = "https://news.yahoo.co.jp/pickup\(topic2)/rss.xml"
+        let urlString = "https://news.google.com/news/rss/headlines/section/topic\(topic2)?hl=ja&gl=JP&ceid=JP:ja"
         let url:URL = URL(string:urlString)!
         parser = XMLParser(contentsOf: url)!
         parser.delegate = self
@@ -72,7 +72,7 @@ class News2ViewController: UITableViewController,SegementSlideContentScrollViewD
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return view.frame.size.height/8
+        return view.frame.size.height/10
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -163,6 +163,7 @@ class News2ViewController: UITableViewController,SegementSlideContentScrollViewD
 
        }
 
+    
     
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

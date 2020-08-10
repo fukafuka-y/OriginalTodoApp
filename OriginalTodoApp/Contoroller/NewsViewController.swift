@@ -27,7 +27,7 @@ class NewsViewController: UITableViewController,SegementSlideContentScrollViewDe
         tableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "NewsCell")
         tableView.backgroundColor = .clear
         
-        let urlString = "https://news.yahoo.co.jp/pickup/rss.xml"
+        let urlString = "https://news.google.com/rss?hl=ja&gl=JP&ceid=JP:ja"
         let url:URL = URL(string:urlString)!
         parser = XMLParser(contentsOf: url)!
         parser.delegate = self
