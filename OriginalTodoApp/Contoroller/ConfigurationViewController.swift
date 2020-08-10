@@ -50,6 +50,16 @@ class ConfigurationViewController: UITableViewController {
            }
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.row == 1{
+            
+            performSegue(withIdentifier: "selectNews", sender: nil)
+            
+        }
+        
+    }
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

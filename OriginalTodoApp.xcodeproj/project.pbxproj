@@ -49,6 +49,9 @@
 		5A9A3AEA24DE542D000F8233 /* Weather1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9A3AE924DE542D000F8233 /* Weather1ViewController.swift */; };
 		5A9A3AF024DE828A000F8233 /* Weather2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9A3AEF24DE828A000F8233 /* Weather2ViewController.swift */; };
 		5A9A3B1224DF8D15000F8233 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9A3B1124DF8D15000F8233 /* ConfigurationViewController.swift */; };
+		5AF52D9A24E0D00200947D70 /* SelectNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF52D9924E0D00200947D70 /* SelectNewsViewController.swift */; };
+		5AF52D9D24E0D40000947D70 /* SelectNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF52D9B24E0D40000947D70 /* SelectNewsCell.swift */; };
+		5AF52D9E24E0D40000947D70 /* SelectNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AF52D9C24E0D40000947D70 /* SelectNewsCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +99,9 @@
 		5A9A3AE924DE542D000F8233 /* Weather1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather1ViewController.swift; sourceTree = "<group>"; };
 		5A9A3AEF24DE828A000F8233 /* Weather2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather2ViewController.swift; sourceTree = "<group>"; };
 		5A9A3B1124DF8D15000F8233 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
+		5AF52D9924E0D00200947D70 /* SelectNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectNewsViewController.swift; sourceTree = "<group>"; };
+		5AF52D9B24E0D40000947D70 /* SelectNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectNewsCell.swift; sourceTree = "<group>"; };
+		5AF52D9C24E0D40000947D70 /* SelectNewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectNewsCell.xib; sourceTree = "<group>"; };
 		D31DD2906DEF17F1926C12B1 /* Pods-OriginalTodoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginalTodoApp.release.xcconfig"; path = "Target Support Files/Pods-OriginalTodoApp/Pods-OriginalTodoApp.release.xcconfig"; sourceTree = "<group>"; };
 		E67F2ECC9DB0359A705CC3BA /* Pods_OriginalTodoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OriginalTodoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -165,6 +171,8 @@
 				5A577B4F24C84BF8000169F1 /* DatePicker.swift */,
 				5A192D4024D6544600872D78 /* Data.swift */,
 				5A9A3AE924DE542D000F8233 /* Weather1ViewController.swift */,
+				5AF52D9B24E0D40000947D70 /* SelectNewsCell.swift */,
+				5AF52D9C24E0D40000947D70 /* SelectNewsCell.xib */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -199,6 +207,7 @@
 				5A192D4824D7779D00872D78 /* CalenderViewController.swift */,
 				5A9A3AEF24DE828A000F8233 /* Weather2ViewController.swift */,
 				5A9A3B1124DF8D15000F8233 /* ConfigurationViewController.swift */,
+				5AF52D9924E0D00200947D70 /* SelectNewsViewController.swift */,
 			);
 			path = Contoroller;
 			sourceTree = "<group>";
@@ -280,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AF52D9E24E0D40000947D70 /* SelectNewsCell.xib in Resources */,
 				5A577B3824C45E4B000169F1 /* NewsCell.xib in Resources */,
 				5A7FEF8124C3CA1D0056F49F /* LaunchScreen.storyboard in Resources */,
 				5A2AA31E24C9568B007A0CA5 /* RainIcon.json in Resources */,
@@ -354,6 +364,7 @@
 				5A577B4424C5D324000169F1 /* News3ViewController.swift in Sources */,
 				5A577B4624C5D336000169F1 /* News4ViewController.swift in Sources */,
 				5A577B3424C45DC5000169F1 /* WebViewController.swift in Sources */,
+				5AF52D9A24E0D00200947D70 /* SelectNewsViewController.swift in Sources */,
 				5A687C9824CBD0AE00A87459 /* DetailViewController.swift in Sources */,
 				5A9A3AEA24DE542D000F8233 /* Weather1ViewController.swift in Sources */,
 				5A577B4224C5D30D000169F1 /* News2ViewController.swift in Sources */,
@@ -366,6 +377,7 @@
 				5A577B3B24C45E5E000169F1 /* WeatherCell.swift in Sources */,
 				5A9A3B1224DF8D15000F8233 /* ConfigurationViewController.swift in Sources */,
 				5A192D4124D6544600872D78 /* Data.swift in Sources */,
+				5AF52D9D24E0D40000947D70 /* SelectNewsCell.swift in Sources */,
 				5A577B2E24C45C3F000169F1 /* BaseViewController.swift in Sources */,
 				5A577B3E24C45F28000169F1 /* NewsData.swift in Sources */,
 				5A687C9624CBD0A000A87459 /* AddMemoViewController.swift in Sources */,
