@@ -12,6 +12,7 @@ class SelectNewsViewController: UIViewController,UITableViewDelegate,UITableView
     
     let newsArray:[String] = ["スポーツ","エンタメ","経済","国際","科学","生活","国内"]
     let news2Array:[String] = ["/SPORTS","/ENTERTAINMENT","/BUSINESS","/WORLD","/SCIENCE","/HEALTH","/NATION"]
+    var topicArray:[String] = UserDefaults.standard.array(forKey: "topic") as! [String]
     
     let ud = UserDefaults.standard
     
@@ -27,7 +28,7 @@ class SelectNewsViewController: UIViewController,UITableViewDelegate,UITableView
         newsTableView.dataSource = self
         
         newsTableView.register(UINib(nibName: "SelectNewsCell", bundle: nil), forCellReuseIdentifier: "SelectNewsCell")
-      
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,26 +38,23 @@ class SelectNewsViewController: UIViewController,UITableViewDelegate,UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SelectNewsCell") as! SelectNewsCell
         cell.newsTextLabel.text = newsArray[indexPath.row]
-        if indexPath.row < 5{
+        if indexPath.row < topicArray.count - 1{
         cell.selectButton.selectedSegmentIndex = 0
         }else{
         cell.selectButton.selectedSegmentIndex = 1
         }
         
         cell.changeNews()
-       
-        if cell.newsBool == true{
-            
-            ud.set(cell.topic2, forKey: "topic2")
-            ud.set(cell.topic3, forKey: "topic3")
-            ud.set(cell.topic4, forKey: "topic4")
-            ud.set(cell.topic5, forKey: "topic5")
-            ud.set(cell.topic6, forKey: "topic6")
-        }else{
-            
-            
-        }
+    
+        ud.set(cell.topic2, forKey: "topic2")
+        ud.set(cell.topic3, forKey: "topic3")
+        ud.set(cell.topic4, forKey: "topic4")
+        ud.set(cell.topic5, forKey: "topic5")
+        ud.set(cell.topic6, forKey: "topic6")
         
+        let number:Int = cell.selectButton.selectedSegmentIndex
+//        print(number)
+        print(topicArray.count - 1)
         
 //        cell.changeNews()
         

@@ -54,6 +54,7 @@
 		5AF52D9E24E0D40000947D70 /* SelectNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AF52D9C24E0D40000947D70 /* SelectNewsCell.xib */; };
 		5AF52DA024E0DABD00947D70 /* News6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF52D9F24E0DABD00947D70 /* News6ViewController.swift */; };
 		5AF52DA224E1389800947D70 /* NewsSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF52DA124E1389800947D70 /* NewsSelect.swift */; };
+		5AF52DA424E14B5D00947D70 /* MojiChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF52DA324E14B5D00947D70 /* MojiChangeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +107,7 @@
 		5AF52D9C24E0D40000947D70 /* SelectNewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectNewsCell.xib; sourceTree = "<group>"; };
 		5AF52D9F24E0DABD00947D70 /* News6ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News6ViewController.swift; sourceTree = "<group>"; };
 		5AF52DA124E1389800947D70 /* NewsSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSelect.swift; sourceTree = "<group>"; };
+		5AF52DA324E14B5D00947D70 /* MojiChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MojiChangeViewController.swift; sourceTree = "<group>"; };
 		D31DD2906DEF17F1926C12B1 /* Pods-OriginalTodoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginalTodoApp.release.xcconfig"; path = "Target Support Files/Pods-OriginalTodoApp/Pods-OriginalTodoApp.release.xcconfig"; sourceTree = "<group>"; };
 		E67F2ECC9DB0359A705CC3BA /* Pods_OriginalTodoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OriginalTodoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -214,6 +216,7 @@
 				5A577B2D24C45C3F000169F1 /* BaseViewController.swift */,
 				5A192D4824D7779D00872D78 /* CalenderViewController.swift */,
 				5A577B2F24C45CA9000169F1 /* WeatherViewController.swift */,
+				5AF52DA324E14B5D00947D70 /* MojiChangeViewController.swift */,
 			);
 			path = Contoroller;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				5A577B3224C45CC3000169F1 /* NewsViewController.swift in Sources */,
 				5A577B3B24C45E5E000169F1 /* WeatherCell.swift in Sources */,
 				5A9A3B1224DF8D15000F8233 /* ConfigurationViewController.swift in Sources */,
+				5AF52DA424E14B5D00947D70 /* MojiChangeViewController.swift in Sources */,
 				5A192D4124D6544600872D78 /* Data.swift in Sources */,
 				5AF52D9D24E0D40000947D70 /* SelectNewsCell.swift in Sources */,
 				5A577B2E24C45C3F000169F1 /* BaseViewController.swift in Sources */,

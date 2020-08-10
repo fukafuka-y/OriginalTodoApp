@@ -359,11 +359,48 @@
                         <outlet property="settingCell4" destination="pkJ-YX-Vys" id="SsV-ax-xZ4"/>
                         <outlet property="settingCell5" destination="6mZ-tn-sHZ" id="l0V-0a-v4O"/>
                         <segue destination="Or1-9D-GoS" kind="show" identifier="selectNews" id="2sV-57-bn2"/>
+                        <segue destination="zay-r5-9ed" kind="show" identifier="mojiChange" id="3dV-Pg-Gn5"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r3R-UN-m0x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1093" y="1061"/>
+        </scene>
+        <!--Moji Change View Controller-->
+        <scene sceneID="cmC-ti-tbk">
+            <objects>
+                <viewController id="zay-r5-9ed" customClass="MojiChangeViewController" customModule="OriginalTodoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tH1-pf-wTC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2la-HM-IS1">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="mojiCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="mojiCell" rowHeight="70" id="s5Q-4Q-fRl">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="s5Q-4Q-fRl" id="mSg-k4-CWJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="mRn-mr-qjx"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="h3W-5E-HLL"/>
+                    <connections>
+                        <outlet property="mojiTableView" destination="2la-HM-IS1" id="O3l-gY-qoc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Owe-sK-KHq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="208.69565217391306" y="1863.6160714285713"/>
         </scene>
         <!--Select News View Controller-->
         <scene sceneID="Pdn-sm-jv2">
@@ -405,7 +442,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A8A-hb-OB0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="385.50724637681162" y="1836.8303571428571"/>
+            <point key="canvasLocation" x="1093" y="1864"/>
         </scene>
         <!--Memo View Controller-->
         <scene sceneID="P3o-VG-awM">

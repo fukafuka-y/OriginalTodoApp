@@ -56,6 +56,10 @@ class ConfigurationViewController: UITableViewController {
             
             performSegue(withIdentifier: "selectNews", sender: nil)
             
+        }else if indexPath.row == 0{
+            
+        performSegue(withIdentifier: "mojiChange", sender: nil)
+            
         }
         
     }
