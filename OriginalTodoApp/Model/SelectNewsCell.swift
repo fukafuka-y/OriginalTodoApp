@@ -12,8 +12,9 @@ class SelectNewsCell: UITableViewCell {
 
     @IBOutlet weak var newsTextLabel: UILabel!
     
-    @IBOutlet weak var newsSwitch: UISwitch!
+    @IBOutlet weak var selectButton: UISegmentedControl!
     
+    var newsBool:Bool = true
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +25,20 @@ class SelectNewsCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func changeNews(){
+        
+        if selectButton.selectedSegmentIndex == 0{
+            
+            newsBool = true
+            
+            
+        }else{
+            
+            newsBool = false
+        }
+        
     }
     
 }

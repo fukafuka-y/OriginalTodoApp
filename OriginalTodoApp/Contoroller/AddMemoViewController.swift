@@ -12,6 +12,7 @@ class AddMemoViewController: UIViewController {
 
     
     @IBOutlet weak var memoTextFiled: UITextView!
+    
     var shareText:String = ""
     let ud = UserDefaults.standard
     
@@ -26,33 +27,50 @@ class AddMemoViewController: UIViewController {
     
     @IBAction func addMemo(_ sender: Any) {
     
-    
-        let inputText = memoTextFiled.text
-        if ud.array(forKey: "memoArray") != nil{
-            var saveMemoArray = ud.array(forKey: "memoArray") as! [String]
-            if inputText != ""{
-                saveMemoArray.append(inputText!)
-                ud.set(saveMemoArray, forKey: "memoArray")
-            }else{
-                showAlert(title: "何も入力されていません")
-            }
-
+        
+        if memoTextFiled.text != ""{
+            
+             showAlert(title: "保存しますか？")
+           
         }else{
-            //最初、何も書かれていない場合
-            var newMemoArray = [String]()
-            //nilを強制アンラップはエラーが出るから
-            if inputText != ""{
-                //inputtextはoptional型だから強制アンラップ
-                newMemoArray.append(inputText!)
-                ud.set(newMemoArray, forKey: "memoArray")
-            }else{
-                showAlert(title: "何も入力されていません")
-            }
-        }
-        showAlert(title: "保存完了")
+
+           let alert2Controller = UIAlertController(title:"何も書いてありません" ,
+                                                          message: nil,
+                                                          preferredStyle: .alert)
+                      alert2Controller.addAction(UIAlertAction(title: "OK",
+                                                              style: .default,
+                                                              handler: nil))
+                      present(alert2Controller, animated: true)
+                    
+        
+       }
+    }
+//        let inputText = memoTextFiled.text
+//        if ud.array(forKey: "memoArray") != nil{
+//            var saveMemoArray = ud.array(forKey: "memoArray") as! [String]
+//            if inputText != ""{
+//                saveMemoArray.append(inputText!)
+//                ud.set(saveMemoArray, forKey: "memoArray")
+//            }else{
+//                showAlert(title: "何も入力されていません")
+//            }
+//
+//        }else{
+//            //最初、何も書かれていない場合
+//            var newMemoArray = [String]()
+//            //nilを強制アンラップはエラーが出るから
+//            if inputText != ""{
+//                //inputtextはoptional型だから強制アンラップ
+//                newMemoArray.append(inputText!)
+//                ud.set(newMemoArray, forKey: "memoArray")
+//            }else{
+//                showAlert(title: "何も入力されていません")
+//            }
+//        }
+//        showAlert(title: "保存完了")
         
        
-    }
+    
     
     @IBAction func share(_ sender: Any) {
            
@@ -80,10 +98,11 @@ class AddMemoViewController: UIViewController {
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
 
         let okAction: UIAlertAction = UIAlertAction(title: "OK",style: UIAlertAction.Style.default,handler:{(action:UIAlertAction!) -> Void in
-            var saveMemoArray = self.ud.array(forKey: "memoArray") as! [String]
+            var saveMemoArray:[String] = []
             let inputText = self.memoTextFiled.text
             saveMemoArray.append(inputText!)
             self.ud.set(saveMemoArray, forKey: "memoArray")
+            self.navigationController?.popViewController(animated: true)
                })
 
        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル",style: UIAlertAction.Style.cancel,handler:nil)

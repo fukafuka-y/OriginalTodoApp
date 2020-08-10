@@ -24,7 +24,7 @@ class News2ViewController: UITableViewController,SegementSlideContentScrollViewD
     
     
     var topic:String = "/sports"
-    var topic2:String = ""
+    var topic3:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()

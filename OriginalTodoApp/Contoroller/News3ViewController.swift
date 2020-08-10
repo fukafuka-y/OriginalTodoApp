@@ -21,13 +21,18 @@ class News3ViewController: UITableViewController,SegementSlideContentScrollViewD
    
      var currentElemantName:String!
     
-    var topic:String = "/entertainment"
-
+    var topic:String = ""
+    var topic3:String = "/entertainment"
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "NewsCell")
         tableView.backgroundColor = .clear
+        
+        UserDefaults.standard.set(topic3, forKey: "topic3")
+        let topic = UserDefaults.standard.object(forKey: "topic3") as! String
         
         let urlString = "https://news.yahoo.co.jp/pickup\(topic)/rss.xml"
         let url:URL = URL(string:urlString)!

@@ -59,6 +59,10 @@ class DetailViewController: UIViewController {
     }
     
     
+    
+    
+    
+    
         
     func showAlert(title:String){
         
@@ -107,33 +111,35 @@ class DetailViewController: UIViewController {
       }
 }
     
-    func Decision(){
-       let inputText = memoTextView.text
-        let ud = UserDefaults.standard
-        if ud.array(forKey: "memoArray") != nil{
-            var saveMemoArray = ud.array(forKey: "memoArray") as! [String]
-            if inputText != ""{
-                saveMemoArray.append(inputText!)
-                ud.set(saveMemoArray, forKey: "memoArray")
-            }else{
-                
-            }
-            
-        }else{
-            //最初、何も書かれていない場合
-            var newMemoArray = [String]()
-            //nilを強制アンラップはエラーが出るから
-            if inputText != ""{
-                //inputtextはoptional型だから強制アンラップ
-                newMemoArray.append(inputText!)
-                ud.set(newMemoArray, forKey: "memoArray")
-            }else{
-              
-            }
-        }
-       self.navigationController?.popViewController(animated: true)
-        
-    }
+    
+    
+//    func Decision(){
+//       let inputText = memoTextView.text
+//        let ud = UserDefaults.standard
+//        if ud.array(forKey: "memoArray") != nil{
+//            var saveMemoArray = ud.array(forKey: "memoArray") as! [String]
+//            if inputText != ""{
+//                saveMemoArray.append(inputText!)
+//                ud.set(saveMemoArray, forKey: "memoArray")
+//            }else{
+//
+//            }
+//
+//        }else{
+//            //最初、何も書かれていない場合
+//            var newMemoArray = [String]()
+//            //nilを強制アンラップはエラーが出るから
+//            if inputText != ""{
+//                //inputtextはoptional型だから強制アンラップ
+//                newMemoArray.append(inputText!)
+//                ud.set(newMemoArray, forKey: "memoArray")
+//            }else{
+//
+//            }
+//        }
+//       self.navigationController?.popViewController(animated: true)
+//
+//    }
     
     
     /*

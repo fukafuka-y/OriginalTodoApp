@@ -11,6 +11,7 @@ import UIKit
 class SelectNewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     let newsArray:[String] = ["スポーツ","エンタメ","経済","国際","IT","地域","国内","科学"]
+    let news2Array:[String] = ["/sport","/entertainment","/economy","/world","/computer","/local","/domestic","/science"]
     
     @IBOutlet weak var newsTableView: UITableView!
     
@@ -32,6 +33,29 @@ class SelectNewsViewController: UIViewController,UITableViewDelegate,UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SelectNewsCell") as! SelectNewsCell
         cell.newsTextLabel.text = newsArray[indexPath.row]
+        if indexPath.row < 4{
+        cell.selectButton.selectedSegmentIndex = 0
+        }else{
+        cell.selectButton.selectedSegmentIndex = 1
+        }
+        cell.changeNews()
+        
+        if cell.newsBool == true{
+            
+            let sport:String = news2Array[indexPath.row]
+            let entertainment:String = news2Array[indexPath.row]
+            let computer:String = news2Array[indexPath.row]
+            let local:String = news2Array[indexPath.row]
+            UserDefaults.standard.set(sport, forKey: "topic2")
+            UserDefaults.standard.set(entertainment, forKey: "topic3")
+            UserDefaults.standard.set(computer, forKey: "topic4")
+            UserDefaults.standard.set(local, forKey: "topic5")
+            print(indexPath.row)
+            
+        }else{
+        
+            
+    }
         
         return cell
     }
@@ -44,12 +68,7 @@ class SelectNewsViewController: UIViewController,UITableViewDelegate,UITableView
         return view.frame.size.height/12
     }
     
-    func change(){
-        
-        
-        
-    }
-    
+   
     /*
     // MARK: - Navigation
 

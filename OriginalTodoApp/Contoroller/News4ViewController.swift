@@ -19,14 +19,18 @@ class News4ViewController: UITableViewController,SegementSlideContentScrollViewD
     //XMLParserのインスタンス化
     var parser = XMLParser()
    
-     var currentElemantName:String!
-    var topic:String = "/economy"
+    var currentElemantName:String!
+    var topic:String = ""
+    var topic4:String = "/economy"
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "NewsCell")
         tableView.backgroundColor = .clear
+        
+        UserDefaults.standard.set(topic4, forKey: "topic4")
+        let topic = UserDefaults.standard.object(forKey: "topic4") as! String
         
         let urlString = "https://news.yahoo.co.jp/pickup\(topic)/rss.xml"
         let url:URL = URL(string:urlString)!
