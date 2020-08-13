@@ -55,6 +55,7 @@
 		5AF52DA024E0DABD00947D70 /* News6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF52D9F24E0DABD00947D70 /* News6ViewController.swift */; };
 		5AF52DA224E1389800947D70 /* NewsSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF52DA124E1389800947D70 /* NewsSelect.swift */; };
 		5AF52DA424E14B5D00947D70 /* MojiChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF52DA324E14B5D00947D70 /* MojiChangeViewController.swift */; };
+		5AF52DB024E4C78000947D70 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AF52DAF24E4C78000947D70 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +109,8 @@
 		5AF52D9F24E0DABD00947D70 /* News6ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News6ViewController.swift; sourceTree = "<group>"; };
 		5AF52DA124E1389800947D70 /* NewsSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSelect.swift; sourceTree = "<group>"; };
 		5AF52DA324E14B5D00947D70 /* MojiChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MojiChangeViewController.swift; sourceTree = "<group>"; };
+		5AF52DAF24E4C78000947D70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5AF52DB124E4CC6E00947D70 /* OriginalTodoAppDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OriginalTodoAppDebug.entitlements; sourceTree = "<group>"; };
 		D31DD2906DEF17F1926C12B1 /* Pods-OriginalTodoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginalTodoApp.release.xcconfig"; path = "Target Support Files/Pods-OriginalTodoApp/Pods-OriginalTodoApp.release.xcconfig"; sourceTree = "<group>"; };
 		E67F2ECC9DB0359A705CC3BA /* Pods_OriginalTodoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OriginalTodoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -145,11 +148,13 @@
 		5A7FEF7324C3CA190056F49F /* OriginalTodoApp */ = {
 			isa = PBXGroup;
 			children = (
+				5AF52DB124E4CC6E00947D70 /* OriginalTodoAppDebug.entitlements */,
 				5A7FEF8B24C3CB470056F49F /* Model */,
 				5A7FEF8C24C3CB4E0056F49F /* View */,
 				5A7FEF8E24C3CB610056F49F /* Contoroller */,
 				5A7FEF7F24C3CA1D0056F49F /* LaunchScreen.storyboard */,
 				5A7FEF8224C3CA1D0056F49F /* Info.plist */,
+				5AF52DAF24E4C78000947D70 /* GoogleService-Info.plist */,
 				5A7FEFA124C4297E0056F49F /* checkAnimation.json */,
 				5A577B4724C6604A000169F1 /* rainAnimation.json */,
 				5A687CD124D5396100A87459 /* windyIcon.json */,
@@ -306,6 +311,7 @@
 				5A7FEF7E24C3CA1D0056F49F /* Assets.xcassets in Resources */,
 				5A2AA31C24C9566A007A0CA5 /* CloudIcon.json in Resources */,
 				5A7FEF7C24C3CA190056F49F /* Main.storyboard in Resources */,
+				5AF52DB024E4C78000947D70 /* GoogleService-Info.plist in Resources */,
 				5A577B3C24C45E5E000169F1 /* WeatherCell.xib in Resources */,
 				5A7FEFA024C40B480056F49F /* ToDoCell.xib in Resources */,
 				5A577B4824C6604B000169F1 /* rainAnimation.json in Resources */,
@@ -541,6 +547,7 @@
 			baseConfigurationReference = 574000D5C9E37D1824B9F899 /* Pods-OriginalTodoApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OriginalTodoApp/OriginalTodoAppDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 777ZAR7F28;
@@ -572,7 +579,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fukaya.OriginalTodoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fukaya.OriginalTodoApp1206;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

@@ -13,6 +13,9 @@ target 'OriginalTodoApp' do
   pod 'YYCalendar'
   pod 'lottie-ios'
   pod 'JJFloatingActionButton'
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
+  
   
 
  

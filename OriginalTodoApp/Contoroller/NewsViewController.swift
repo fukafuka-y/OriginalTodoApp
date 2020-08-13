@@ -12,6 +12,7 @@ import SwiftyJSON
 
 
 
+
 class NewsViewController: UITableViewController,SegementSlideContentScrollViewDelegate,XMLParserDelegate{
 
     var newsData = [NewsData]()
