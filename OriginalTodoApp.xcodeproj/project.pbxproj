@@ -56,6 +56,8 @@
 		5AF52DA224E1389800947D70 /* NewsSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF52DA124E1389800947D70 /* NewsSelect.swift */; };
 		5AF52DA424E14B5D00947D70 /* MojiChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF52DA324E14B5D00947D70 /* MojiChangeViewController.swift */; };
 		5AF52DB024E4C78000947D70 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AF52DAF24E4C78000947D70 /* GoogleService-Info.plist */; };
+		5AF52DF524E61AF400947D70 /* News8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF52DF424E61AF400947D70 /* News8ViewController.swift */; };
+		5AF52DF724E61B0500947D70 /* News7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF52DF624E61B0500947D70 /* News7ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +113,8 @@
 		5AF52DA324E14B5D00947D70 /* MojiChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MojiChangeViewController.swift; sourceTree = "<group>"; };
 		5AF52DAF24E4C78000947D70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5AF52DB124E4CC6E00947D70 /* OriginalTodoAppDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OriginalTodoAppDebug.entitlements; sourceTree = "<group>"; };
+		5AF52DF424E61AF400947D70 /* News8ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News8ViewController.swift; sourceTree = "<group>"; };
+		5AF52DF624E61B0500947D70 /* News7ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News7ViewController.swift; sourceTree = "<group>"; };
 		D31DD2906DEF17F1926C12B1 /* Pods-OriginalTodoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OriginalTodoApp.release.xcconfig"; path = "Target Support Files/Pods-OriginalTodoApp/Pods-OriginalTodoApp.release.xcconfig"; sourceTree = "<group>"; };
 		E67F2ECC9DB0359A705CC3BA /* Pods_OriginalTodoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OriginalTodoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -212,6 +216,8 @@
 				5A577B4524C5D336000169F1 /* News4ViewController.swift */,
 				5A577B4D24C7B259000169F1 /* News5ViewController.swift */,
 				5AF52D9F24E0DABD00947D70 /* News6ViewController.swift */,
+				5AF52DF624E61B0500947D70 /* News7ViewController.swift */,
+				5AF52DF424E61AF400947D70 /* News8ViewController.swift */,
 				5A577B3324C45DC5000169F1 /* WebViewController.swift */,
 				5A687C9324CBD08D00A87459 /* MemoViewController.swift */,
 				5A687C9524CBD0A000A87459 /* AddMemoViewController.swift */,
@@ -387,6 +393,7 @@
 				5A577B4224C5D30D000169F1 /* News2ViewController.swift in Sources */,
 				5A7FEF9F24C40B480056F49F /* ToDoCell.swift in Sources */,
 				5A687C9424CBD08D00A87459 /* MemoViewController.swift in Sources */,
+				5AF52DF724E61B0500947D70 /* News7ViewController.swift in Sources */,
 				5A577B4024C465A9000169F1 /* Base2ViewController.swift in Sources */,
 				5A577B3024C45CA9000169F1 /* WeatherViewController.swift in Sources */,
 				5A577B4E24C7B259000169F1 /* News5ViewController.swift in Sources */,
@@ -402,6 +409,7 @@
 				5A7FEFA424C42C980056F49F /* TimePicker.swift in Sources */,
 				5A577B3724C45E4B000169F1 /* NewsCell.swift in Sources */,
 				5A577B5024C84BF8000169F1 /* DatePicker.swift in Sources */,
+				5AF52DF524E61AF400947D70 /* News8ViewController.swift in Sources */,
 				5A192D4924D7779D00872D78 /* CalenderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -579,7 +587,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fukaya.OriginalTodoApp1206;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fukaya.OriginalTodoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
