@@ -21,19 +21,10 @@ class NewsViewController: UITableViewController,SegementSlideContentScrollViewDe
    
     var currentElemantName:String!
     
-    var topic1:String = ""
-    var topic2:String = ""
-    var topic3:String = ""
-    var topic4:String = ""
-    var topic5:String = ""
-    var topic6:String = ""
-    var topic7:String = ""
-    var topic8:String = ""
+  
 
     
-    let ud = UserDefaults.standard
     
-    var topicArray:[String] = []
 //    var topicSaveArray : [String] = []
 //        UserDefaults.standard.array(forKey: "topic") as! [String]
     
@@ -58,69 +49,7 @@ class NewsViewController: UITableViewController,SegementSlideContentScrollViewDe
         
         
         
-        if ud.object(forKey: "topic2") != nil{
-            topic2 = ud.object(forKey: "topic2") as! String
-        }else{
-            topic2 = "/SPORTS"
-        }
-        
-        if ud.object(forKey: "topic3") != nil{
-            topic3 = ud.object(forKey: "topic3") as! String
-        }else{
-            topic3 = "/ENTERTAINMENT"
-        }
-        
-        if ud.object(forKey: "topic4") != nil{
-            topic4 = ud.object(forKey: "topic4") as! String
-        }else{
-            topic4 = "/BUSINESS"
-        }
-        
-        if ud.object(forKey: "topic5") != nil{
-            topic5 = ud.object(forKey: "topic5") as! String
-        }else{
-            topic5 = "/WORLD"
-        }
-        
-        if ud.object(forKey: "topic6") != nil{
-            topic6 = ud.object(forKey: "topic6") as! String
-        }else{
-            topic6 = "/SCIENCE"
-        }
-        
-        if ud.object(forKey: "topic7") != nil{
-                   topic7 = ud.object(forKey: "topic7") as! String
-               }else{
-                   topic7 = "/HEALTH"
-               }
-        
-        if ud.object(forKey: "topic8") != nil{
-                   topic8 = ud.object(forKey: "topic8") as! String
-               }else{
-                   topic8 = "/NATION"
-               }
-            
-
-            
-        topicArray.append(topic1)
-        topicArray.append(topic2)
-        topicArray.append(topic3)
-        topicArray.append(topic4)
-        topicArray.append(topic5)
-        topicArray.append(topic6)
-        topicArray.append(topic7)
-        topicArray.append(topic8)
-        
-        
-        ud.set(topicArray, forKey: "topic")
-        
-        ud.removeObject(forKey: "topic2")
-        ud.removeObject(forKey: "topic3")
-        ud.removeObject(forKey: "topic4")
-        ud.removeObject(forKey: "topic5")
-        ud.removeObject(forKey: "topic6")
-        ud.removeObject(forKey: "topic7")
-        ud.removeObject(forKey: "topic8")
+       
         
         
         

@@ -12,7 +12,7 @@ class SelectNewsViewController: UIViewController,UITableViewDelegate,UITableView
     
     let newsArray:[String] = ["スポーツ","エンタメ","経済","国際","科学","生活","国内"]
     let news2Array:[String] = ["/SPORTS","/ENTERTAINMENT","/BUSINESS","/WORLD","/SCIENCE","/HEALTH","/NATION"]
-    var topicArray:[String] = UserDefaults.standard.array(forKey: "topic") as! [String]
+//    var topicArray:[String] = UserDefaults.standard.array(forKey: "topic") as! [String]
     
     let ud = UserDefaults.standard
     
@@ -28,6 +28,8 @@ class SelectNewsViewController: UIViewController,UITableViewDelegate,UITableView
         newsTableView.dataSource = self
         
         newsTableView.register(UINib(nibName: "SelectNewsCell", bundle: nil), forCellReuseIdentifier: "SelectNewsCell")
+         print(ud.object(forKey: "topic2") as Any)
+        print(ud.object(forKey: "topic4") as Any)
         
     }
     
@@ -38,23 +40,15 @@ class SelectNewsViewController: UIViewController,UITableViewDelegate,UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SelectNewsCell") as! SelectNewsCell
         cell.newsTextLabel.text = newsArray[indexPath.row]
-        if indexPath.row < topicArray.count - 1{
+        
+        
+        
         cell.selectButton.selectedSegmentIndex = 0
-        }else{
-        cell.selectButton.selectedSegmentIndex = 1
-        }
         
-        cell.changeNews()
     
-        ud.set(cell.topic2, forKey: "topic2")
-        ud.set(cell.topic3, forKey: "topic3")
-        ud.set(cell.topic4, forKey: "topic4")
-        ud.set(cell.topic5, forKey: "topic5")
-        ud.set(cell.topic6, forKey: "topic6")
+        cell.selectNews(cellIndex: indexPath.row)
+       
         
-        let number:Int = cell.selectButton.selectedSegmentIndex
-//        print(number)
-        print(topicArray.count - 1)
         
 //        cell.changeNews()
         
@@ -92,6 +86,7 @@ class SelectNewsViewController: UIViewController,UITableViewDelegate,UITableView
     @IBAction func change(_ sender: Any) {
         
         
+        newsTableView.reloadData()
         
     }
     
